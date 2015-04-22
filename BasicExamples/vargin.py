@@ -67,5 +67,3 @@ def main(argv):
 #The "main" function is the one initiated by the user. So if this script is imported from another module, then "main" would be THAT module's name instead of this script. So we only ask "sys" what the input arguments were if the user was the one who called this function. In python, this type of checking lets us run certain parts when the code is called directly and other parts when it's called as part of something larger. 
 if __name__ == "__main__":
     main(sys.argv[1:])
-
-
