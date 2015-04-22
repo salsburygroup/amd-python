@@ -18,7 +18,6 @@
 #####
 #Example call to python script
 #python vargin.py -i ~/Desktop/input.dcd -o ~/Desktop.output.dat
-
 #Successful output of this script
 #Input file is  /Users/melvrl13/Desktop/input.dcd
 #Ouput file is  /Users/melvrl13/Desktop.output.dat
