@@ -16,14 +16,16 @@
 #TODO:
 #####
 
-#Inputs: reference PDB (-ref), structure file for trajectory (-structure) , trajectory (-traj), atomselection (-sel),  output name (-o)
+
 
 #Outputs: aligned dcd
 
-### Example call
-#python AlignToPDB.py -ref '/Users/melvrl13/Documents/RyanM/F10/hairpin.pdb' -structure '/Users/melvrl13/Documents/RyanM/F10/f10.psf' -traj '/Users/melvrl13/Desktop/foldingPaperWorking/weighted3200.dcd' -sel 'segid F10' -o '/Users/melvrl13/Desktop/testingPyplot/test.dcd'
-#Dependencies
-import MDAnalysis, MDAnalysis.analysis.align, argparse
+#Example Call
+#python align.py -structure '/Users/melvrl13/Documents/RyanM/F10/f10.psf' -traj '/Users/melvrl13/Desktop/foldingPaperWorking/weighted3200.dcd' -sel 'segid F10' -o '/Users/melvrl13/Desktop/testingPyplot/test.dcd'
+
+import MDAnalysis
+import MDAnalysis.analysis.align 
+import argparse
 
 #parse user input
 #Initialize parser. The default help has poor labeling. See http://bugs.python.org/issue9694
@@ -31,21 +33,41 @@ parser = argparse.ArgumentParser(description = 'Align to first frame and save ne
 
 inputs=parser.add_argument_group('Input arguments')
 inputs.add_argument('-h', '--help', action='help')
-inputs.add_argument('-ref', action='store', dest='refStructure',help='Reference Structure',type=str,required=True)
 inputs.add_argument('-structure', action='store', dest='structure',help='Structure file corresponding to trajectory',type=str,required=True)
+inputs.add_argument('-ref', action='store', dest='ref_structure',help='Reference Structure',type=str,default=None)
+inputs.add_argument('-refframe', action='store', dest='ref_frame',help='Reference Structure',type=int,default=0)
 inputs.add_argument('-traj', action='store', dest='trajectory',help='Trajectory',type=str,required=True)
 inputs.add_argument('-sel', action='store', dest='sel', help='Atom selection',type=str,default='all')
 inputs.add_argument('-o', action='store', dest='outName',help='Output file',type=str,required=True)
 
-userInput=parser.parse_args()
+UserInput=parser.parse_args()
 
 #Define the universe (i.e., molecule in VMD)
-u = MDAnalysis.Universe(userInput.structure, userInput.trajectory)
+u = MDAnalysis.Universe(
+        UserInput.structure, 
+        UserInput.trajectory
+        )
 
-#Define the reference universe
-referencePDB = MDAnalysis.Universe(userInput.refStructure)
+#Align according to user inputs
+if UserInput.ref_structure:
+    #Define the reference universe
+    referencePDB = MDAnalysis.Universe(UserInput.ref_structure)
+    MDAnalysis.analysis.align.rms_fit_trj(
+            u, 
+            referencePDB, 
+            select=UserInput.sel, 
+            filename=UserInput.outName
+            )
+else:
+    #advance to reference frame
+    u.trajectory[UserInput.ref_frame]
+    MDAnalysis.analysis.align.rms_fit_trj(
+            u, 
+            u, 
+            select=UserInput.sel, 
+            filename=UserInput.outName
+            )
 
 
-#Align to first frame. If you give the same universe twice, it uses "current frame"
-MDAnalysis.analysis.align.rms_fit_trj(u, referencePDB, select=userInput.sel, filename=userInput.outName)
+
 

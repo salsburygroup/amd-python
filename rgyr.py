@@ -1,35 +1,35 @@
 #! /usr/bin/env python
 
 #####
-#AlignToFrame.py   
-#Wed Apr 22 17:52:44 EDT 2015
+#rgyr.py
+#Thu Apr 23 13:07:33 EDT 2015
 #Ryan Melvin
 #####
-#Credit:
+#Credit:http://www.mdanalysis.org/MDAnalysisTutorial/trajectories.html
 #If you use this script, cite
-#Douglas L. Theobald (2005) "Rapid calculation of RMSD using a quaternion-based characteristic polynomial." Acta Crystallographica A 61(4):478-480.
-#AND
-#Pu Liu, Dmitris K. Agrafiotis, and Douglas L. Theobald (2010) "Fast determination of the optimal rotational matrix for macromolecular superpositions." J. Comput. Chem. 31, 1561-1563.
-#AND
 #N. Michaud-Agrawal, E. J. Denning, T. B. Woolf, and O. Beckstein. MDAnalysis: A Toolkit for the Analysis of Molecular Dynamics Simulations. J. Comput. Chem. 32 (2011), 2319-2327. doi:10.1002/jcc.21787
 ####
 #TODO:
 #####
+#Example call
+#python rgyr.py -structure '/Users/melvrl13/Documents/RyanM/F10/f10.psf' -traj '/Users/melvrl13/Desktop/foldingPaperWorking/weighted3200.dcd' -sel 'segid F10' -o '/Users/melvrl13/Desktop/testingPyplot/rgyr.dat' 
 
 #Inputs:  structure file for trajectory (-structure) , trajectory (-traj), atomselection (-sel),  output name (-o)
 
-#Outputs: aligned dcd
-
-### Example call
-#python AlignToFrame.py -structure '/Users/melvrl13/Documents/RyanM/F10/f10.psf' -traj '/Users/melvrl13/Desktop/foldingPaperWorking/weighted3200.dcd' -sel 'segid F10' -o '/Users/melvrl13/Desktop/testingPyplot/test.dcd'
+#Outputs: rgyr time series in text file
 
 #Dependencies
-import MDAnalysis, MDAnalysis.analysis.align, argparse
+import MDAnalysis
+import argparse
+import numpy as np
 
-#parse user input
+#Initialize variables
+Rgyr = []
+
 #Initialize parser. The default help has poor labeling. See http://bugs.python.org/issue9694
-parser = argparse.ArgumentParser(description = 'Align to first frame and save new trajectory', add_help=False) 
+parser = argparse.ArgumentParser(description = 'Calculate RGYR time series', add_help=False) 
 
+#List all possible user input
 inputs=parser.add_argument_group('Input arguments')
 inputs.add_argument('-h', '--help', action='help')
 inputs.add_argument('-structure', action='store', dest='structure',help='Structure file corresponding to trajectory',type=str,required=True)
@@ -37,10 +37,19 @@ inputs.add_argument('-traj', action='store', dest='trajectory',help='Trajectory'
 inputs.add_argument('-sel', action='store', dest='sel', help='Atom selection',type=str,default='all')
 inputs.add_argument('-o', action='store', dest='outName',help='Output file',type=str,required=True)
 
-userInput=parser.parse_args()
+#Parse into useful form
+UserInput=parser.parse_args()
 
 #Define the universe (i.e., molecule in VMD)
-u = MDAnalysis.Universe(userInput.structure, userInput.trajectory)
+u = MDAnalysis.Universe(UserInput.structure, UserInput.trajectory)
+selection = u.selectAtoms(UserInput.sel)
 
-#Align to first frame. If you give the same universe twice, it uses "current frame"
-MDAnalysis.analysis.align.rms_fit_trj(u, u, select=userInput.sel, filename=userInput.outName)
+#Get Rgyr of each frame
+for frames in u.trajectory:
+    Rgyr.append((selection.radiusOfGyration()))
+
+#Make into a numpy array
+Rgyr = np.array(Rgyr)
+
+#Save as a column in a text file.
+np.savetxt(UserInput.outName,Rgyr)
