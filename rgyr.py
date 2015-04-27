@@ -35,7 +35,7 @@ inputs.add_argument('-h', '--help', action='help')
 inputs.add_argument('-structure', action='store', dest='structure',help='Structure file corresponding to trajectory',type=str,required=True)
 inputs.add_argument('-traj', action='store', dest='trajectory',help='Trajectory',type=str,required=True)
 inputs.add_argument('-sel', action='store', dest='sel', help='Atom selection',type=str,default='all')
-inputs.add_argument('-o', action='store', dest='outName',help='Output file',type=str,required=True)
+inputs.add_argument('-o', action='store', dest='out_name',help='Output file',type=str,required=True)
 
 #Parse into useful form
 UserInput=parser.parse_args()
@@ -52,4 +52,4 @@ for frames in u.trajectory:
 Rgyr = np.array(Rgyr)
 
 #Save as a column in a text file.
-np.savetxt(UserInput.outName,Rgyr)
+np.savetxt(UserInput.out_name,Rgyr)

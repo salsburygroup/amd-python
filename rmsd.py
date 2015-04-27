@@ -51,8 +51,9 @@ else:
     reference_structure=None
 
 
-#Set up calculation of RMSM
-Rmsd = MDAnalysis.analysis.rms.RMSD(u, 
+#Set up calculation of RMSD
+Rmsd = MDAnalysis.analysis.rms.RMSD(
+        u, 
         reference=reference_structure, 
         select=UserInput.sel, 
         ref_frame=UserInput.ref_frame

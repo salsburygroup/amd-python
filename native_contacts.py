@@ -7,7 +7,7 @@
 #####
 #Credit:
 #If you use this script, cite
-#N. Michaud-Agrawal, E. J. Denning, T. B. Woolf, and O. Beckstein. MDAnalysis: A Toolkit for the Analysis of Molecular Dynamics Simulations. J. Comput. Chem. 32 (2011), 2319–2327. doi:10.1002/jcc.21787
+#N. Michaud-Agrawal, E. J. Denning, T. B. Woolf, and O. Beckstein. MDAnalysis: A Toolkit for the Analysis of Molecular Dynamics Simulations. J. Comput. Chem. 32 (2011), 2319-2327. doi:10.1002/jcc.21787
 #####
 #TODO:
 #####
@@ -22,7 +22,10 @@
 #NOTE: This function will overwrite already exiting files of the assigned name 
 
 #Dependencies
-import MDAnalysis, MDAnalysis.analysis.contacts, argparse,  matplotlib.pyplot
+import MDAnalysis
+import MDAnalysis.analysis.contacts
+import argparse
+import matplotlib.pyplot
 
 #parse user input
 #Initialize parser. The default help has poor labeling. See http://bugs.python.org/issue9694
