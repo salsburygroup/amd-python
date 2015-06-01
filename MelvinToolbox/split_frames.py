@@ -4,7 +4,7 @@ def split_all(structure, trajectory, output_prefix = 'Frame'):
     Split all
     =========
 
-    Usage: %split_all(trajectory.dcd, output_prefix)
+    Usage: %split_all(structure, trajectory.dcd, output_prefix)
     Saves each frame in a DCD as a PDB with name output_prefix%s.pdb % frame#
 
     inputs:
@@ -42,13 +42,13 @@ def split_list(structure, trajectory, frame_list, output_prefix = 'Frame'):
     Split list
     ==========
 
-    Usage: %split_list(trajectory.dcd, frame_list, output_prefix)
+    Usage: %split_list(structure, trajectory.dcd, frame_list, output_prefix)
     Saves each frame in list from DCD as a PDB with name output_prefix%s.pdb % frame#
 
     inputs:
         -structure: path to psf or pdb as string
         -trjectory: path to trajectory as string
-        -frame_list: list of desired frames
+        -frame_list: list of desired frames in 0-based indexing
         -output_prefix: prefix for output frames as string. If a prefix is not specified, 'Frame' will be used.
 
     :Author: Ryan Melvin
