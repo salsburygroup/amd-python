@@ -22,3 +22,13 @@ def pdbs(structure1, structure2, out_name):
         - MDAnalysis
 
     """
+
+    import MDAnalysis
+
+    u1 = MDAnalysis.Universe(structure1)
+
+    u2 = MDAnalysis.Universe(structure2)
+
+    u = MDAnalysis.Merge(u1.selectAtoms("all"), u2.selectAtoms("all"))
+
+    u.atoms.write(out_name)
