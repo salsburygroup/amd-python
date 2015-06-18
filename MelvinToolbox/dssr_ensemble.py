@@ -24,7 +24,7 @@ def run_dssr(structure, trajectory, working_directory):
     """
 
     from MDAnalysis import Universe
-    from split_frames import split_DCD
+    from split_frames import split_all
     from os import path, makedirs, system
     from re import findall
     from pandas import DataFrame
@@ -42,7 +42,7 @@ def run_dssr(structure, trajectory, working_directory):
 
     #Split DCD into frame PDBs
     frame_name = frame_directory + "/Frames"
-    split_DCD(structure,trajectory,frame_name)
+    split_all(structure,trajectory,frame_name)
 
     #Make directories for storing dssr output
     terminal_output_directory = working_directory + "/terminal_out"
