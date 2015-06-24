@@ -1,3 +1,20 @@
+#####
+#pca2.py   
+#
+#Ryan Melvin
+#####
+#Credit:
+#If you use this script, cite
+#TODO:
+#####
+
+
+
+#Outputs: aligned dcd
+
+#Example Call
+#python ~/Documents/AMD/AMD-PYTHON/pca.py '/Volumes/RyanMdata/F10/Folding/weightedSims3200/f10.psf' '/Volumes/RyanMdata/F10/Folding/weightedSims3200/weighted3200.dcd' '/Users/melvrl13/Desktop/testPCA/test/'
+
 def xyz(topology,trajectory,outname):
     import mdtraj as md
     import matplotlib.pyplot as plt
