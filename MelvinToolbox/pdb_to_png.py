@@ -18,6 +18,7 @@ sname = spath.split('/')[-1].split('.')[0]
 pymol.cmd.load(spath, sname)
 pymol.cmd.disable("all")
 pymol.cmd.enable(sname)
+pymol.cmd.cartoon('automatic','all')
 
 #Prepare name for image file
 outname = os.path.dirname(spath) + '/' + os.path.splitext(sname)[0] + '.png'
