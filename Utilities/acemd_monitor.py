@@ -18,6 +18,7 @@ inputs.add_argument('-h', '--help', action='help')
 inputs.add_argument('-d', '--device', action='store', dest='device', help='Which GPU card to use',type=str,required=True)
 inputs.add_argument('-c', '--config', action='store', dest='conf', help='configuration file', type=str, required=True)
 inputs.add_argument('-l', '--log', action='store', dest='logfile', help='Log file. Assumes cwd if no other path specified',default='log.txt')
+inputs.add_argument('-e', '--email', action='store', dest='email', help='Email to notify of termination', type=str, required=True)
 
 UserInput=parser.parse_args()
 
@@ -40,16 +41,16 @@ msg = MIMEText("\n".join(fp.read().strip().split("\n")[-9:]))
 fp.close() #Close the file
 
 # Prepare message for smtp
-sender = 'melvrl13@wfu.edu'
-recipient = 'ryanlmelvin@gmail.com'
+sender = 'salsburygroup@gmail.com'
+recipient = UserInput.email
 
 msg['Subject'] = UserInput.conf + ' on ' + ip_address + ' device ' + UserInput.device 
 msg['From'] = sender
 msg['To'] = recipient
 
 # Credentials
-username = 'melvrl13@wfu.edu'
-password = 'thisis4th'
+username = 'salsburygroup@gmail.com'
+password = 'F10simulations'
 
 s = smtplib.SMTP('smtp.gmail.com:587')
 s.starttls()
