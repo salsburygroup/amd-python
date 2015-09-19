@@ -6,7 +6,6 @@ from __future__ import division
 import mdtraj
 import math
 import os
-import csv
 import argparse
 import numpy as np
 
@@ -23,6 +22,7 @@ inputs.add_argument('-s', '-structure', action='store', dest='topology',help='St
 inputs.add_argument('-t', '--traj', action='store', dest='dcd',help='Trajectory',type=str,required=True)
 inputs.add_argument('-c', '--cluster', action='store', dest='cluster_data',help='cluster data file',type=str,required=True)
 
+
 #Parse into useful form
 UserInput=parser.parse_args()
 
@@ -37,6 +37,13 @@ with open (UserInput.cluster_data) as file:
 
         # Now, we'll measure the RMSDs
         rmsd=mdtraj.rmsd(trajectory_subset,trajectory_subset,frame=0)
+
+        # We'll save each cluster's statistics in its own folder
+        directory = 'cluster' + str(cluster_number)
+        os.makedirs(directory)
+
+        # Save the frame used as the mean
+        trajectory_subset[0].save(directory+'/mu.pdb')
 
         trajectory_subset = None #Won't be needing this again
         # Keep the RMSDs as a numpy array
@@ -54,9 +61,7 @@ with open (UserInput.cluster_data) as file:
         sigma_frames = [frame for (frame,sigma_mask) in zip(cluster,sigma_mask) if sigma_mask]
         SE_frames = [frame for (frame,SE_mask) in zip(cluster,SE_mask) if SE_mask]
       
-        # We'll save each cluster's statistics in its own folder
-        directory = 'cluster' + str(cluster_number)
-        os.makedirs(directory)
+
         with open(directory+'/sigma.txt','wb') as sigma_file:
             sigma_file.write(' '.join([str(i) for i in sigma_frames]))
 
@@ -64,18 +69,7 @@ with open (UserInput.cluster_data) as file:
             SE_file.write(' '.join([str(i) for i in SE_frames]))
 
         # Let's also save the subsets of frames
-        trajectory_sigma = trajectory.slice(sigma_frames)
-        trajectory_sigma.save(directory+'/sigma.pdb')
-        trajectory_sigma = None #Waste not thy memory!
-        trajectory_SE = trajectory.slice(SE_frames)
-        trajectory_SE.save(directory+'/SE.pdb')
-        trajectory_SE = None
-
-        #Use VMD  to make images. You'll probably want to redo with a good orientation
-        vmdin=os.popen('/Applications/VMD\ 1.9.2.app/Contents/vmd/vmd_MACOSXX86','w')
-        vmdin.write('mol new ' + directory +'/sigma.pdb\n')
-        vmdin.write('mol representation Ribbons 0.300000 12.000000 2.000000\n')
-        vmdin.write('mol material Ghost\n')
-        vmdin.write('color Display {Background} white\n')
+        trajectory.slice(sigma_frames).save(directory+'/sigma.pdb')
+        trajectory.slice(SE_frames).save(directory+'/SE.pdb')
 
         cluster_number = cluster_number+1
