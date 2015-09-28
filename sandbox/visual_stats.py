@@ -83,7 +83,7 @@ with open (UserInput.cluster_data) as file:
 
 
         vmd_render_median_cmd = ('/Applications/VMD\ 1.9.2.app/Contents/vmd/vmd_MACOSXX86 ' 
-                + directory +'/sigma.pdb -dispdev text -e ' 
+                + directory +'/mu.pdb -dispdev text -e ' 
                 + median_helper + ' -args -outfile '
                 +directory + '/median.dat'
                 )
@@ -97,7 +97,7 @@ with open (UserInput.cluster_data) as file:
                 ' -trans_vmd ' + directory + '/median.dat -o ' + directory + '/median.tga')
         tachyon_render_median=subprocess.call(tachyon_render_median_cmd,shell=True)
 
-        #Let's get rid of the white pixels and convert the TGAs to PNGs
+        #Let's get rid of the grey pixels and convert the TGAs to PNGs
         median_img = Image.open(directory + '/median.tga')
         median_img = median_img.convert("RGBA")
         median_data = median_img.getdata()
