@@ -16,7 +16,7 @@ from sys import exit
 dir = os.path.dirname(__file__)
 cwd = os.getcwd()
 shadow_helper = os.path.join(dir, 'generate_shadow.vmd')
-median_helper = os.path.join(dir, 'generate_median.vmd')
+median_helper = os.path.join(dir, 'generate_middle.vmd')
 
 parser = argparse.ArgumentParser(
         description = (
@@ -31,6 +31,7 @@ inputs.add_argument('-s', '--structure', action='store', dest='topology',help='S
 inputs.add_argument('-t', '--traj', action='store', dest='dcd',help='Trajectory',type=str,required=True)
 inputs.add_argument('-c', '--cluster', action='store', dest='cluster_data',help='cluster data file',type=str,required=True)
 inputs.add_argument('-l', '--last', action='store', dest='last',help='last cluster for which to generate files',type=int,required=True)
+inputs.add_argument('-r', '--representation', action='store', dest='rep',help='VMD graphic representation to use',type=str,default='NewRibbons')
 
 #Parse into useful form
 UserInput=parser.parse_args()
@@ -82,15 +83,16 @@ with open (UserInput.cluster_data) as file:
         # Now, let's make some pretty pictures
         vmd_render_shadow_cmd = (vmd_path + '/vmd_MACOSXX86 ' 
             + directory +'/sigma.pdb -dispdev text -e ' 
-            + shadow_helper + ' -args -first 1 -last ' + str(len(cluster)) + ' -outfile ' 
+            + shadow_helper + ' -args -first 1 -last ' + str(len(cluster)) 
+             + ' -rep ' + UserInput.rep +  ' -outfile ' 
             + directory + '/shadow.dat')
         vmd_render_shadow=subprocess.call(vmd_render_shadow_cmd,shell=True)
 
 
         vmd_render_median_cmd = (vmd_path + '/vmd_MACOSXX86 ' 
-                + directory +'/sigma.pdb -dispdev text -e ' 
-                + median_helper + ' -args -outfile '
-                +directory + '/median.dat'
+                + directory + '/mu.pdb -dispdev text -e ' 
+                + median_helper + ' -args '  + ' -rep ' + UserInput.rep + 
+                ' -outfile ' + directory + '/median.dat'
                 )
         vmd_render_median=subprocess.call(vmd_render_median_cmd,shell=True)
         

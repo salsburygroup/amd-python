@@ -12,11 +12,12 @@
 package require cmdline
 set parameters {
     outfile.arg	"" "Output file name?"
+    rep.arg "" "What representation?"
 }
 
 array set arg [cmdline::getoptions argv $parameters]
 
-set requiredParameters {outfile}
+set requiredParameters {outfile rep}
 foreach parameter $requiredParameters {
     if {$arg($parameter) == ""} {
         puts stderr "Missing required parameter: -$parameter"
@@ -357,7 +358,7 @@ display dof_fnumber 64.000000
 display dof_focaldist 0.700000
 #mol new /Volumes/RyanMdata/F10/CaCl2_150mM/1micro/Analysis/Clusters/cluster1/mu.pdb type pdb first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
 mol delrep 0 top
-mol representation NewRibbons 0.720000 12.000000 3.000000 0
+mol representation $arg(rep)
 mol color Name
 mol selection {all}
 mol material AOShiny
