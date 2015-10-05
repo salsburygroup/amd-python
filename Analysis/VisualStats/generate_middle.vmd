@@ -1,26 +1,23 @@
-#Generate Shadow
+#Generate Median
 #September 23, 2015
 #Ryan Melvin
 #####
 #Modified from a VMD save-state script
 #
-#Example call to 
+#Example call 
 #####
 #ToDo:
 #####
 #
-
 package require cmdline
 set parameters {
-    first.arg   "" "Which starting frame?"
-    last.arg    "" "Which final frame?"
     outfile.arg	"" "Output file name?"
-    rep.arg	"" "What vmd representation?"
+    rep.arg "" "What representation?"
 }
 
 array set arg [cmdline::getoptions argv $parameters]
 
-set requiredParameters {first last outfile}
+set requiredParameters {outfile rep}
 foreach parameter $requiredParameters {
     if {$arg($parameter) == ""} {
         puts stderr "Missing required parameter: -$parameter"
@@ -359,18 +356,18 @@ display aodirect 0.300000
 display dof off
 display dof_fnumber 64.000000
 display dof_focaldist 0.700000
-#mol new $arg($frames) type pdb first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
+#mol new /Volumes/RyanMdata/F10/CaCl2_150mM/1micro/Analysis/Clusters/cluster1/mu.pdb type pdb first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
 mol delrep 0 top
 mol representation $arg(rep)
 mol color Name
 mol selection {all}
-mol material Ghost
+mol material AOShiny
 mol addrep top
 mol selupdate 0 top 0
 mol colupdate 0 top 0
 mol scaleminmax top 0 0.000000 0.000000
 mol smoothrep top 0 0
-mol drawframes top 0 $arg(first):$arg(last)
+mol drawframes top 0 {now}
 mol clipplane center 0 0 top {0.0 0.0 0.0}
 mol clipplane color  0 0 top {0.5 0.5 0.5 }
 mol clipplane normal 0 0 top {0.0 0.0 1.0}
@@ -425,7 +422,7 @@ color scale colors BlkW {0.0 0.0 0.0} {0.5 0.5 0.5} {1.0 1.0 1.0}
 color scale colors WBlk {1.0 1.0 1.0} {0.5 0.5 0.5} {0.0 0.0 0.0}
   color scale method RWB
   set colorcmds {
-    {color Display {Background} white}
+    {color Display {Background} gray}
     {color Display {BackgroundTop} black}
     {color Display {BackgroundBot} blue2}
     {color Display {FPS} black}
@@ -546,6 +543,7 @@ color scale colors WBlk {1.0 1.0 1.0} {0.5 0.5 0.5} {0.0 0.0 0.0}
     {color Segname {} blue}
     {color Conformation {all} blue}
     {color Molecule {0} blue}
+    {color Molecule {sigma.pdb} blue}
     {color Structure {3_10_Helix} blue}
     {color Surface {Grasp} gray}
     {color Labels {Springs} orange}

@@ -11,6 +11,7 @@ dir = os.path.dirname(__file__)
 cwd = os.getcwd()
 shadow_helper = os.path.join(dir, 'generate_shadow.vmd')
 middle_helper = os.path.join(dir, 'generate_middle.vmd')
+tachyon = os.path.join(dir, 'tachyon')
 
 parser = argparse.ArgumentParser(
         description = (
@@ -55,11 +56,11 @@ vmd_render_middle_cmd = (
         )
 vmd_render_middle=subprocess.call(vmd_render_middle_cmd,shell=True)
 
-tachyon_render_shadow_cmd = (vmd_path + '/tachyon_MACOSXX86'+
+tachyon_render_shadow_cmd = (tachyon +
         ' -trans_vmd ' + UserInput.directory + '/shadow.dat -o ' + UserInput.directory + '/shadow.tga')
 tachyon_render_shadow=subprocess.call(tachyon_render_shadow_cmd,shell=True)
 
-tachyon_render_middle_cmd = (vmd_path + '/tachyon_MACOSXX86'+
+tachyon_render_middle_cmd = (tachyon +
         ' -trans_vmd ' + UserInput.directory + '/middle.dat -o ' + UserInput.directory + '/middle.tga')
 tachyon_render_middle=subprocess.call(tachyon_render_middle_cmd,shell=True)
 
