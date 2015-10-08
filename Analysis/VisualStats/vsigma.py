@@ -82,6 +82,9 @@ with open (UserInput.cluster_data) as file:
         # Let's also save the subsets of frames
         trajectory_subset.slice(sigma_mask).save(directory+'/sigma.pdb')
 
+        # Now, let's clear the trajectory subset from memory before starting rendering
+        trajectory_subset = None
+
         # Now, let's make some pretty pictures
         vmd_render_shadow_cmd = (vmd_path + '/vmd_MACOSXX86 ' 
             + directory +'/sigma.pdb -dispdev text -e ' 
