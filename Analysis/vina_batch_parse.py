@@ -38,7 +38,7 @@ width = (bins[1]-bins[0])
 center = (bins[:-1]+bins[1:])/2
 fig = plt.figure()
 plt.bar(center, hist, align='center', width=width)
-plt.xlabel('Free energy of binding')
+plt.xlabel('Free energy of binding (kcal/mol)')
 plt.ylabel('Normalized probability')
 plt.title('Vina Top Energy Outputs')
 fig.savefig('TopEnergiesHistogram.png')
