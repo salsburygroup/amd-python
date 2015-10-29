@@ -25,8 +25,6 @@ from __future__ import division
 import MDAnalysis
 import MDAnalysis.analysis.hbonds
 import argparse
-import recfile
-import fileinput
 import sys
 import pandas as pd
 
@@ -83,18 +81,7 @@ h.run()
 # Format as a table
 h.generate_table()
 
-# Save as csv
-recf = recfile.Open(UserInput.out_name, 'w', delim=',')
-header = 'time, donor_idx, acceptor_idx, donor_resnm, donor_resid, donor_atom, acceptor_resnm, acceptor_resid, acceptor_atom, distance, angle'
-recf.fobj.write(header+'\n')
-recf.write(h.table)
-recf.close()
-
-# Clean up the output file for humans and other csv-accepting software
-for line in fileinput.input([UserInput.out_name],inplace=True):
-    sys.stdout.write(line.replace('\00',''))
-
-# Correct time from the MDAnalysis default (read stupid and infuriating) timestep
-df = pd.read_csv(UserInput.out_name)
+# Save as csv and change tiem to frames
+df = pd.DataFrame.from_records(h.table)
 df['time']=df['time'].apply(lambda x: x/u.trajectory.dt)
 df.to_csv(UserInput.out_name,index=False)
