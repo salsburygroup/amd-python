@@ -21,6 +21,7 @@
 #NOTE 0-based column indexing
 
 # Dependencies
+from __future__ import division
 import MDAnalysis
 import MDAnalysis.analysis.hbonds
 import argparse
