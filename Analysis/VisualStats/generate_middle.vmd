@@ -586,5 +586,6 @@ color scale colors WBlk {1.0 1.0 1.0} {0.5 0.5 0.5} {0.0 0.0 0.0}
 vmdrestoremycolors
 label textsize 1.0
 display resize 1920 1080
+display resetview
 render Tachyon $arg(outfile)
 exit
