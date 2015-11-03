@@ -27,6 +27,7 @@ import MDAnalysis.analysis.hbonds
 import argparse
 import sys
 import pandas as pd
+import time
 
 print "Please cite: "\
     "N. Michaud-Agrawal, E. J. Denning, T. B. Woolf, and O. Beckstein. MDAnalysis: "\
@@ -110,10 +111,11 @@ for frame in list(range(0, len(u.trajectory))):
     #current_frame_hbonds = current_frame_hbonds.loc[:,['donor_idx', 'acceptor_idx']]
     current_frame_hbonds = current_frame_hbonds.drop_duplicates() #Don't repeat
     current_frame_hbond_pairs = [str(row['donor_idx']) + '-' + str(row['acceptor_idx']) 
-            for index, row in  current_frame_hbonds.iterrows()]
+            for index, row in  current_frame_hbonds.iterrows()] #list comp across two lines. Not wrong tabbing.
     for pair in current_frame_hbond_pairs:
         hbond_trajectory.loc[frame, pair] = 1
+    progress = "\r Motif calculation on Frame " + str(frame) + " of " + str(len(u.trajectory))
+    sys.stdout.write(progress)
+    sys.stdout.flush()
 
 hbond_trajectory.to_csv(UserInput.out_name + '_trajectory.csv',index=False)
-
-print "All done."
