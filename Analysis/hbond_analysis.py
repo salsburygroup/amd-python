@@ -14,7 +14,7 @@
 #TODO:
 #####
 #Example call
-#python /Users/melvrl13/Documents/AMD/AMD-PYTHON/Analysis/hbonds.py -structure /Volumes/RyanMdata/sufCandD/RelaxationSimulations/SufCD_with_ATP/Homology/LastFrameOfHomologyRound2/Complex.psf -t /Volumes/RyanMdata/sufCandD/RelaxationSimulations/SufCD_with_ATP/Homology/LastFrameOfHomologyRound2/round1/SufCD_ATP_relax_strip_stride.dcd -sel1 all -sel2 all -sel1_type both -d 4 -a 60 -o /Volumes/RyanMdata/sufCandD/RelaxationSimulations/SufCD_with_ATP/Homology/LastFrameOfHomologyRound2/round1/hbond_test.txt
+#python /Users/melvrl13/Documents/AMD/AMD-PYTHON/Analysis/hbond_analysis.py -structure /Volumes/RyanMdata/sufCandD/RelaxationSimulations/SufCD_with_ATP/Homology/LastFrameOfHomologyRound2/Complex.psf -t /Volumes/RyanMdata/sufCandD/RelaxationSimulations/SufCD_with_ATP/Homology/LastFrameOfHomologyRound2/round1/SufCD_ATP_relax_strip_stride.dcd -sel1 all -sel2 all -sel1_type both -d 4 -a 60 -o /Volumes/RyanMdata/sufCandD/RelaxationSimulations/SufCD_with_ATP/Homology/LastFrameOfHomologyRound2/round1/hbond_test.txt
 
 #Outputs: Hydrogen bonds table with columns 0)time 1)donor index 2) acceptor index 3) donor residue name 4) donor residue id 5) donor atom 6) acceptor residue name 7) acceptor residue id 8) acceptor atom 9) distance 10) angle
 #NOTE 1-based atom indexing
@@ -28,6 +28,13 @@ import argparse
 import sys
 import pandas as pd
 
+print "Please cite: "\
+    "N. Michaud-Agrawal, E. J. Denning, T. B. Woolf, and O. Beckstein. MDAnalysis: "\
+    "A Toolkit for the Analysis of Molecular Dynamics Simulations. "\
+    "J. Comput. Chem. 32 (2011), 2319-2327. doi:10.1002/jcc.21787 "\
+    "AND "\
+    "L.M. Gregoret, S.D. Rader, R.J. Fletterick, and F.E. Cohen. "\
+    "Hydrogen bonds involving sulfur atoms in proteins. Proteins, 9(2):99-107, 1991. 10.1002/prot.340090204."
 
 #Initialize parser. The default help has poor labeling. See http://bugs.python.org/issue9694
 parser = argparse.ArgumentParser(
@@ -86,6 +93,8 @@ df = pd.DataFrame.from_records(h.table)
 df['time']=df['time'].apply(lambda x: x/u.trajectory.dt)
 df.to_csv(UserInput.out_name + '_raw.csv',index=False)
 
+print "Cleaning up. Please don't move any files."
+
 # Now make a list of all possible hydrogen bonds
 df_idx = df.loc[:,['donor_idx', 'acceptor_idx']]
 df_unique = df_idx.drop_duplicates()
@@ -106,3 +115,5 @@ for frame in list(range(0, len(u.trajectory))):
         hbond_trajectory.loc[frame, pair] = 1
 
 hbond_trajectory.to_csv(UserInput.out_name + '_trajectory.csv',index=False)
+
+print "All done."

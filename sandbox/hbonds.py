@@ -28,6 +28,7 @@ import argparse
 import sys
 import pandas as pd
 
+print "WARNING: This is not the script you are looking for. Use hbond_analysis.py in the Analysis directory."
 
 #Initialize parser. The default help has poor labeling. See http://bugs.python.org/issue9694
 parser = argparse.ArgumentParser(
