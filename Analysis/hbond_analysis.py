@@ -60,6 +60,8 @@ inputs.add_argument('-a', '--angle',  action='store', dest='angle', help='Angle 
 inputs.add_argument('-o', action='store', dest='out_name',help='Output prefix with no extension',type=str,required=True)
 inputs.add_argument('--extra_acceptors', action='store', dest='acceptors',help='Acceptors in addition to those defined by charmm27',type=str,default=None)
 inputs.add_argument('--extra_donors', action='store', dest='donors',help='Donors in addition to those defined by charmm27',type=str,default=None)
+inputs.add_argument('--distance_type', action='store', dest='distance_type',help='heavy or hydrogen?',type=str,default='heavy')
+
 
 
 # Parse into useful form
@@ -80,7 +82,8 @@ h = MDAnalysis.analysis.hbonds.HydrogenBondAnalysis(
         angle=UserInput.angle, 
         donors=UserInput.donors,
         acceptors=UserInput.acceptors,
-        detect_hydrogens='distance'
+        detect_hydrogens='distance',
+        distance_type=UserInput.distance_type
         )
 
 # Execute analysis.
