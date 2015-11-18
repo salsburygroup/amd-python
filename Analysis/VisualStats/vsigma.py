@@ -43,6 +43,8 @@ if "VMD_HOME" in os.environ:
 else:
     exit("VMD_HOME not found in environmental variables.")
 
+tachyon = os.path.join(vmd_path, 'tachyon_MACOSXX86')
+
 trajectory = mdtraj.load(UserInput.dcd,top=UserInput.topology) #Load trajectory
 cluster_number = 1 #We'll start counting clusters from 1
 with open (UserInput.cluster_data) as file:
