@@ -105,7 +105,7 @@ df_unique = df_idx.drop_duplicates()
 
 # Turn into string to be used as a header in a dataframe 
 hbond_pairs = [str(row['donor_idx']) + '-' + str(row['acceptor_idx']) for index, row in  df_unique.iterrows()]
-df.unique = None #Clear from memory
+df_unique = None #Clear from memory
 
 # Repeat for each frame individually and record
 hbond_trajectory = pd.DataFrame(0, index=list(range(0, len(u.trajectory))), columns=hbond_pairs)
