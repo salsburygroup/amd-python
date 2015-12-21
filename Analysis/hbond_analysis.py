@@ -94,10 +94,8 @@ h.generate_table()
 
 # Save as csv and change tiem to frames
 df = pd.DataFrame.from_records(h.table)
-df['time']=df['time'].apply(lambda x: x/u.trajectory.dt)
+df['time']=df['time'].apply(lambda x: int(x/u.trajectory.dt))
 df.to_csv(UserInput.out_name + '_raw.csv',index=False)
-
-print "Cleaning up. Please don't move any files."
 
 # Now make a list of all possible hydrogen bonds
 df_idx = df.loc[:,['donor_idx', 'acceptor_idx']]
@@ -110,11 +108,13 @@ df_unique = None #Clear from memory
 # Repeat for each frame individually and record
 hbond_trajectory = pd.DataFrame(0, index=list(range(0, len(u.trajectory))), columns=hbond_pairs)
 for frame in list(range(0, len(u.trajectory))):
-    current_frame_hbonds = df.loc[df['time'] == float(frame), ['donor_idx', 'acceptor_idx']]
+    current_frame_hbonds = df.loc[df['time'] == int(frame), ['donor_idx', 'acceptor_idx']]
+    print(current_frame_hbonds)
     #current_frame_hbonds = current_frame_hbonds.loc[:,['donor_idx', 'acceptor_idx']]
     current_frame_hbonds = current_frame_hbonds.drop_duplicates() #Don't repeat
     current_frame_hbond_pairs = [str(row['donor_idx']) + '-' + str(row['acceptor_idx']) 
             for index, row in  current_frame_hbonds.iterrows()] #list comp across two lines. Not wrong tabbing.
+    #print(current_frame_hbond_pairs)
     for pair in current_frame_hbond_pairs:
         hbond_trajectory.loc[frame, pair] = 1
     progress = "\r Motif calculation on Frame " + str(frame) + " of " + str(len(u.trajectory))
