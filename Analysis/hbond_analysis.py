@@ -26,7 +26,7 @@ import MDAnalysis
 import MDAnalysis.analysis.hbonds
 import argparse
 import sys
-import pdb
+#import pdb
 import pandas as pd
 import numpy as np
 import time
@@ -125,7 +125,7 @@ h.generate_table()
 
 # Save as csv and change tiem to frames
 df = pd.DataFrame.from_records(h.table)
-df['time']=df['time'].apply(lambda x: float(x/u.trajectory.dt))
+df['time']=df['time'].apply(lambda x: int(round((x/u.trajectory.dt))))
 df.to_csv(UserInput.out_name + '_raw.csv',index=False)
 
 # Now make a list of all possible hydrogen bonds
@@ -141,7 +141,7 @@ hbond_trajectory = pd.DataFrame(index=list(range(0, len(u.trajectory))))
 #hbond_trajectory = pd.DataFrame(0, index=list(range(0, len(u.trajectory))), columns=hbond_pairs)
 for frame in list(range(0, len(u.trajectory))):
     current_frame_hbonds = df.loc[df['time'] == int(frame), ['donor_idx', 'acceptor_idx']]
-    current_frame_hbonds = current_frame_hbonds.drop_duplicates(keep='last') #Don't repeat
+    current_frame_hbonds = current_frame_hbonds.drop_duplicates() #Don't repeat
     current_frame_hbond_pairs = [str(row['donor_idx']) + '-' + str(row['acceptor_idx']) 
             for index, row in  current_frame_hbonds.iterrows()] #list comp across two lines. Not wrong tabbing.
     for pair in current_frame_hbond_pairs:
