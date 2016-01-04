@@ -26,6 +26,7 @@ import MDAnalysis
 import MDAnalysis.analysis.hbonds
 import argparse
 import sys
+import pdb
 import pandas as pd
 import time
 
@@ -92,9 +93,9 @@ h.run()
 # Format as a table
 h.generate_table()
 
-# Save as csv and change tiem to frames
+# Save as csv and change time to frames
 df = pd.DataFrame.from_records(h.table)
-df['time']=df['time'].apply(lambda x: int(x/u.trajectory.dt))
+df['time']=df['time'].apply(lambda x: float(x/u.trajectory.dt))
 df.to_csv(UserInput.out_name + '_raw.csv',index=False)
 
 # Now make a list of all possible hydrogen bonds
@@ -118,7 +119,7 @@ for frame in list(range(0, len(u.trajectory))):
     for pair in current_frame_hbond_pairs:
         hbond_trajectory.loc[frame, pair] = 1
     progress = "\r Motif calculation on Frame " + str(frame) + " of " + str(len(u.trajectory))
-    sys.stdout.write(progress)
-    sys.stdout.flush()
+    #sys.stdout.write(progress)
+    #sys.stdout.flush()
 
 hbond_trajectory.to_csv(UserInput.out_name + '_trajectory.csv',index=False)
