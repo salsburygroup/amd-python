@@ -26,9 +26,10 @@ import MDAnalysis
 import MDAnalysis.analysis.hbonds
 import argparse
 import sys
-import pdb
 import pandas as pd
+import numpy as np
 import time
+from warnings import warn
 
 print "Please cite: "\
     "N. Michaud-Agrawal, E. J. Denning, T. B. Woolf, and O. Beckstein. MDAnalysis: "\
@@ -62,6 +63,8 @@ inputs.add_argument('-o', action='store', dest='out_name',help='Output prefix wi
 inputs.add_argument('--extra_acceptors', action='store', dest='acceptors',help='Acceptors in addition to those defined by charmm27',type=str,default=None)
 inputs.add_argument('--extra_donors', action='store', dest='donors',help='Donors in addition to those defined by charmm27',type=str,default=None)
 inputs.add_argument('--distance_type', action='store', dest='distance_type',help='heavy or hydrogen?',type=str,default='heavy')
+inputs.add_argument('--matchVMD', action='store_true', help='Emulates VMD polar atom only algorithm. Ignores extra donors and acceptors options. Also, This options will not work for atom names longer than three characters.')
+# Three letter atom name restriction to be fixed in future version.
 
 
 
@@ -71,8 +74,32 @@ UserInput=parser.parse_args()
 # Define the universe (i.e., molecule in VMD)
 u = MDAnalysis.Universe(UserInput.structure, UserInput.trajectory, permissive=True)
 
-# Setup analysis.
-h = MDAnalysis.analysis.hbonds.HydrogenBondAnalysis(
+# Emulate VMD's detection algorithm if option is selected
+if UserInput.matchVMD:
+    warn("The matchVMD flag ignores additional donors or acceptors. Instead, it searches all polar atoms -- N, O, S and F.")
+
+    donors_acceptors = u.select_atoms("name O or name O* or name O** or name N or name N* or name N** or name S or name S* or name S** or name F or name F* or name F**")
+    donors_acceptors_list = np.unique(donors_acceptors.names)
+
+    # Setup MD Analysis input
+    h = MDAnalysis.analysis.hbonds.HydrogenBondAnalysis(
+        u, 
+        UserInput.sel1, 
+        UserInput.sel2, 
+        selection1_type=UserInput.sel1_type, 
+        update_selection1=UserInput.update_sel1, 
+        update_selection2=UserInput.update_sel2, 
+        distance=UserInput.distance, 
+        angle=UserInput.angle, 
+        donors=donors_acceptors_list,
+        acceptors=donors_acceptors_list,
+        detect_hydrogens='distance',
+        distance_type=UserInput.distance_type
+        )
+
+else:
+    # Setup MD Analysis input
+    h = MDAnalysis.analysis.hbonds.HydrogenBondAnalysis(
         u, 
         UserInput.sel1, 
         UserInput.sel2, 
@@ -87,39 +114,39 @@ h = MDAnalysis.analysis.hbonds.HydrogenBondAnalysis(
         distance_type=UserInput.distance_type
         )
 
+
+
 # Execute analysis.
 h.run()
 
 # Format as a table
 h.generate_table()
 
-# Save as csv and change time to frames
+# Save as csv and change tiem to frames
 df = pd.DataFrame.from_records(h.table)
-df['time']=df['time'].apply(lambda x: float(x/u.trajectory.dt))
+df['time']=df['time'].apply(lambda x: int(x/u.trajectory.dt))
 df.to_csv(UserInput.out_name + '_raw.csv',index=False)
 
 # Now make a list of all possible hydrogen bonds
 df_idx = df.loc[:,['donor_idx', 'acceptor_idx']]
-df_unique = df_idx.drop_duplicates()
+#df_unique = df_idx.drop_duplicates(keep='last')
 
 # Turn into string to be used as a header in a dataframe 
-hbond_pairs = [str(row['donor_idx']) + '-' + str(row['acceptor_idx']) for index, row in  df_unique.iterrows()]
-df_unique = None #Clear from memory
+#hbond_pairs = [str(row['donor_idx']) + '-' + str(row['acceptor_idx']) for index, row in  df_unique.iterrows()]
+#df_unique = None #Clear from memory
 
 # Repeat for each frame individually and record
-hbond_trajectory = pd.DataFrame(0, index=list(range(0, len(u.trajectory))), columns=hbond_pairs)
+hbond_trajectory = pd.DataFrame(index=list(range(0, len(u.trajectory))))
+#hbond_trajectory = pd.DataFrame(0, index=list(range(0, len(u.trajectory))), columns=hbond_pairs)
 for frame in list(range(0, len(u.trajectory))):
     current_frame_hbonds = df.loc[df['time'] == int(frame), ['donor_idx', 'acceptor_idx']]
-    print(current_frame_hbonds)
-    #current_frame_hbonds = current_frame_hbonds.loc[:,['donor_idx', 'acceptor_idx']]
-    current_frame_hbonds = current_frame_hbonds.drop_duplicates() #Don't repeat
+    current_frame_hbonds = current_frame_hbonds.drop_duplicates(keep='last') #Don't repeat
     current_frame_hbond_pairs = [str(row['donor_idx']) + '-' + str(row['acceptor_idx']) 
             for index, row in  current_frame_hbonds.iterrows()] #list comp across two lines. Not wrong tabbing.
-    #print(current_frame_hbond_pairs)
     for pair in current_frame_hbond_pairs:
         hbond_trajectory.loc[frame, pair] = 1
     progress = "\r Motif calculation on Frame " + str(frame) + " of " + str(len(u.trajectory))
-    #sys.stdout.write(progress)
-    #sys.stdout.flush()
-
+    sys.stdout.write(progress)
+    sys.stdout.flush()
+hbond_trajectory = hbond_trajectory.fillna(0)
 hbond_trajectory.to_csv(UserInput.out_name + '_trajectory.csv',index=False)
