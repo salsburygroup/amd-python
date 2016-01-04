@@ -14,7 +14,7 @@
 #TODO:
 #####
 #Example call
-#python /Users/melvrl13/Documents/AMD/AMD-PYTHON/Analysis/hbond_analysis.py -structure /Volumes/RyanMdata/sufCandD/RelaxationSimulations/SufCD_with_ATP/Homology/LastFrameOfHomologyRound2/Complex.psf -t /Volumes/RyanMdata/sufCandD/RelaxationSimulations/SufCD_with_ATP/Homology/LastFrameOfHomologyRound2/round1/SufCD_ATP_relax_strip_stride.dcd -sel1 all -sel2 all -sel1_type both -d 4 -a 60 -o /Volumes/RyanMdata/sufCandD/RelaxationSimulations/SufCD_with_ATP/Homology/LastFrameOfHomologyRound2/round1/hbond_test.txt
+#python /Users/melvrl13/Documents/AMD/AMD-PYTHON/Analysis/hbond_analysis.py -structure /Volumes/RyanMdata/sufCandD/RelaxationSimulations/SufCD_with_ATP/Homology/LastFrameOfHomologyRound2/Complex.psf -t /Volumes/RyanMdata/sufCandD/RelaxationSimulations/SufCD_with_ATP/Homology/LastFrameOfHomologyRound2/round1/SufCD_ATP_relax_strip_stride.dcd --matchVMD -sel1 all -sel2 all -sel1_type both -d 4 -a 60 -o /Volumes/RyanMdata/sufCandD/RelaxationSimulations/SufCD_with_ATP/Homology/LastFrameOfHomologyRound2/round1/hbond_test.txt
 
 #Outputs: Hydrogen bonds table with columns 0)time 1)donor index 2) acceptor index 3) donor residue name 4) donor residue id 5) donor atom 6) acceptor residue name 7) acceptor residue id 8) acceptor atom 9) distance 10) angle
 #NOTE 1-based atom indexing
@@ -26,10 +26,8 @@ import MDAnalysis
 import MDAnalysis.analysis.hbonds
 import argparse
 import sys
-import pdb
 import pandas as pd
 import numpy as np
-import time
 from warnings import warn
 
 print "Please cite: "\
@@ -125,29 +123,23 @@ h.generate_table()
 
 # Save as csv and change tiem to frames
 df = pd.DataFrame.from_records(h.table)
-df['time']=df['time'].apply(lambda x: float(x/u.trajectory.dt))
-df.to_csv(UserInput.out_name + '_raw.csv',index=False)
+df['time']=df['time'].apply(lambda x: int(round(x/u.trajectory.dt))) #Convert from MDAnalysis default time values to frames
+df.to_csv(UserInput.out_name + '_raw.csv',index=False) #Save as csv
 
 # Now make a list of all possible hydrogen bonds
-df_idx = df.loc[:,['donor_idx', 'acceptor_idx']]
-#df_unique = df_idx.drop_duplicates(keep='last')
+df_idx = df.loc[:,['donor_idx', 'acceptor_idx']] #All the hbonds that occur in the trajectory as a data frame
 
-# Turn into string to be used as a header in a dataframe 
-#hbond_pairs = [str(row['donor_idx']) + '-' + str(row['acceptor_idx']) for index, row in  df_unique.iterrows()]
-#df_unique = None #Clear from memory
 
 # Repeat for each frame individually and record
-hbond_trajectory = pd.DataFrame(index=list(range(0, len(u.trajectory))))
-#hbond_trajectory = pd.DataFrame(0, index=list(range(0, len(u.trajectory))), columns=hbond_pairs)
+hbond_trajectory = pd.DataFrame(index=list(range(0, len(u.trajectory)))) #Empty data frame in memory 
 for frame in list(range(0, len(u.trajectory))):
-    current_frame_hbonds = df.loc[df['time'] == int(frame), ['donor_idx', 'acceptor_idx']]
-    current_frame_hbonds = current_frame_hbonds.drop_duplicates(keep='last') #Don't repeat
+    current_frame_hbonds = df.loc[df['time'] == int(frame), ['donor_idx', 'acceptor_idx']] #All hbonds in frame
     current_frame_hbond_pairs = [str(row['donor_idx']) + '-' + str(row['acceptor_idx']) 
             for index, row in  current_frame_hbonds.iterrows()] #list comp across two lines. Not wrong tabbing.
     for pair in current_frame_hbond_pairs:
-        hbond_trajectory.loc[frame, pair] = 1
-    progress = "\r Motif calculation on Frame " + str(frame) + " of " + str(len(u.trajectory))
+        hbond_trajectory.loc[frame, pair] = 1 #Fill in the empties with 1 if the hbond occurs
+    progress = "\r Motif calculation on Frame " + str(frame) + " of " + str(len(u.trajectory)) #status
     sys.stdout.write(progress)
-    sys.stdout.flush()
-hbond_trajectory = hbond_trajectory.fillna(0)
-hbond_trajectory.to_csv(UserInput.out_name + '_trajectory.csv',index=False)
+    sys.stdout.flush() #report status to terminal output
+hbond_trajectory = hbond_trajectory.fillna(0) #Fill any leftover empties with 0
+hbond_trajectory.to_csv(UserInput.out_name + '_trajectory.csv',index=False) #Save as csv
