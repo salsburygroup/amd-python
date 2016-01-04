@@ -26,6 +26,7 @@ import MDAnalysis
 import MDAnalysis.analysis.hbonds
 import argparse
 import sys
+import pdb
 import pandas as pd
 import numpy as np
 import time
@@ -124,7 +125,7 @@ h.generate_table()
 
 # Save as csv and change tiem to frames
 df = pd.DataFrame.from_records(h.table)
-df['time']=df['time'].apply(lambda x: int(x/u.trajectory.dt))
+df['time']=df['time'].apply(lambda x: float(x/u.trajectory.dt))
 df.to_csv(UserInput.out_name + '_raw.csv',index=False)
 
 # Now make a list of all possible hydrogen bonds
