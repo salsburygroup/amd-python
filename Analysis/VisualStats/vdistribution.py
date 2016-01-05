@@ -3,15 +3,15 @@
 import os
 import subprocess
 import argparse
+# Note that this is not the standard PIL. You need to have Pillow installed (e.g., "conda install pillow").
 from PIL import Image
-from sys import exit
 
 # Find the helper file generate_shadow.vmd
 dir = os.path.dirname(__file__)
 cwd = os.getcwd()
 shadow_helper = os.path.join(dir, 'generate_shadow.vmd')
 middle_helper = os.path.join(dir, 'generate_middle.vmd')
-tachyon = os.path.join(dir, 'tachyon')
+
 
 parser = argparse.ArgumentParser(
         description = (
@@ -32,37 +32,23 @@ inputs.add_argument('-o', '--outdir', action='store', dest='directory',help='out
 #Parse into useful form
 UserInput=parser.parse_args()
 
-#Get path to VMD
-if "VMD_HOME" in os.environ:
-    vmd_path = os.environ["VMD_HOME"]
-else:
-    exit("VMD_HOME not found in environmental variables.")
-
 # Now, let's make some pretty pictures
 vmd_render_shadow_cmd = (
-        vmd_path + '/vmd_MACOSXX86 ' 
+        'vmd '
         + UserInput.shadow + ' -dispdev text -e ' 
         + shadow_helper + ' -args -first 1 -last ' + str(UserInput.number -1 ) 
-        + ' -rep ' + UserInput.rep + ' -outfile ' + UserInput.directory + '/shadow.dat'
+        + ' -rep ' + UserInput.rep + ' -outfile ' + UserInput.directory + '/shadow.tga'
         )
 vmd_render_shadow=subprocess.call(vmd_render_shadow_cmd,shell=True)
 
 
 vmd_render_middle_cmd = (
-        vmd_path + '/vmd_MACOSXX86 ' 
+        'vmd '
         + UserInput.middle + ' -dispdev text -e ' 
         + middle_helper + ' -args -rep ' + UserInput.rep + ' -outfile '
-        + UserInput.directory + '/middle.dat'
+        + UserInput.directory + '/middle.tga'
         )
 vmd_render_middle=subprocess.call(vmd_render_middle_cmd,shell=True)
-
-tachyon_render_shadow_cmd = (tachyon +
-        ' -trans_vmd ' + UserInput.directory + '/shadow.dat -o ' + UserInput.directory + '/shadow.tga')
-tachyon_render_shadow=subprocess.call(tachyon_render_shadow_cmd,shell=True)
-
-tachyon_render_middle_cmd = (tachyon +
-        ' -trans_vmd ' + UserInput.directory + '/middle.dat -o ' + UserInput.directory + '/middle.tga')
-tachyon_render_middle=subprocess.call(tachyon_render_middle_cmd,shell=True)
 
 #Let's get rid of the white pixels and convert the TGAs to PNGs
 middle_img = Image.open(UserInput.directory + '/middle.tga')
