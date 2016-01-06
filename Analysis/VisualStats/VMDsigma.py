@@ -19,8 +19,7 @@ tachyon = os.path.join(dir, 'tachyon')
 
 parser = argparse.ArgumentParser(
         description = (
-            'outputs a pdb with all frames within 1 sigma of the first frame in each cluster. 
-            ), 
+            'outputs a pdb with all frames within 1 sigma of the first frame in each cluster.'), 
         add_help=False
         ) 
 #List all possible user input
