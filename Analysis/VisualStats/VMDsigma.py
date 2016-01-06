@@ -71,4 +71,10 @@ with open (UserInput.cluster_data) as file:
 
         # Let's also save the subsets of frames
         trajectory_subset.slice(sigma_mask).save(directory+'/sigma.pdb')
+
+         # The user has specified a cutoff. Let's see if we've reached it.
+        if cluster_number == UserInput.last:
+            break
+        else:
+            cluster_number = cluster_number+1
         
