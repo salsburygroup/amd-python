@@ -350,7 +350,7 @@ display cueend     10.000000
 display cuedensity 0.320000
 display cuemode    Exp2
 display shadows off
-display ambientocclusion off
+display ambientocclusion on
 display aoambient 0.800000
 display aodirect 0.300000
 display dof off
