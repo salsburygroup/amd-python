@@ -1,0 +1,5 @@
+#Helper script for titrate.py
+
+[atomselect top all frame last] writepdb LastFrame.pdb
+
+exit

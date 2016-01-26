@@ -1,0 +1,7 @@
+#Helper script for titrate.py
+
+package require autoionize
+
+autoionize -psf {structure.psf} -pdb {LastFrame.pdb} -nions {{CLA 2} {ZN2 1}} -o next
+
+exit
