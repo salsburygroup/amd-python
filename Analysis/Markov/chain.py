@@ -27,12 +27,22 @@ def from_vmd(cluster_file):
     import re
     import pandas as pd
 
+    dfbig = pd.DataFrame(columns = ['frame', 'cluster_number'])
+    
     with open (cluster_file) as file:
         all_clusters = [result for result in re.findall('\{(.*?)\}',file.read(),re.S)] #re.S makes dot anything, even \n
     
+    i = 1
     for line in all_clusters:
-        cluster = map(int, all_clusters[line].split(' '))
-        dftemp = pd.dataframe(columns = [frame, cluster_number])
+        cluster = map(int, line.split(' '))
+        dftemp = pd.DataFrame(columns = ['frame', 'cluster_number'])
+        dftemp['frame'] = cluster
+        dftemp['cluster_number'] = i
+        dfbig = pd.concat([dfbig,dftemp])
+        i = i+1
+
+dfsort = dfbig.sort_values(by=['frame'])
+chain = dfsort['cluster_number'].values.astype(int)
 
     
 
