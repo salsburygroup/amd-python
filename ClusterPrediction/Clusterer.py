@@ -33,9 +33,11 @@ class KMeans(Clusterer):
         k_to_try = range(2, max_clusters + 2)  # Have to go +2 for slope
         scores = numpy.zeros(max_clusters)
         for k in k_to_try:
-            clusterer = MiniBatchKMeans(n_clusters=k, n_init=5)
+            clusterer = MiniBatchKMeans(
+                n_clusters=k, n_init=5)
             labels = clusterer.fit_predict(self.trajectory_2d)
-            scores[k - 2] = silhouette_score(self.trajectory_2d, labels)
+            scores[k - 2] = silhouette_score(self.trajectory_2d, labels
+                                             )
         optimizer = Optimizer.Slope(scores, k_to_try)
         num_clusters = optimizer.minimize()
         clusterer = MiniBatchKMeans(n_clusters=num_clusters)
@@ -55,8 +57,16 @@ class GMM(Clusterer):
             clusterer = mixture.GMM(
                 n_components=k,
                 covariance_type='tied',
-                n_init=5)
+                n_init=5
+            )
             cluster = clusterer.fit(self.trajectory_2d)
-            labels = clusterer.predict(self.trajectory_2d)
+            _ = clusterer.predict(self.trajectory_2d)
             aic[k - 2] = cluster.aic(self.trajectory_2d)
+        optimizer = Optimizer.Optimizer(aic, k_to_try)
+        num_clusters = optimizer.minimize()
+        clusterer = mixture.GMM(
+            n_components=num_clusters,
+            covariance_type='tied'
+        )
+        labels = clusterer.fit_predict(self.trajectory_2d)
         return labels
