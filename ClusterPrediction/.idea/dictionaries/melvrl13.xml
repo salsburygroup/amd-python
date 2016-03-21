@@ -3,6 +3,7 @@
     <words>
       <w>clusterer</w>
       <w>hdbscan</w>
+      <w>minkowski</w>
     </words>
   </dictionary>
 </component>

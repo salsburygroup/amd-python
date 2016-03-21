@@ -2,9 +2,10 @@ import hdbscan
 import Unsupervised.clustering
 import numpy
 from sklearn.cluster import MiniBatchKMeans
-from sklearn.metrics import silhouette_score
+import Scorer.Silhouette
 from sklearn import mixture
 import Optimizer
+import copy
 
 
 class Clusterer:
@@ -29,15 +30,15 @@ class HDBSCAN(Clusterer):
 class KMeans(Clusterer):
     def fit(self):
         cl = Unsupervised.clustering.Clustering()
-        _, max_clusters, _, _, _, = cl.ik_means(data=self.trajectory_2d)
+        labels, _, _, _, _, = cl.ik_means(data=self.trajectory_2d)
+        max_clusters = max(labels) + 1
         k_to_try = range(2, max_clusters + 2)  # Have to go +2 for slope
         scores = numpy.zeros(max_clusters)
         for k in k_to_try:
             clusterer = MiniBatchKMeans(
                 n_clusters=k, n_init=5)
             labels = clusterer.fit_predict(self.trajectory_2d)
-            scores[k - 2] = silhouette_score(self.trajectory_2d, labels
-                                             )
+            scores[k - 2] = Scorer.Silhouette(data=self.trajectory_2d, labels=labels).evaluate()
         optimizer = Optimizer.Slope(scores, k_to_try)
         num_clusters = optimizer.minimize()
         clusterer = MiniBatchKMeans(n_clusters=num_clusters)
@@ -69,4 +70,47 @@ class GMM(Clusterer):
             covariance_type='tied'
         )
         labels = clusterer.fit_predict(self.trajectory_2d)
+        return labels
+
+
+class IMWKRescaled(Clusterer):
+    def __init__(self, trajectory_2d, minkowski_weight=2):
+        self.minkowski_weight = minkowski_weight
+        super().__init__(trajectory_2d)
+
+    def fit(self):
+        cl = Unsupervised.clustering.Clustering()
+        [labels, _, _, _, _] = cl.ik_means(self.trajectory_2d, p=self.minkowski_weight)
+        max_clusters = max(labels) + 1
+        silhouette_averages = numpy.zeros(max_clusters - 1)
+        k_to_try = numpy.arange(2, max_clusters + 1)
+        for k in k_to_try:
+            cl = Unsupervised.clustering.Clustering()
+            data = copy.copy(self.trajectory_2d)
+            [labels, centroids, weights, _, _] = cl.imwk_means(data, p=self.minkowski_weight, k=k)
+        # Rescale the data
+            for k1 in numpy.arange(0, max(labels)+1):
+                data[labels == k1] = numpy.multiply(self.trajectory_2d[labels == k1],
+                                                  numpy.tile(weights[k1],
+                                                             (numpy.sum(labels == k1), 1)))
+                centroids[k1] = numpy.multiply(centroids[k1], weights[k1])
+        # Apply Euclidean KMeans
+            kmeans_clusterer = MiniBatchKMeans(n_clusters=k, n_init=5)
+            kmeans_clusters = kmeans_clusterer.fit(data)
+            labels = kmeans_clusters.labels_
+            silhouette_averages[k - 2] = Scorer.Silhouette(data, labels).evaluate()
+        optimal_k = Optimizer.Optimizer(scores=silhouette_averages, parameter_list=k_to_try)
+        # Do optimal clustering
+        data = copy.copy(self.trajectory_2d)
+        [labels, centroids, weights, _, _] = cl.imwk_means(data, p=self.minkowski_weight, k=optimal_k)
+        # Rescale the data
+        for k1 in numpy.arange(0, max(labels)+1):
+            data[labels == k1] = numpy.multiply(data[labels == k1],
+                                                numpy.tile(weights[k1], (numpy.sum(labels == k1), 1)))
+            centroids[k1] = numpy.multiply(centroids[k1], weights[k1])
+
+        # Apply Euclidean KMeans
+        kmeans_clusterer = MiniBatchKMeans(n_clusters=optimal_k, n_init=5)
+        kmeans_clusters = kmeans_clusterer.fit(data)
+        labels = kmeans_clusters.labels_
         return labels

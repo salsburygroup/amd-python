@@ -2,12 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5d49719-0e9e-4dd6-9bae-22e95420a93e" name="Default" comment="Implemented object-oriented versionf of KMeans, GMM and HDBSCAN">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Scorer.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../sandbox/CorrelationPropagator/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../sandbox/CorrelationPropagator/CorrelationPropagator.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Analysis/PyEMMA/.ipynb_checkpoints/GenerateMacrostateMSM-Copy1-checkpoint.ipynb" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Analysis/PyEMMA/GenerateMacrostateMSM.ipynb" afterPath="$PROJECT_DIR$/../Analysis/PyEMMA/GenerateMacrostateMSM.ipynb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Plotter.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Saver.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/melvrl13.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/melvrl13.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Clusterer.py" afterPath="$PROJECT_DIR$/Clusterer.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scorer.py" afterPath="$PROJECT_DIR$/Scorer.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Unsupervised/clustering.py" afterPath="$PROJECT_DIR$/Unsupervised/clustering.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Unsupervised/kmeans.py" afterPath="$PROJECT_DIR$/Unsupervised/kmeans.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Unsupervised/mwkmeans.py" afterPath="$PROJECT_DIR$/Unsupervised/mwkmeans.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Unsupervised/mwpam.py" afterPath="$PROJECT_DIR$/Unsupervised/mwpam.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Unsupervised/mymath.py" afterPath="$PROJECT_DIR$/Unsupervised/mymath.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Unsupervised/pam.py" afterPath="$PROJECT_DIR$/Unsupervised/pam.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Unsupervised/tester.py" afterPath="$PROJECT_DIR$/Unsupervised/tester.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Unsupervised/ward.py" afterPath="$PROJECT_DIR$/Unsupervised/ward.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Unsupervised/wkmeans.py" afterPath="$PROJECT_DIR$/Unsupervised/wkmeans.py" />
     </list>
     <ignored path="ClusterPrediction.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,21 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DCDShaper.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DCDShaper.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Clusterer.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Clusterer.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Clusterer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.67050207">
-              <caret line="57" column="31" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="28" column="0" selection-start-line="31" selection-start-column="8" selection-end-line="33" selection-end-column="38" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -61,12 +60,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Scorer.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Scorer.py">
+      <file leaf-file-name="Plotter.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Plotter.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+              <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+              <folding>
+                <element signature="e#0#24#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Saver.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Saver.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="26" column="49" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Scorer.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Scorer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.16841005">
+              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#12#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -118,6 +141,8 @@
         <option value="$PROJECT_DIR$/Optimizer.py" />
         <option value="$PROJECT_DIR$/Scorer.py" />
         <option value="$PROJECT_DIR$/Clusterer.py" />
+        <option value="$PROJECT_DIR$/Plotter.py" />
+        <option value="$PROJECT_DIR$/Saver.py" />
       </list>
     </option>
   </component>
@@ -438,7 +463,7 @@
     <frame x="0" y="23" width="1920" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36458334" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19375" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -499,7 +524,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -512,11 +537,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Clusterer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scorer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="72" column="13" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Optimizer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DCDReader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/DCDShaper.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -565,19 +633,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DCDReader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DCDShaper.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -632,20 +691,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Scorer.py">
+    <entry file="file://$PROJECT_DIR$/DCDReader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+          <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Clusterer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67050207">
-          <caret line="57" column="31" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="0" selection-start-line="31" selection-start-column="8" selection-end-line="33" selection-end-column="38" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Plotter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Saver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="49" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scorer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16841005">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
           </folding>
         </state>
       </provider>

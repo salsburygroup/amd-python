@@ -1,3 +1,5 @@
+import numpy as np
+import random as rd
 from mymath import MyMath
 from kmeans import KMeans
 from wkmeans import WKMeans
@@ -5,10 +7,10 @@ from mwkmeans import MWKMeans
 from pam import PartitionAroundMedoids
 from ward import Ward
 from mwpam import MWPAM
-import numpy as np
 
 
 class Clustering(object):
+
     def __init__(self):
         self.my_math = MyMath()
 
@@ -20,8 +22,7 @@ class Clustering(object):
         km = KMeans(self.my_math)
         return km.ik_means(data, k, theta, distance, p)
 
-    def wk_means(self, data, k, beta, init_centroids=None, init_weights=None, distance='SqEuclidean', replicates=1,
-                 p=None, max_ite=100):
+    def wk_means(self, data, k, beta, init_centroids=None, init_weights=None, distance='SqEuclidean', replicates=1, p=None, max_ite=100):
         wkm = WKMeans(self.my_math)
         return wkm.wk_means(data, k, beta, init_centroids, init_weights, distance, replicates, p, max_ite)
 
@@ -29,9 +30,9 @@ class Clustering(object):
         mwk = MWKMeans(self.my_math)
         return mwk.mwk_means(data, k, p, init_centroids, init_weights, replicates, max_ite)
 
-    def imwk_means(self, data, p, k=None, theta=0, gradient=np.array([0.001]), cutoff=0.0001):
+    def imwk_means(self, data, p, k=None, theta=0):
         mwk = MWKMeans(self.my_math)
-        return mwk.imwk_means(data, p, k, theta, gradient, cutoff)
+        return mwk.imwk_means(data, p, k, theta)
 
     def pam(self, data, k, replicates=1, init_medoids=None, dist='SqEuclidean', p=None, max_ite=100):
         _pam = PartitionAroundMedoids(self.my_math)

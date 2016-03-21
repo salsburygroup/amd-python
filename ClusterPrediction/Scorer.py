@@ -1,4 +1,6 @@
 import numpy
+import sklearn.metrics
+import warnings
 
 
 class Scorer:
@@ -58,4 +60,17 @@ class DaviesBouldin(Scorer):
                 d[j-1] = (within_cluster_scatter[i] + within_cluster_scatter[j]) / cluster_separation[i, j]
             db += numpy.max(d)
         self.score = db/num_clusters
+        return self.score
+
+
+class Silhouette(Scorer):
+    def evaluate(self):
+        if self.data.shape[0] > 10000:
+            sample_size = 10000
+            warnings.warn("More than 10,000 samples. "
+                          "Silhouette will score on random sampling of 10,000."
+                          "To override, score directly with scikit-learn")
+        else:
+            sample_size = None
+        self.score = sklearn.metrics.silhouette_score(self.data, self.labels, sample_size=sample_size)
         return self.score

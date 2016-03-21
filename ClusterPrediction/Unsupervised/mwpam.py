@@ -1,21 +1,21 @@
 # Author: Dr. Renato Cordeiro de Amorim, r.amorim@glyndwr.ac.uk
 #
-# Minkowski Weighted Partition Around Medoids - MWPAM
+#Minkowski Weighted Partition Around Medoids - MWPAM
 #
-# data
+#data
 #    numpy.array data set. It should be standardized (for best results). Format: entities x features
-# k
+#k
 #    Number of clusters.
-# p
+#p
 #   The distance exponent of the Minkowski_pthPower distances.
-# use_build
+#use_build
 #   If true, it uses a Minkowski based version of build to find initial medoids
-# replicates
+#replicates
 #    Number of times you want to run K-Means. The method will return the clustering with smallest
 #    K-Means output criterion (sum of distances between entities and respective centroids)
-# max_ite
+#max_ite
 #   The maximum number of iterations allowed. It also uses max_ite as the maximum number of tries for a
-# successful clustering in a given replication.
+#successful clustering in a given replication.
 ########################################################################################################################
 #
 # More info:
@@ -29,44 +29,41 @@ from pam import PartitionAroundMedoids
 
 
 class MWPAM(object):
+
     def __init__(self, _my_math):
         self.my_math = _my_math
 
     def __mwpam(self, data, k, p, medoids=None, weights=None, max_ite=100):
-        # Runs MWPAM once
-        # Returns -1 is it can't find k clusters.
+        #Runs MWPAM once
+        #Returns -1 is it can't find k clusters.
         wkm = WKMeans(self.my_math)
         [n_entities, n_features] = data.shape
         if medoids is None:
             medoids = data[rd.sample(range(n_entities), k), :]
         if weights is None:
-            weights = np.ones([k, data.shape[1]]) / data.shape[1]
+            weights = np.ones([k, data.shape[1]])/data.shape[1]
         previous_u = np.array([])
         ite = 1
         while ite <= max_ite:
-            # assign each entity to a cluster
-            # calculates all distances
+            #assign each entity to a cluster
+            #calculates all distances
             dist_tmp = np.zeros([n_entities, k])
             for k_i in range(k):
-                dist_tmp[:, k_i] = self.my_math.get_distance(data, medoids[k_i, :], "Minkowski_pthPower", p,
-                                                             weights[k_i, :] ** p)
+                dist_tmp[:, k_i] = self.my_math.get_distance(data, medoids[k_i, :], "Minkowski_pthPower", p, weights[k_i,:]**p)
             u = dist_tmp.argmin(axis=1)
-            # put the sum of distances to centroids in dist_tmp
+            #put the sum of distances to centroids in dist_tmp
             dist_tmp = np.sum(dist_tmp[np.arange(n_entities), u])
-            # stop if there are no changes in the partitions
+            #stop if there are no changes in the partitions
             if np.array_equal(u, previous_u):
                 return u, medoids, weights, ite, dist_tmp
             for k_i in range(k):
-                # check is each cluster has at least one entity
-                if (u == k_i).sum() == 0:
+                #check is each cluster has at least one entity
+                if (u==k_i).sum() == 0:
                     return np.array([-1]), np.array([-1]), np.array([-1]), np.array([-1]), np.array([-1])
-                # update medoid
-                medoids[k_i, :] = data[u == k_i, :][
-                    self.my_math.get_entity_with_min_distance(data[u == k_i, :], "Minkowski_pthPower", p,
-                                                              weights[k_i, :])[0]]
-            # update weights
-            weights = wkm._get_dispersion_based_weights(data, medoids, k, p, u, n_features, 'Minkowski_pthPower', p,
-                                                        0.01)
+                #update medoid
+                medoids[k_i,:]=data[u==k_i,:][self.my_math.get_entity_with_min_distance(data[u==k_i,:], "Minkowski_pthPower", p, weights[k_i,:])[0]]
+            #update weights
+            weights = wkm._get_dispersion_based_weights(data, medoids, k, p, u, n_features, 'Minkowski_pthPower', p, 0.01)
             previous_u = u[:]
             ite += 1
 
@@ -77,15 +74,14 @@ class MWPAM(object):
         else:
             final_dist = float("inf")
             for i in range(replicates):
-                # loops up to max_ite to try to get a successful clustering for this replication
+                #loops up to max_ite to try to get a successful clustering for this replication
                 for i in range(max_ite):
-                    [u, medoids, weights, ite, dist_tmp] = self.__mwpam(data, k, p, max_ite=max_ite)
+                    [u, medoids, weights, ite, dist_tmp]= self.__mwpam(data, k, p, max_ite=max_ite)
                     if u[0] != -1:
                         break
                 if u[0] == -1:
                     raise Exception('Cannot generate a single successful clustering')
-                # given a successful clustering, check if its the best
+                #given a successful clustering, check if its the best
                 if dist_tmp < final_dist:
-                    (final_u, final_medoids, final_weights, final_ite, final_dist) = u[:], medoids[:], weights[
-                                                                                                       :], ite, dist_tmp
+                    (final_u,final_medoids, final_weights, final_ite, final_dist) = u[:], medoids[:], weights[:], ite, dist_tmp
             return final_u, final_medoids, final_weights, final_ite, final_dist
