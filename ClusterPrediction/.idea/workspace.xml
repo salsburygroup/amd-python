@@ -2,21 +2,60 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5d49719-0e9e-4dd6-9bae-22e95420a93e" name="Default" comment="Implemented object-oriented versionf of KMeans, GMM and HDBSCAN">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Plotter.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Saver.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/melvrl13.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/melvrl13.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/ac3dparse.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/api.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/apigeom.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/box.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/camera.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/coordsys.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/cylinder.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/extvol.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/getargs.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/global.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/glwin.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/grid.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/hash.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/imageio.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/imap.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/intersect.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/jpeg.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/light.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/main.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/mgfparse.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/nffparse.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/parallel.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/parse.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/plane.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/pngfile.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/ppm.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/psd.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/quadric.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/render.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/ring.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/sgirgb.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/shade.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/spaceball.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/sphere.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/texture.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/tgafile.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/threads.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/trace.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/trackball.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/triangle.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/ui.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/util.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/vector.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/vol.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/libtachyon/winbmp.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/generate_middle.vmd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/generate_shadow.vmd" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Analysis/PyEMMA/GenerateMacrostateMSM.ipynb" afterPath="$PROJECT_DIR$/../Analysis/PyEMMA/GenerateMacrostateMSM.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Analysis/VisualStats/generate_shadow.vmd" afterPath="$PROJECT_DIR$/../Analysis/VisualStats/generate_shadow.vmd" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Analysis/VisualStats/vdistribution.py" afterPath="$PROJECT_DIR$/../Analysis/VisualStats/vdistribution.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Clusterer.py" afterPath="$PROJECT_DIR$/Clusterer.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scorer.py" afterPath="$PROJECT_DIR$/Scorer.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Unsupervised/clustering.py" afterPath="$PROJECT_DIR$/Unsupervised/clustering.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Unsupervised/kmeans.py" afterPath="$PROJECT_DIR$/Unsupervised/kmeans.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Unsupervised/mwkmeans.py" afterPath="$PROJECT_DIR$/Unsupervised/mwkmeans.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Unsupervised/mwpam.py" afterPath="$PROJECT_DIR$/Unsupervised/mwpam.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Unsupervised/mymath.py" afterPath="$PROJECT_DIR$/Unsupervised/mymath.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Unsupervised/pam.py" afterPath="$PROJECT_DIR$/Unsupervised/pam.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Unsupervised/tester.py" afterPath="$PROJECT_DIR$/Unsupervised/tester.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Unsupervised/ward.py" afterPath="$PROJECT_DIR$/Unsupervised/ward.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Unsupervised/wkmeans.py" afterPath="$PROJECT_DIR$/Unsupervised/wkmeans.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Saver.py" afterPath="$PROJECT_DIR$/Saver.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../MelvinToolbox/pdb_to_png.py" afterPath="$PROJECT_DIR$/../MelvinToolbox/pdb_to_png.py" />
     </list>
     <ignored path="ClusterPrediction.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,8 +80,18 @@
       <file leaf-file-name="DCDReader.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DCDReader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state relative-caret-position="165">
               <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DCDShaper.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DCDShaper.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -51,8 +100,8 @@
       <file leaf-file-name="Clusterer.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Clusterer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="0" selection-start-line="31" selection-start-column="8" selection-end-line="33" selection-end-column="38" />
+            <state relative-caret-position="15">
+              <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -63,7 +112,7 @@
       <file leaf-file-name="Plotter.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Plotter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state relative-caret-position="45">
               <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
@@ -72,21 +121,43 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Saver.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Saver.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Saver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="49" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
+            <state relative-caret-position="480">
+              <caret line="32" column="19" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#12#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="generate_shadow.vmd" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/generate_shadow.vmd">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="370" column="0" selection-start-line="370" selection-start-column="0" selection-end-line="370" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Scorer.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="generate_middle.vmd" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/generate_middle.vmd">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Scorer.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Scorer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.16841005">
-              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+            <state relative-caret-position="945">
+              <caret line="65" column="6" selection-start-line="65" selection-start-column="6" selection-end-line="65" selection-end-column="16" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -97,7 +168,7 @@
       <file leaf-file-name="Optimizer.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Optimizer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state relative-caret-position="480">
               <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
               <folding />
             </state>
@@ -107,7 +178,7 @@
       <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -140,8 +211,9 @@
         <option value="$PROJECT_DIR$/Unsupervised/__init__.py" />
         <option value="$PROJECT_DIR$/Optimizer.py" />
         <option value="$PROJECT_DIR$/Scorer.py" />
-        <option value="$PROJECT_DIR$/Clusterer.py" />
         <option value="$PROJECT_DIR$/Plotter.py" />
+        <option value="$PROJECT_DIR$/Clusterer.py" />
+        <option value="$PROJECT_DIR$/../Analysis/PCAMeanShift.py" />
         <option value="$PROJECT_DIR$/Saver.py" />
       </list>
     </option>
@@ -181,27 +253,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ClusterPrediction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ClusterPrediction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ClusterPrediction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -230,6 +281,41 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ClusterPrediction" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ClusterPrediction" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ClusterPrediction" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ClusterPrediction" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ClusterPrediction" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -237,6 +323,11 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
@@ -308,7 +399,21 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <module name="ClusterPrediction" />
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
       <node-options />
       <gulpfile />
       <tasks />
@@ -319,6 +424,7 @@
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
       <command value="run-script" />
       <scripts />
+      <node-interpreter value="project" />
       <envs />
       <method />
     </configuration>
@@ -433,7 +539,9 @@
       <method />
     </configuration>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -442,17 +550,20 @@
       <changelist id="b5d49719-0e9e-4dd6-9bae-22e95420a93e" name="Default" comment="" />
       <created>1457728510449</created>
       <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
       <updated>1457728510449</updated>
     </task>
     <task id="LOCAL-00001" summary="Setting up folder for OOP version of cluster trial project. Nothing to see here.">
       <created>1457728703831</created>
       <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
       <updated>1457728703831</updated>
     </task>
     <task id="LOCAL-00002" summary="Implemented object-oriented versionf of KMeans, GMM and HDBSCAN">
       <created>1457753465478</created>
       <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
       <updated>1457753465478</updated>
     </task>
@@ -529,9 +640,25 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Optimizer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/DCDReader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
           <folding />
         </state>
@@ -539,7 +666,209 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Clusterer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
+          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Plotter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Saver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Analysis/PCAMeanShift.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scorer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="65" column="6" selection-start-line="65" selection-start-column="6" selection-end-line="65" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Optimizer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DCDReader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Clusterer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Plotter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Saver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scorer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="65" column="6" selection-start-line="65" selection-start-column="6" selection-end-line="65" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Optimizer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DCDReader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Clusterer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="28" column="0" selection-start-line="31" selection-start-column="8" selection-end-line="33" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Plotter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Saver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="26" column="49" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scorer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Optimizer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DCDReader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Clusterer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
@@ -549,7 +878,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Scorer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="72" column="13" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
@@ -559,7 +888,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Optimizer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
           <folding />
         </state>
@@ -567,7 +896,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -575,7 +904,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DCDReader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
           <folding />
         </state>
@@ -583,14 +912,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DCDShaper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Clusterer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
@@ -600,7 +929,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Optimizer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
           <folding />
         </state>
@@ -608,7 +937,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -633,44 +962,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DCDShaper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Unsupervised/kmeans.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Unsupervised/wkmeans.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Unsupervised/mwkmeans.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Unsupervised/clustering.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -678,40 +1000,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Unsupervised/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Optimizer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="480">
           <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DCDReader.py">
+    <entry file="file://$PROJECT_DIR$/Scorer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Clusterer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="0" selection-start-line="31" selection-start-column="8" selection-end-line="33" selection-end-column="38" />
+        <state relative-caret-position="945">
+          <caret line="65" column="6" selection-start-line="65" selection-start-column="6" selection-end-line="65" selection-end-column="16" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#0#12#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Plotter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="45">
           <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
@@ -719,18 +1033,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Saver.py">
+    <entry file="file://$PROJECT_DIR$/../Analysis/PCAMeanShift.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="49" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
+        <state relative-caret-position="866">
+          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Clusterer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/generate_middle.vmd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Scorer.py">
+    <entry file="file://$PROJECT_DIR$/DCDReader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16841005">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        <state relative-caret-position="165">
+          <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DCDShaper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/generate_shadow.vmd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="370" column="0" selection-start-line="370" selection-start-column="0" selection-end-line="370" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Saver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="19" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
           </folding>

@@ -7,6 +7,7 @@ import sys, time, os
 import pymol
 
 pymol.finish_launching()
+pymol.cmd.set('ray_trace_frames', 1)
 
 ##
 # Read User Input
@@ -18,7 +19,9 @@ sname = spath.split('/')[-1].split('.')[0]
 pymol.cmd.load(spath, sname)
 pymol.cmd.disable("all")
 pymol.cmd.enable(sname)
-pymol.cmd.cartoon('automatic','all')
+pymol.cmd.show_as('cartoon')
+pymol.cmd.bg_color('white')
+pymol.cmd.util.chainbow("all")
 
 #Prepare name for image file
 outname = os.path.dirname(spath) + '/' + os.path.splitext(sname)[0] + '.png'

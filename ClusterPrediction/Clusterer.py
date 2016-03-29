@@ -2,7 +2,7 @@ import hdbscan
 import Unsupervised.clustering
 import numpy
 from sklearn.cluster import MiniBatchKMeans
-import Scorer.Silhouette
+import Scorer
 from sklearn import mixture
 import Optimizer
 import copy
@@ -91,8 +91,8 @@ class IMWKRescaled(Clusterer):
         # Rescale the data
             for k1 in numpy.arange(0, max(labels)+1):
                 data[labels == k1] = numpy.multiply(self.trajectory_2d[labels == k1],
-                                                  numpy.tile(weights[k1],
-                                                             (numpy.sum(labels == k1), 1)))
+                                                    numpy.tile(weights[k1],
+                                                               (numpy.sum(labels == k1), 1)))
                 centroids[k1] = numpy.multiply(centroids[k1], weights[k1])
         # Apply Euclidean KMeans
             kmeans_clusterer = MiniBatchKMeans(n_clusters=k, n_init=5)
@@ -113,4 +113,30 @@ class IMWKRescaled(Clusterer):
         kmeans_clusterer = MiniBatchKMeans(n_clusters=optimal_k, n_init=5)
         kmeans_clusters = kmeans_clusterer.fit(data)
         labels = kmeans_clusters.labels_
+        return labels
+
+
+class VBGMM(Clusterer):
+    def __init__(self, trajectory_2d, max_clusters):
+        self.max_clusters = max_clusters
+        super().__init__(trajectory_2d)
+
+    def fit(self):
+        aic = numpy.zeros(self.max_clusters - 1)
+        k_to_try = range(2, self.max_clusters + 1)
+        for k in k_to_try:
+            clusterer = mixture.VBGMM(
+                n_components=k,
+                covariance_type='tied',
+                )
+            cluster = clusterer.fit(self.trajectory_2d)
+            _ = clusterer.predict(self.trajectory_2d)
+            aic[k - 2] = cluster.aic(self.trajectory_2d)
+        optimizer = Optimizer.Optimizer(aic, k_to_try)
+        num_clusters = optimizer.minimize()
+        clusterer = mixture.VBGMM(
+            n_components=num_clusters,
+            covariance_type='tied'
+        )
+        labels = clusterer.fit_predict(self.trajectory_2d)
         return labels

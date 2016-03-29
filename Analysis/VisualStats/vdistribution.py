@@ -26,6 +26,7 @@ inputs.add_argument('-m', '--middle', action='store', dest='middle',help='pdb th
 inputs.add_argument('-s', '--shadow', action='store', dest='shadow',help='pdb with multiple frames that should be displayed as shadow',type=str,required=True)
 inputs.add_argument('-n', '--number', action='store', dest='number',help='number of frames in shadow',type=int,required=True)
 inputs.add_argument('-r', '--representation', action='store', dest='rep',help='VMD graphic representation to use',type=str,default='NewRibbons')
+inputs.add_argument('-stride', action='store', dest='stride',help='Stride for shadow',type=int,default=1)
 inputs.add_argument('-o', '--outdir', action='store', dest='directory',help='output directory',type=str, default=cwd)
 
 
@@ -37,6 +38,7 @@ vmd_render_shadow_cmd = (
         'vmd '
         + UserInput.shadow + ' -dispdev text -e ' 
         + shadow_helper + ' -args -first 1 -last ' + str(UserInput.number -1 ) 
+        + ' -stride ' + UserInput.stride
         + ' -rep ' + UserInput.rep + ' -outfile ' + UserInput.directory + '/shadow.tga'
         )
 vmd_render_shadow=subprocess.call(vmd_render_shadow_cmd,shell=True)
