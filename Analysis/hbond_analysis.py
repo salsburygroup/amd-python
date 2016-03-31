@@ -74,8 +74,8 @@ UserInput=parser.parse_args()
 u = MDAnalysis.Universe(UserInput.structure, UserInput.trajectory, permissive=True)
 
 # Emulate VMD's detection algorithm if option is selected
-if UserInput.matchVMD:
-    warn("The matchVMD flag ignores additional donors or acceptors. Instead, it searches all polar atoms -- N, O, S and F.")
+if UserInput.polar:
+    warn("The polar flag ignores additional donors or acceptors. Instead, it searches all polar atoms -- N, O, S and F.")
 
     donors_acceptors = u.select_atoms("name O or name O* or name O** or name N or name N* or name N** or name S or name S* or name S** or name F or name F* or name F**")
     donors_acceptors_list = np.unique(donors_acceptors.names)
