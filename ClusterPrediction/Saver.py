@@ -25,6 +25,16 @@ class TimeSeries(Saver):
         numpy.savetxt(self.out_name, self.labels)
 
 
+class Score(Saver):
+    def __init__(self, out_name, score):
+        self.score = score
+        super().__init__(out_name)
+
+    def save(self):
+        with open(self.out_name, 'w') as f:
+            f.write(str(self.score))
+
+
 class Scores(Saver):
     def __init__(self, out_name, scores):
         self.scores = scores
@@ -86,25 +96,35 @@ class Shadows(Saver):
 
     def save(self):
         directory = os.path.dirname(__file__)
-        shadow_helper = os.path.join(directory, 'generate_shadow.vmd')
-        middle_helper = os.path.join(directory, 'generate_middle.vmd')
+        shadow_helper = os.path.join(directory, 'resources', 'generate_shadow.vmd')
+        middle_helper = os.path.join(directory, 'resources', 'generate_middle.vmd')
         shadow_traj = mdtraj.load(self.shadow)
         shadow_count = shadow_traj.n_frames
-        stride = numpy.floor(shadow_count/50)
+        tachyon = os.path.join(directory, 'resources', 'tachyon')
+        stride = numpy.ceil(shadow_count/50)
 
         vmd_render_shadow_cmd = (
-            'vmd ' + self.shadow + ' -dispdev text -e ' +
+            '/Applications/VMD\\ 1.9.2.app/Contents/MacOs/startup.command ' + self.shadow + ' -dispdev text -e ' +
             shadow_helper + ' -args -first 0 -last ' + str(shadow_count - 1) +
-            ' -stride ' + stride + ' -rep ' + self.rep + ' -outfile ' + self.out_name + '/shadow.tga'
+            ' -stride ' + str(stride) + ' -rep ' + self.rep + ' -outfile ' + self.out_name + '/shadow.dat'
         )
-
         subprocess.call(vmd_render_shadow_cmd, shell=True)
 
         vmd_render_middle_cmd = (
-            'vmd ' + self.middle + ' -dispdev text -e ' +
-            middle_helper + ' -args -rep ' + self.rep + ' -outfile ' + self.out_name + '/middle.tga'
+            '/Applications/VMD\\ 1.9.2.app/Contents/MacOs/startup.command ' + self.middle + ' -dispdev text -e ' +
+            middle_helper + ' -args -rep ' + self.rep + ' -outfile ' + self.out_name + '/middle.dat'
             )
         subprocess.call(vmd_render_middle_cmd, shell=True)
+
+        tachyon_render_shadow_cmd = (
+            tachyon + ' -trans_vmd ' + self.out_name + '/shadow.dat -o ' + self.out_name + '/shadow.tga'
+        )
+        subprocess.call(tachyon_render_shadow_cmd, shell=True)
+
+        tachyon_render_middle_cmd = (
+            tachyon + ' -trans_vmd ' + self.out_name + '/middle.dat -o ' + self.out_name + '/middle.tga'
+        )
+        subprocess.call(tachyon_render_middle_cmd, shell=True)
 
         # Let's get rid of the white pixels and convert the TGAs to PNGs
         middle_img = PIL.Image.open(self.out_name + '/middle.tga')

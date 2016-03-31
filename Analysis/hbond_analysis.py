@@ -62,7 +62,7 @@ inputs.add_argument('-o', action='store', dest='out_name',help='Output prefix wi
 inputs.add_argument('--extra_acceptors', action='store', dest='acceptors',help='Acceptors in addition to those defined by charmm27',type=str,default=None)
 inputs.add_argument('--extra_donors', action='store', dest='donors',help='Donors in addition to those defined by charmm27',type=str,default=None)
 inputs.add_argument('--distance_type', action='store', dest='distance_type',help='heavy or hydrogen?',type=str,default='heavy')
-inputs.add_argument('--matchVMD', action='store_true', help='Emulates VMD polar atom only algorithm. Ignores extra donors and acceptors options. Also, This options will not work for atom names longer than three characters.')
+inputs.add_argument('--polar', action='store_true', help='Emulates VMD polar atom only algorithm. Ignores extra donors and acceptors options. Also, This options will not work for atom names longer than three characters.')
 # Three letter atom name restriction to be fixed in future version.
 
 

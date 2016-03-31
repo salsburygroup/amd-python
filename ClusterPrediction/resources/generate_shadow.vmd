@@ -590,5 +590,5 @@ vmdrestoremycolors
 label textsize 1.0
 display resize 1920 1080
 display resetview
-render TachyonLOptiXInternal $arg(outfile)
+render Tachyon $arg(outfile)
 exit

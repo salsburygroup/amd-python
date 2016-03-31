@@ -40,7 +40,7 @@ class DaviesBouldin(Scorer):
         num_clusters = len(self.centers)
         within_cluster_scatter = numpy.empty(num_clusters, dtype=float)
         clusters = numpy.unique(self.labels)
-        for i in range(num_clusters + 1):
+        for i in range(num_clusters):
             cluster = clusters[i]
             points_in_cluster = self.data[numpy.where(self.labels == cluster)]
             norm = 1 / points_in_cluster.shape[0]
@@ -55,7 +55,7 @@ class DaviesBouldin(Scorer):
         for i in range(num_clusters):
             d = numpy.empty(num_clusters-1, dtype=float)
             for j in range(0, i):
-                d = (within_cluster_scatter[i] + within_cluster_scatter[j]) / cluster_separation[i, j]
+                d[j] = (within_cluster_scatter[i] + within_cluster_scatter[j]) / cluster_separation[i, j]
             for j in range(i+1, num_clusters):
                 d[j-1] = (within_cluster_scatter[i] + within_cluster_scatter[j]) / cluster_separation[i, j]
             db += numpy.max(d)

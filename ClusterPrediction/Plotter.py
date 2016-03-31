@@ -23,7 +23,7 @@ class TimeSeries(Plotter):
         matplotlib.pyplot.ylabel('Cluster')
         matplotlib.pyplot.title('Time Series')
         matplotlib.pyplot.savefig(self.out_name)
-        matplotlib.pyplot.clf()
+        matplotlib.pyplot.close()
 
 
 class Scores(Plotter):
@@ -38,4 +38,4 @@ class Scores(Plotter):
         matplotlib.pyplot.ylabel('CVI')
         matplotlib.pyplot.title('Scores')
         matplotlib.pyplot.savefig(self.out_name)
-        matplotlib.pyplot.clf()
+        matplotlib.pyplot.close()
