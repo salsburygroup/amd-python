@@ -42,14 +42,14 @@ if __name__ == "__main__":
                         help='Structure file corresponding to trajectory', type=str, required=True)
     inputs.add_argument('-traj', action='store', dest='trajectory', help='Trajectory', type=str, required=True)
     inputs.add_argument('-sel', action='store', dest='sel', help='Atom selection', type=str, default='not element H')
-    inputs.add_argument('-tau', action='store', dest='sel', help='lag time', type=int, default=1)
+    inputs.add_argument('-tau', action='store', dest='tau', help='lag time', type=int, default=1)
     inputs.add_argument('-o', action='store', dest='out_name', help='Output directory', type=str, required=True)
 
     # Parse into useful form
     UserInput = parser.parse_args()
 
     # Execute calculation
-    cp = CorrelationPropagator(UserInput.trajectory, UserInput.structure, UserInput.sel)
+    cp = CorrelationPropagator(UserInput.trajectory, UserInput.structure, UserInput.sel,UserInput.tau)
     average_dot = cp.matrix()
 
     # Save text results

@@ -15,6 +15,7 @@
 #####
 #Example call
 #python /Users/melvrl13/Documents/AMD/AMD-PYTHON/Analysis/hbond_analysis.py -structure /Volumes/RyanMdata/sufCandD/RelaxationSimulations/SufCD_with_ATP/Homology/LastFrameOfHomologyRound2/Complex.psf -t /Volumes/RyanMdata/sufCandD/RelaxationSimulations/SufCD_with_ATP/Homology/LastFrameOfHomologyRound2/round1/SufCD_ATP_relax_strip_stride.dcd --matchVMD -sel1 all -sel2 all -sel1_type both -d 4 -a 60 -o /Volumes/RyanMdata/sufCandD/RelaxationSimulations/SufCD_with_ATP/Homology/LastFrameOfHomologyRound2/round1/hbond_test.txt
+#MDANALYSIS default atom list https://mdanalysis.googlecode.com/svn/trunk/doc/html/documentation_pages/analysis/hbonds.html
 
 #Outputs: Hydrogen bonds table with columns 0)time 1)donor index 2) acceptor index 3) donor residue name 4) donor residue id 5) donor atom 6) acceptor residue name 7) acceptor residue id 8) acceptor atom 9) distance 10) angle
 #NOTE 1-based atom indexing
@@ -56,7 +57,7 @@ inputs.add_argument('-sel2', action='store', dest='sel2', help='Atom selection 2
 inputs.add_argument('-sel1_type', action='store', dest='sel1_type', help='Selection 1 type, i.e. donor, acceptor or both',type=str,default='both')
 inputs.add_argument('-update_sel1', action='store_true', dest='update_sel1', help='Upate selection 1 each frame?',default=False)
 inputs.add_argument('-update_sel2', action='store_true', dest='update_sel2', help='Upate selection 2 each frame?',default=False)
-inputs.add_argument('-d', '--distance', action='store', dest='distance',help='Distance cutoff in angstroms',type=float,default=3.0)
+inputs.add_argument('-d', '--distance', action='store', dest='distance',help='Distance cutoff in angstroms',type=float,default=3.2)
 inputs.add_argument('-a', '--angle',  action='store', dest='angle', help='Angle cutoff in degrees', type=float, default=120.00)
 inputs.add_argument('-o', action='store', dest='out_name',help='Output prefix with no extension',type=str,required=True)
 inputs.add_argument('--extra_acceptors', action='store', dest='acceptors',help='Acceptors in addition to those defined by charmm27',type=str,default=None)
