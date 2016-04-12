@@ -10,7 +10,7 @@ import glob
 
 class Predictor:
     def __init__(self, method, dcd_path, topology_path, atom_selection, out_dir, **kwargs):
-        self.method = method
+        self.method = method  # This should be enum
         self.dcd_path = dcd_path
         self.topology_path = topology_path
         self.atom_selection = atom_selection
@@ -47,7 +47,7 @@ class Predictor:
             ).evaluate()
             Saver.Score(out_name=os.path.join(self.out_dir, 'DaviesBouldin.txt'), score=db_score).save()
 
-    def row_format(self):
+    def row_format(self):  # Maybe format row
         try:
             self.labels[0]
         except IndexError:
@@ -87,7 +87,7 @@ if __name__ == "__main__":
         type=str, required=True
     )
     inputs.add_argument('-traj', action='store', dest='trajectory', help='Trajectory', type=str, required=True)
-    inputs.add_argument('-sel', action='store', dest='sel', help='Atom selection', type=str, default='not name H*')
+    inputs.add_argument('-sel', action='store', dest='sel', help='Atom selection', type=str, default='not element H')
     inputs.add_argument('-o', action='store', dest='out_dir', help='Output directory', type=str, required=True)
     inputs.add_argument('-method', action='store', dest='method', help='Clustering Method', type=str, required=True)
 

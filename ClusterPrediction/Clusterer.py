@@ -4,6 +4,7 @@ import numpy
 from sklearn.cluster import MiniBatchKMeans
 import Scorer
 from sklearn import mixture
+from sklearn import cluster
 import Optimizer
 import copy
 
@@ -30,7 +31,6 @@ class HDBSCAN(Clusterer):
 
 class KMeans(Clusterer):
     def __init__(self, trajectory_2d):
-        self.trajectory_2d = trajectory_2d
         self.centers = []
         super().__init__(trajectory_2d)
 
@@ -69,7 +69,7 @@ class GMM(Clusterer):
                 n_init=5
             )
             cluster = clusterer.fit(self.trajectory_2d)
-            _ = clusterer.predict(self.trajectory_2d)
+            clusterer.predict(self.trajectory_2d)
             aic[k - 2] = cluster.aic(self.trajectory_2d)
         optimizer = Optimizer.Optimizer(aic, k_to_try)
         num_clusters = optimizer.minimize()
@@ -153,4 +153,32 @@ class VBGMM(Clusterer):
         )
         self.labels = clusterer.fit_predict(self.trajectory_2d)
         self.centers = clusterer.means_
+        return self.labels, self.centers
+
+
+class MeanShift(Clusterer):
+    def __init__(self, trajectory_2d, bandwidth=None, cluster_all=True):
+        self.bandwidth = bandwidth
+        self.cluster_all = cluster_all
+        self.centers = []
+        super().__init__(trajectory_2d)
+
+    def fit(self):
+        clusterer = cluster.MeanShift(bandwidth=self.bandwidth, n_jobs=-1, cluster_all=self.cluster_all)
+        self.labels = clusterer.fit_predict(self.trajectory_2d)
+        self.centers = clusterer.cluster_centers_
+        return self.labels, self.centers
+
+
+class AffinityPropagation(Clusterer):
+    def __init__(self, trajectory_2d, damping=0.5, preference=None):
+        self.damping = damping
+        self.preference = preference
+        self.centers = []
+        super().__init__(trajectory_2d)
+
+    def fit(self):
+        clusterer = cluster.AffinityPropagation(damping=self.damping, preference=self.preference)
+        self.labels = clusterer.fit_predict(self.trajectory_2d)
+        self.centers = clusterer.cluster_centers_
         return self.labels, self.centers

@@ -38,7 +38,7 @@ vmd_render_shadow_cmd = (
         'vmd '
         + UserInput.shadow + ' -dispdev text -e ' 
         + shadow_helper + ' -args -first 1 -last ' + str(UserInput.number -1 ) 
-        + ' -stride ' + UserInput.stride
+        + ' -stride ' + str(UserInput.stride)
         + ' -rep ' + UserInput.rep + ' -outfile ' + UserInput.directory + '/shadow.tga'
         )
 vmd_render_shadow=subprocess.call(vmd_render_shadow_cmd,shell=True)

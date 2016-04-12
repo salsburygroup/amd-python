@@ -1,5 +1,6 @@
 import matplotlib.pyplot
 import numpy
+import pyemma
 
 
 class Plotter:
@@ -37,5 +38,24 @@ class Scores(Plotter):
         matplotlib.pyplot.xlabel('Parameter')
         matplotlib.pyplot.ylabel('CVI')
         matplotlib.pyplot.title('Scores')
+        matplotlib.pyplot.savefig(self.out_name)
+        matplotlib.pyplot.close()
+
+
+class RateMatrix(Plotter):
+    def __init__(self, out_name, msm):
+        assert isinstance(msm, pyemma.msm.MaximumLikelihoodHMSM)
+        self.msm = msm
+        super().__init__(out_name)
+
+    def plot(self):
+        matplotlib.pyplot.imshow(self.msm.transition_matrix,
+                                 extent=(self.msm.active_set.min(), self.msm.active_set.max(),
+                                         self.msm.active_set.min(), self.msm.active_set.max())
+                                 )
+        matplotlib.pyplot.colorbar()
+        matplotlib.pyplot.xlabel('Transition to')
+        matplotlib.pyplot.ylabel('Transition From')
+        matplotlib.pyplot.title('Estimated Transition Matrix')
         matplotlib.pyplot.savefig(self.out_name)
         matplotlib.pyplot.close()

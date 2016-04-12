@@ -26,7 +26,7 @@
 #clustering. Pattern Recognition 45(3), 1061-1075 (2012)
 
 import numpy as np
-from Unsupervised.wkmeans import WKMeans
+from wkmeans import WKMeans
 
 
 class MWKMeans(object):
