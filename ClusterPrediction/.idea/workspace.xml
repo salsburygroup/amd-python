@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b5d49719-0e9e-4dd6-9bae-22e95420a93e" name="Default" comment="Implemented object-oriented versionf of KMeans, GMM and HDBSCAN">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/F10IonDistances.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Markov.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Analysis/VisualStats/vdistribution.py" afterPath="$PROJECT_DIR$/../Analysis/VisualStats/vdistribution.py" />
+    <list default="true" id="b5d49719-0e9e-4dd6-9bae-22e95420a93e" name="Default" comment="Added Markov Rate matrix generation to OOP cluster predictor along with MeanShift and Affinity Propagation Clustering.">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Clusterer.py" afterPath="$PROJECT_DIR$/Clusterer.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Plotter.py" afterPath="$PROJECT_DIR$/Plotter.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Predictor.py" afterPath="$PROJECT_DIR$/Predictor.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Unsupervised/clustering.py" afterPath="$PROJECT_DIR$/Unsupervised/clustering.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Unsupervised/mwkmeans.py" afterPath="$PROJECT_DIR$/Unsupervised/mwkmeans.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Unsupervised/mwpam.py" afterPath="$PROJECT_DIR$/Unsupervised/mwpam.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Unsupervised/tester.py" afterPath="$PROJECT_DIR$/Unsupervised/tester.py" />
     </list>
     <ignored path="ClusterPrediction.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,11 +31,21 @@
       <file leaf-file-name="Clusterer.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Clusterer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-319">
-              <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
+            <state relative-caret-position="570">
+              <caret line="38" column="66" selection-start-line="38" selection-start-column="66" selection-end-line="38" selection-end-column="66" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="builtins.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Library/Caches/PyCharm2016.1/python_stubs/898378442/builtins.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="273">
+              <caret line="687" column="29" selection-start-line="687" selection-start-column="29" selection-end-line="687" selection-end-column="29" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -57,16 +58,6 @@
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="generate_middle.vmd" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/generate_middle.vmd">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8850">
-              <caret line="590" column="4" selection-start-line="590" selection-start-column="4" selection-end-line="590" selection-end-column="4" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -86,8 +77,8 @@
       <file leaf-file-name="Markov.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Markov.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+            <state relative-caret-position="165">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -96,8 +87,8 @@
       <file leaf-file-name="Plotter.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Plotter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+            <state relative-caret-position="690">
+              <caret line="46" column="63" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="63" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
@@ -108,10 +99,10 @@
       <file leaf-file-name="F10IonDistances.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Examples/F10IonDistances.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="73" selection-start-line="17" selection-start-column="73" selection-end-line="17" selection-end-column="73" />
+            <state relative-caret-position="240">
+              <caret line="16" column="73" selection-start-line="16" selection-start-column="73" selection-end-line="16" selection-end-column="73" />
               <folding>
-                <element signature="e#185#234#0" expanded="true" />
+                <element signature="e#184#233#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -566,7 +557,14 @@
       <option name="project" value="LOCAL" />
       <updated>1457753465478</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added Markov Rate matrix generation to OOP cluster predictor along with MeanShift and Affinity Propagation Clustering.">
+      <created>1460478596135</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1460478596135</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -629,7 +627,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Setting up folder for OOP version of cluster trial project. Nothing to see here." />
     <MESSAGE value="Implemented object-oriented versionf of KMeans, GMM and HDBSCAN" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented object-oriented versionf of KMeans, GMM and HDBSCAN" />
+    <MESSAGE value="Added Markov Rate matrix generation to OOP cluster predictor along with MeanShift and Affinity Propagation Clustering." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Markov Rate matrix generation to OOP cluster predictor along with MeanShift and Affinity Propagation Clustering." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -646,16 +645,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Saver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Scorer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -927,6 +916,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+          <folding>
+            <marker date="1459786969000" expanded="true" signature="1067:1113" placeholder="import ..." />
+            <marker date="1459786969000" expanded="true" signature="1174:1206" placeholder="..." />
+            <marker date="1459786969000" expanded="true" signature="1311:1499" placeholder="..." />
+            <marker date="1459786969000" expanded="true" signature="2110:3887" placeholder="..." />
+            <marker date="1459786969000" expanded="true" signature="2318:3260" placeholder="..." />
+            <marker date="1459786969000" expanded="true" signature="3312:3821" placeholder="..." />
+            <marker date="1459786969000" expanded="true" signature="3358:3533" placeholder="..." />
+            <marker date="1459786969000" expanded="true" signature="3555:3821" placeholder="..." />
+            <marker date="1459786969000" expanded="true" signature="3913:4126" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -974,10 +974,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Examples/F10IonDistances.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="73" selection-start-line="17" selection-start-column="73" selection-end-line="17" selection-end-column="73" />
+        <state relative-caret-position="240">
+          <caret line="16" column="73" selection-start-line="16" selection-start-column="73" selection-end-line="16" selection-end-column="73" />
           <folding>
-            <element signature="e#185#234#0" expanded="true" />
+            <element signature="e#184#233#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1205,16 +1205,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Clusterer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-319">
-          <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Saver.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="386">
@@ -1225,18 +1215,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Clusterer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" column="66" selection-start-line="38" selection-start-column="66" selection-end-line="38" selection-end-column="66" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2016.1/python_stubs/898378442/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="687" column="29" selection-start-line="687" selection-start-column="29" selection-end-line="687" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Markov.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+        <state relative-caret-position="165">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Plotter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+        <state relative-caret-position="690">
+          <caret line="46" column="63" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="63" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
           </folding>
