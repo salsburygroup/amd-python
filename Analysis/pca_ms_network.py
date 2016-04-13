@@ -8,7 +8,7 @@ matplotlib.use('Agg') #Avoids hangs on visualize
 import matplotlib.pyplot as plt
 import argparse
 
-parser = argparse.ArgumentParser(description = 'Run and score hdbscan clustering', add_help=False) 
+parser = argparse.ArgumentParser(description = 'Turn PCA space into a network based on wells', add_help=False) 
 
 # List all possible user input
 inputs=parser.add_argument_group('Input arguments')
