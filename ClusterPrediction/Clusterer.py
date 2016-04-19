@@ -182,3 +182,14 @@ class AffinityPropagation(Clusterer):
         self.labels = clusterer.fit_predict(self.trajectory_2d)
         self.centers = clusterer.cluster_centers_
         return self.labels, self.centers
+
+
+class QualityThreshold:
+    def __init__(self, distances, cutoff):
+        self.distances = distances
+        self.cutoff = cutoff
+        self.labels = []
+        self.centers = []
+
+    def fit(self):
+

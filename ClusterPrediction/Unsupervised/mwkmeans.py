@@ -34,7 +34,7 @@ class MWKMeans(object):
     def __init__(self, _my_math):
         self.my_math = _my_math
 
-    def mwk_means(self, data, k, p, init_centroids=None, init_weights=None, replicates=1, max_ite=100):
+    def mwk_means(self, data, k, p, init_centroids=None, init_weights=None, replicates=1, max_ite=1000):
         #Minkowski Weighted K-Means
         wkm = WKMeans(self.my_math)
         return wkm.wk_means(data, k, p, init_centroids, init_weights, 'Minkowski_pthPower', replicates, p, max_ite)

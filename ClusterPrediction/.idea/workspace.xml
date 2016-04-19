@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5d49719-0e9e-4dd6-9bae-22e95420a93e" name="Default" comment="Added Markov Rate matrix generation to OOP cluster predictor along with MeanShift and Affinity Propagation Clustering.">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Analysis/VisualStats/vdistribution.py" afterPath="$PROJECT_DIR$/../Analysis/VisualStats/vdistribution.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Plotter.py" afterPath="$PROJECT_DIR$/Plotter.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Clusterer.py" afterPath="$PROJECT_DIR$/Clusterer.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DCDShaper.py" afterPath="$PROJECT_DIR$/DCDShaper.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Unsupervised/clustering.py" afterPath="$PROJECT_DIR$/Unsupervised/clustering.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Unsupervised/mwkmeans.py" afterPath="$PROJECT_DIR$/Unsupervised/mwkmeans.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Unsupervised/wkmeans.py" afterPath="$PROJECT_DIR$/Unsupervised/wkmeans.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../sandbox/Clustering/NBClust.ipynb" afterPath="$PROJECT_DIR$/../sandbox/Clustering/NBClust.ipynb" />
     </list>
     <ignored path="ClusterPrediction.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,45 +37,9 @@
       <file leaf-file-name="Clusterer.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Clusterer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="38" column="66" selection-start-line="38" selection-start-column="66" selection-end-line="38" selection-end-column="66" />
-              <folding>
-                <element signature="e#0#14#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="builtins.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Library/Caches/PyCharm2016.1/python_stubs/898378442/builtins.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="687" column="29" selection-start-line="687" selection-start-column="29" selection-end-line="687" selection-end-column="29" />
+            <state relative-caret-position="56">
+              <caret line="140" column="38" selection-start-line="140" selection-start-column="38" selection-end-line="140" selection-end-column="38" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Saver.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Saver.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="66" column="23" selection-start-line="66" selection-start-column="23" selection-end-line="66" selection-end-column="84" />
-              <folding>
-                <element signature="e#0#12#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Predictor.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Predictor.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-              <folding>
-                <element signature="e#0#16#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -84,10 +54,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Plotter.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Plotter.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Plotter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
+            <state relative-caret-position="660">
               <caret line="46" column="63" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="63" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
@@ -96,24 +66,58 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="F10IonDistances.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Examples/F10IonDistances.py">
+      <file leaf-file-name="wkmeans.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Unsupervised/wkmeans.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="73" selection-start-line="16" selection-start-column="73" selection-end-line="16" selection-end-column="73" />
+            <state relative-caret-position="1545">
+              <caret line="104" column="135" selection-start-line="104" selection-start-column="135" selection-end-line="104" selection-end-column="135" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mwkmeans.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Unsupervised/mwkmeans.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="525">
+              <caret line="36" column="100" selection-start-line="36" selection-start-column="100" selection-end-line="36" selection-end-column="100" />
               <folding>
-                <element signature="e#184#233#0" expanded="true" />
+                <element signature="e#1067#1085#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DCDShaper.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="clustering.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Unsupervised/clustering.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="18" column="76" selection-start-line="18" selection-start-column="76" selection-end-line="20" selection-end-column="78" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DCDShaper.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DCDShaper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="38" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="55" />
-              <folding />
+            <state relative-caret-position="405">
+              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="F10IonDistances.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Examples/F10IonDistances.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="16" column="73" selection-start-line="16" selection-start-column="73" selection-end-line="16" selection-end-column="73" />
+              <folding>
+                <element signature="e#184#233#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -162,22 +166,23 @@
       <list>
         <option value="$PROJECT_DIR$/__init__.py" />
         <option value="$PROJECT_DIR$/DCDReader.py" />
-        <option value="$PROJECT_DIR$/DCDShaper.py" />
         <option value="$PROJECT_DIR$/Unsupervised/__init__.py" />
         <option value="$PROJECT_DIR$/Optimizer.py" />
         <option value="$PROJECT_DIR$/../Analysis/PCAMeanShift.py" />
         <option value="$PROJECT_DIR$/Unsupervised/mwpam.py" />
         <option value="$PROJECT_DIR$/Unsupervised/tester.py" />
-        <option value="$PROJECT_DIR$/Unsupervised/clustering.py" />
-        <option value="$PROJECT_DIR$/Unsupervised/mwkmeans.py" />
         <option value="$PROJECT_DIR$/resources/generate_shadow.vmd" />
         <option value="$PROJECT_DIR$/Saver.py" />
         <option value="$PROJECT_DIR$/Scorer.py" />
         <option value="$PROJECT_DIR$/Examples/F10IonDistances.py" />
-        <option value="$PROJECT_DIR$/Clusterer.py" />
         <option value="$PROJECT_DIR$/Predictor.py" />
         <option value="$PROJECT_DIR$/Markov.py" />
         <option value="$PROJECT_DIR$/Plotter.py" />
+        <option value="$PROJECT_DIR$/Unsupervised/wkmeans.py" />
+        <option value="$PROJECT_DIR$/Unsupervised/mwkmeans.py" />
+        <option value="$PROJECT_DIR$/Unsupervised/clustering.py" />
+        <option value="$PROJECT_DIR$/Clusterer.py" />
+        <option value="$PROJECT_DIR$/DCDShaper.py" />
       </list>
     </option>
   </component>
@@ -217,6 +222,35 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="ClusterPrediction">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="ClusterPrediction">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Unsupervised">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -247,35 +281,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="Examples" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scratches" />
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="ClusterPrediction">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="ClusterPrediction">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Unsupervised">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -577,19 +582,19 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -659,7 +664,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -682,7 +686,7 @@
         <state relative-caret-position="0">
           <caret line="28" column="0" selection-start-line="31" selection-start-column="8" selection-end-line="33" selection-end-column="38" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#0#14#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -701,9 +705,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="26" column="49" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -721,7 +722,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -744,7 +744,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#0#14#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -763,7 +763,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -793,7 +792,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#0#14#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -802,7 +801,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -846,20 +844,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Analysis/PCAMeanShift.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="866">
-          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Unsupervised/wkmeans.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../Analysis/PCAMeanShift.py" />
     <entry file="file://$PROJECT_DIR$/Unsupervised/ward.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -895,13 +880,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Unsupervised/clustering.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Unsupervised/mwpam.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -912,29 +890,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Unsupervised/mwkmeans.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
-          <folding>
-            <marker date="1459786969000" expanded="true" signature="1067:1113" placeholder="import ..." />
-            <marker date="1459786969000" expanded="true" signature="1174:1206" placeholder="..." />
-            <marker date="1459786969000" expanded="true" signature="1311:1499" placeholder="..." />
-            <marker date="1459786969000" expanded="true" signature="2110:3887" placeholder="..." />
-            <marker date="1459786969000" expanded="true" signature="2318:3260" placeholder="..." />
-            <marker date="1459786969000" expanded="true" signature="3312:3821" placeholder="..." />
-            <marker date="1459786969000" expanded="true" signature="3358:3533" placeholder="..." />
-            <marker date="1459786969000" expanded="true" signature="3555:3821" placeholder="..." />
-            <marker date="1459786969000" expanded="true" signature="3913:4126" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/generate_shadow.vmd">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8880">
           <caret line="592" column="14" selection-start-line="592" selection-start-column="14" selection-end-line="592" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -942,7 +901,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -950,35 +908,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8850">
           <caret line="590" column="4" selection-start-line="590" selection-start-column="4" selection-end-line="590" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DCDShaper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="38" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Scorer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="54" column="37" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Examples/F10IonDistances.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="73" selection-start-line="16" selection-start-column="73" selection-end-line="16" selection-end-column="73" />
-          <folding>
-            <element signature="e#184#233#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1028,9 +957,10 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="0.8890599100165758" x="1830.0097216673325" y="212.5000000000001" />
+          <settings layout="Hierarchic Group" zoom="0.8890599100165758" x="1830.0" y="213.0" />
           <SelectedNodes />
           <Categories />
+          <SCOPE>All</SCOPE>
         </state>
       </provider>
     </entry>
@@ -1060,10 +990,11 @@
             <node>Clusterer.Clusterer</node>
           </SelectedNodes>
           <Categories>
-            <Category>Methods</Category>
-            <Category>Inner Classes</Category>
             <Category>Fields</Category>
+            <Category>Inner Classes</Category>
+            <Category>Methods</Category>
           </Categories>
+          <SCOPE>All</SCOPE>
         </state>
       </provider>
     </entry>
@@ -1086,86 +1017,18 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="0.6000000000000001" x="922.1666666666665" y="546.1666666666665" />
+          <settings layout="Hierarchic Group" zoom="0.6000000000000001" x="922.0" y="546.0" />
           <SelectedNodes />
           <Categories>
-            <Category>Methods</Category>
-            <Category>Inner Classes</Category>
-            <Category>Fields</Category>
-          </Categories>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Documentation/Clusterer.uml">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>Python</ID>
-          <OriginalElement>#/Users/melvrl13/Documents/AMD/AMD-PYTHON/ClusterPrediction/Clusterer.py</OriginalElement>
-          <nodes>
-            <node x="1967.0" y="189.0">Clusterer.KMeans</node>
-            <node x="1010.0" y="189.0">Clusterer.IMWKRescaled</node>
-            <node x="453.0" y="178.0">Clusterer.AffinityPropagation</node>
-            <node x="1481.0" y="200.0">Clusterer.HDBSCAN</node>
-            <node x="2294.0" y="178.0">Clusterer.MeanShift</node>
-            <node x="2869.0" y="189.0">Clusterer.VBGMM</node>
-            <node x="1570.5" y="0.0">Clusterer.Clusterer</node>
-            <node x="0.0" y="189.0">Clusterer.GMM</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="Clusterer.KMeans" target="Clusterer.Clusterer">
-              <point x="0.0" y="-70.0" />
-              <point x="2120.5" y="158.0" />
-              <point x="1755.0" y="158.0" />
-              <point x="41.0" y="59.0" />
-            </edge>
-            <edge source="Clusterer.IMWKRescaled" target="Clusterer.Clusterer">
-              <point x="0.0" y="-70.0" />
-              <point x="1235.5" y="158.0" />
-              <point x="1673.0" y="158.0" />
-              <point x="-41.0" y="59.0" />
-            </edge>
-            <edge source="Clusterer.AffinityPropagation" target="Clusterer.Clusterer">
-              <point x="0.0" y="-81.0" />
-              <point x="721.5" y="148.0" />
-              <point x="1632.0" y="148.0" />
-              <point x="-82.0" y="59.0" />
-            </edge>
-            <edge source="Clusterer.MeanShift" target="Clusterer.Clusterer">
-              <point x="0.0" y="-81.0" />
-              <point x="2571.5" y="148.0" />
-              <point x="1796.0" y="148.0" />
-              <point x="82.0" y="59.0" />
-            </edge>
-            <edge source="Clusterer.GMM" target="Clusterer.Clusterer">
-              <point x="0.0" y="-70.0" />
-              <point x="216.5" y="138.0" />
-              <point x="1591.0" y="138.0" />
-              <point x="-123.0" y="59.0" />
-            </edge>
-            <edge source="Clusterer.VBGMM" target="Clusterer.Clusterer">
-              <point x="0.0" y="-70.0" />
-              <point x="3085.5" y="138.0" />
-              <point x="1837.0" y="138.0" />
-              <point x="123.0" y="59.0" />
-            </edge>
-            <edge source="Clusterer.HDBSCAN" target="Clusterer.Clusterer">
-              <point x="0.0" y="-59.0" />
-              <point x="0.0" y="59.0" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="0.4945815773630343" x="502.25867315885574" y="93.0809494826537" />
-          <SelectedNodes>
-            <node>Clusterer.KMeans</node>
-          </SelectedNodes>
-          <Categories>
             <Category>Fields</Category>
             <Category>Inner Classes</Category>
             <Category>Methods</Category>
           </Categories>
+          <SCOPE>All</SCOPE>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Documentation/Clusterer.uml" />
     <entry file="uml://Python/#/Users/melvrl13/Documents/AMD/AMD-PYTHON/ClusterPrediction/DCDShaper.py">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -1178,56 +1041,33 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="89.5" y="1053.5" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="90.0" y="1054.0" />
           <SelectedNodes />
           <Categories>
-            <Category>Methods</Category>
             <Category>Fields</Category>
+            <Category>Methods</Category>
           </Categories>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DCDReader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
-          <folding />
+          <SCOPE>All</SCOPE>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Predictor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
+        <state relative-caret-position="45">
           <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Saver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
+        <state relative-caret-position="885">
           <caret line="66" column="23" selection-start-line="66" selection-start-column="23" selection-end-line="66" selection-end-column="84" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Clusterer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="66" selection-start-line="38" selection-start-column="66" selection-end-line="38" selection-end-column="66" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Library/Caches/PyCharm2016.1/python_stubs/898378442/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
+        <state relative-caret-position="10305">
           <caret line="687" column="29" selection-start-line="687" selection-start-column="29" selection-end-line="687" selection-end-column="29" />
           <folding />
         </state>
@@ -1243,10 +1083,82 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Plotter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
+        <state relative-caret-position="660">
           <caret line="46" column="63" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="63" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Examples/F10IonDistances.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="16" column="73" selection-start-line="16" selection-start-column="73" selection-end-line="16" selection-end-column="73" />
+          <folding>
+            <element signature="e#184#233#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scorer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="54" column="37" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Unsupervised/wkmeans.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1545">
+          <caret line="104" column="135" selection-start-line="104" selection-start-column="135" selection-end-line="104" selection-end-column="135" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Unsupervised/mwkmeans.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="36" column="100" selection-start-line="36" selection-start-column="100" selection-end-line="36" selection-end-column="100" />
+          <folding>
+            <element signature="e#1067#1085#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Unsupervised/clustering.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="18" column="76" selection-start-line="18" selection-start-column="76" selection-end-line="20" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Clusterer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="140" column="38" selection-start-line="140" selection-start-column="38" selection-end-line="140" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DCDReader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DCDShaper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>

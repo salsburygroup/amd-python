@@ -14,7 +14,7 @@ class Clustering(object):
     def __init__(self):
         self.my_math = MyMath()
 
-    def k_means(self, data, k, replicates=1, init_centroids=None, dist='SqEuclidean', p=None, max_ite=100):
+    def k_means(self, data, k, replicates=1, init_centroids=None, dist='SqEuclidean', p=None, max_ite=1000):
         km = KMeans(self.my_math)
         return km.k_means(data, k, replicates, init_centroids, dist, p, max_ite)
 
@@ -22,11 +22,11 @@ class Clustering(object):
         km = KMeans(self.my_math)
         return km.ik_means(data, k, theta, distance, p)
 
-    def wk_means(self, data, k, beta, init_centroids=None, init_weights=None, distance='SqEuclidean', replicates=1, p=None, max_ite=100):
+    def wk_means(self, data, k, beta, init_centroids=None, init_weights=None, distance='SqEuclidean', replicates=1, p=None, max_ite=1000):
         wkm = WKMeans(self.my_math)
         return wkm.wk_means(data, k, beta, init_centroids, init_weights, distance, replicates, p, max_ite)
 
-    def mwk_means(self, data, k, p, init_centroids=None, init_weights=None, replicates=1, max_ite=100):
+    def mwk_means(self, data, k, p, init_centroids=None, init_weights=None, replicates=1, max_ite=1000):
         mwk = MWKMeans(self.my_math)
         return mwk.mwk_means(data, k, p, init_centroids, init_weights, replicates, max_ite)
 

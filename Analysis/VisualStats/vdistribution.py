@@ -11,6 +11,7 @@ dir = os.path.dirname(__file__)
 cwd = os.getcwd()
 shadow_helper = os.path.join(dir, 'generate_shadow.vmd')
 middle_helper = os.path.join(dir, 'generate_middle.vmd')
+vmd = '/Applications/VMD\ 1.9.2.app/Contents/MacOs/startup.command'
 
 
 parser = argparse.ArgumentParser(
@@ -35,7 +36,7 @@ UserInput=parser.parse_args()
 
 # Now, let's make some pretty pictures
 vmd_render_shadow_cmd = (
-        'vmd '
+        vmd + ' '
         + UserInput.shadow + ' -dispdev text -e ' 
         + shadow_helper + ' -args -first 1 -last ' + str(UserInput.number -1 ) 
         + ' -stride ' + str(UserInput.stride)
@@ -45,7 +46,7 @@ vmd_render_shadow=subprocess.call(vmd_render_shadow_cmd,shell=True)
 
 
 vmd_render_middle_cmd = (
-        'vmd '
+        vmd + ' '
         + UserInput.middle + ' -dispdev text -e ' 
         + middle_helper + ' -args -rep ' + UserInput.rep + ' -outfile '
         + UserInput.directory + '/middle.tga'
