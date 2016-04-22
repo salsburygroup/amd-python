@@ -186,10 +186,29 @@ class AffinityPropagation(Clusterer):
 
 class QualityThreshold:
     def __init__(self, distances, cutoff):
+        assert isinstance(distances, numpy.ndarray)
         self.distances = distances
         self.cutoff = cutoff
         self.labels = []
         self.centers = []
 
     def fit(self):
+        cutoff_mask = self.distances < self.cutoff
+        cluster = 0
+        self.labels = numpy.empty(self.distances.shape[0])
+        self.labels.fill(numpy.NAN)
 
+        while cutoff_mask.any():
+            membership = cutoff_mask.sum(axis=1)
+            center = numpy.argmax(membership)
+            members = numpy.where(cutoff_mask[center, :] == True)
+            if max(membership) == 1:
+                self.labels[numpy.where(numpy.isnan(self.labels))] = -1
+                break
+            self.labels[members] = cluster
+            self.centers.append(center)
+            cutoff_mask[members, :] = False
+            cutoff_mask[:, members] = False
+            cluster = cluster + 1
+
+        return self.labels, self.centers

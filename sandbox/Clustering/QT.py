@@ -4,9 +4,9 @@ import matplotlib
 matplotlib.use('Agg') #For use on DEAC cluster
 import matplotlib.pyplot as plt
 plt.style.use('bmh')
+import tempfile
 import argparse
 
-# Currently only working in python 2 due to MDAnalysis package.
 # Initialize parser. The default help has poor labeling. See http://bugs.python.org/issue9694
 parser = argparse.ArgumentParser(description = 'Runs a vectorized version of QT clustering', add_help=False) 
 
@@ -15,7 +15,8 @@ inputs=parser.add_argument_group('Input arguments')
 inputs.add_argument('-h', '--help', action='help')
 inputs.add_argument('-top', action='store', dest='structure',help='Structure file corresponding to trajectory',type=str,required=True)
 inputs.add_argument('-traj', action='store', dest='trajectory',help='Trajectory',type=str,required=True)
-inputs.add_argument('-sel', action='store', dest='sel', help='Atom selection',type=str,default='not element H')
+inputs.add_argument('-sel', action='store', dest='sel', help='Atom selection',type=str,default='name CA')
+inputs.add_argument('-min', action='store', dest='minimum_membership', help='Minimum number of frames in a cluster',type=int,default=1)
 inputs.add_argument('-cutoff', action='store', dest='cutoff', help='maximum cluster radius',type=float,required=True)
 inputs.add_argument('-o', action='store', dest='out_name',help='Output file',type=str,required=True)
 
@@ -27,13 +28,15 @@ trajectory = UserInput.trajectory
 t = md.load(trajectory,top=topology)
 sel = t.topology.select(UserInput.sel)
 t = t.atom_slice(sel)
-trajectory = []
+
 
 distances = np.empty((t.n_frames, t.n_frames), dtype=float)
+t.center_coordinates()
 for i in range(t.n_frames):
     distances[i] = md.rmsd(target=t, reference=t, frame=i, precentered=True)
 
-cutoff_mask = distances < UserInput.cutoff
+cutoff_mask = distances <= UserInput.cutoff
+distances = None
 centers = []
 cluster = 0
 labels = np.empty(t.n_frames)
@@ -43,7 +46,7 @@ while cutoff_mask.any():
     membership = cutoff_mask.sum(axis=1)
     center = np.argmax(membership)
     members = np.where(cutoff_mask[center,:]==True)
-    if max(membership) == 1:
+    if max(membership) <= UserInput.minimum_membership:
         labels[np.where(np.isnan(labels))] = -1
         break
     labels[members] = cluster
@@ -65,4 +68,4 @@ plt.xlabel('Frame')
 plt.ylabel('Cluster')
 plt.title('QT')
 plt.savefig(UserInput.out_name + '/QT.png')
-plt.clf()
+plt.close()

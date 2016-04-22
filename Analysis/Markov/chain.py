@@ -26,6 +26,7 @@ def from_vmd(cluster_file):
     """
     import re
     import pandas as pd
+    import numpy as np
 
     dfbig = pd.DataFrame(columns = ['frame', 'cluster_number'])
     
@@ -44,5 +45,8 @@ def from_vmd(cluster_file):
 dfsort = dfbig.sort_values(by=['frame'])
 chain = dfsort['cluster_number'].values.astype(int)
 
+# Match ClusterPrediction output scheme
+chain = chain-1
+chain[np.where(chain == chain.max())] = -1
     
 
