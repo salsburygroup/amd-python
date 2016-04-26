@@ -26,20 +26,23 @@ UserInput=parser.parse_args()
 topology = UserInput.structure
 trajectory = UserInput.trajectory
 t = md.load(trajectory,top=topology)
+n_frames = t.n_frames
 sel = t.topology.select(UserInput.sel)
 t = t.atom_slice(sel)
 
-
-distances = np.empty((t.n_frames, t.n_frames), dtype=float)
+tempfile = tempfile.NamedTemporaryFile()
+distances = np.memmap(tempfile.name, dtype=float, shape=(n_frames,n_frames))
+#distances = np.empty((n_frames, n_frames), dtype=float)
 t.center_coordinates()
-for i in range(t.n_frames):
+for i in range(n_frames):
     distances[i] = md.rmsd(target=t, reference=t, frame=i, precentered=True)
 
+t = None
 cutoff_mask = distances <= UserInput.cutoff
 distances = None
 centers = []
 cluster = 0
-labels = np.empty(t.n_frames)
+labels = np.empty(n_frames)
 labels.fill(np.NAN)
 
 while cutoff_mask.any():
@@ -63,7 +66,7 @@ np.savetxt(UserInput.out_name + '/QT_centers.txt', centers, fmt='%i')
 
 #Figures
 plt.figure()
-plt.scatter(np.arange(t.n_frames), labels, marker = '+')
+plt.scatter(np.arange(n_frames), labels, marker = '+')
 plt.xlabel('Frame')
 plt.ylabel('Cluster')
 plt.title('QT')
