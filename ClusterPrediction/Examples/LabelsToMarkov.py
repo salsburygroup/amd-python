@@ -1,7 +1,10 @@
 #!/usr/env python
 """
 An example script that takes labels from previous clustering and generates an MSM using pyEmma.
+Example command
+python LabelsToMarkov.py -l RLM/QT_labels.txt -o /Users/melvrl13/Documents/groupStuff/Jiajie/MelvinQT/RLM
 """
+
 
 import Markov
 import argparse
@@ -38,6 +41,7 @@ cmtest_file = os.path.join(user_input.output, 'chapman_kolmogorov.png')
 cktest = msm.cktest(2)
 mplt.plot_cktest(cktest=cktest)
 plt.savefig(cmtest_file)
+
 
 #if __name__ == '__main__':
 #    main()
