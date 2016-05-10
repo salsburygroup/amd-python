@@ -48,10 +48,7 @@ class RateMatrix(Plotter):
         super().__init__(out_name)
 
     def plot(self):
-        matplotlib.pyplot.imshow(self.msm.transition_matrix,
-                                 extent=(self.msm.active_set.min(), self.msm.active_set.max(),
-                                         self.msm.active_set.min(), self.msm.active_set.max())
-                                 )
+        matplotlib.pyplot.imshow(self.msm.transition_matrix)
         matplotlib.pyplot.colorbar()
         matplotlib.pyplot.xlabel('Transition to')
         matplotlib.pyplot.ylabel('Transition From')
