@@ -7,5 +7,5 @@ class Model:
         self.model = None
 
     def estimate(self):
-        self.model = pyemma.msm.estimate_markov_model(dtrajs=labels, lag=1)
+        self.model = pyemma.msm.estimate_markov_model(dtrajs=self.labels, lag=1)
         return self.model

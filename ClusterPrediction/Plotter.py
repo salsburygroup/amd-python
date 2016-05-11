@@ -44,32 +44,27 @@ class Scores(Plotter):
 
 class RateMatrix(Plotter):
     def __init__(self, out_name, msm):
-        assert isinstance(msm, pyemma.msm.MaximumLikelihoodHMSM)
         self.msm = msm
         super().__init__(out_name)
 
     def plot(self):
-        matplotlib.pyplot.imshow(self.msm.transition_matrix,
-                                 extent=(self.msm.active_set.min(), self.msm.active_set.max(),
-                                         self.msm.active_set.min(), self.msm.active_set.max())
-                                 )
+        matplotlib.pyplot.imshow(self.msm.transition_matrix)
         matplotlib.pyplot.colorbar()
         matplotlib.pyplot.xlabel('Transition to')
         matplotlib.pyplot.ylabel('Transition From')
         matplotlib.pyplot.title('Estimated Transition Matrix')
         matplotlib.pyplot.savefig(self.out_name)
-        matplotlib.pyplot.close()
+        matplotlib.pyplot.clf()
 
 
 class TransitionPath(Plotter):
     def __init__(self, out_name, msm):
-        assert isinstance(msm, pyemma.msm.MaximumLikelihoodHMSM)
+        assert isinstance(msm, pyemma.msm.MaximumLikelihoodMSM)
         self.msm = msm
         super().__init__(out_name)
 
     def plot(self):
         pyemma.plots.plot_markov_model(self.msm)
-        matplotlib.pyplot.title('Markov Model')
-        matplotlib.pyplot.title('Estimated Transition Matrix')
+        matplotlib.pyplot.title('Estimated Markov Chain')
         matplotlib.pyplot.savefig(self.out_name)
-        matplotlib.pyplot.close()
+        matplotlib.pyplot.clf()
