@@ -71,7 +71,7 @@ with open (UserInput.cluster_data) as file:
         sigma_mask = [i for i in range(len(rmsd)) if rmsd[i] <= sigma]
         sigma_frames_txt = [frame for (frame,sigma_mask_txt) in zip(cluster,sigma_mask_txt) if sigma_mask_txt]
       
-
+        # Not python 3 compatible
         #with open(directory+'/sigma.txt','wb') as sigma_file:
         #    for item in sigma_frames_txt:
         #        sigma_file.write("%s\n" % item)
