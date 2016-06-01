@@ -3,15 +3,15 @@
 import os
 import subprocess
 import argparse
-# Note that this is not the standard PIL. You need to have Pillow installed (e.g., "conda install pillow").
 from PIL import Image
+from sys import exit
 
 # Find the helper file generate_shadow.vmd
 dir = os.path.dirname(__file__)
 cwd = os.getcwd()
 shadow_helper = os.path.join(dir, 'generate_shadow.vmd')
 middle_helper = os.path.join(dir, 'generate_middle.vmd')
-
+tachyon = os.path.join(dir, 'tachyon')
 
 parser = argparse.ArgumentParser(
         description = (
@@ -35,7 +35,7 @@ UserInput=parser.parse_args()
 vmd_render_shadow_cmd = (
         'vmd '
         + UserInput.shadow + ' -dispdev text -e ' 
-        + shadow_helper + ' -args' 
+        + shadow_helper + ' -args '
         + ' -rep ' + UserInput.rep + ' -outfile ' + UserInput.directory + '/shadow.tga'
         )
 vmd_render_shadow=subprocess.call(vmd_render_shadow_cmd,shell=True)
