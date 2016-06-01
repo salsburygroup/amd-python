@@ -43,9 +43,9 @@ trajectory = mdtraj.load(UserInput.dcd,top=UserInput.topology) #Load trajectory
 cluster_number = 1 #We'll start counting clusters from 1
 with open (UserInput.cluster_data) as file:
     for line in file:
-        cluster = map(int,line.split( )) #From string to ints
+        cluster = list(map(int,line.split( ))) #From string to ints
         # Get framesusin the user-specified distribution
-        trajectory_subset = trajectory.slice(cluster)
+        trajectory_subset = trajectory[cluster]
         trajectory_subset.superpose(trajectory_subset,frame=0) #Subtracting off the median
 
         # Now, we'll measure the RMSDs
@@ -72,8 +72,9 @@ with open (UserInput.cluster_data) as file:
         sigma_frames_txt = [frame for (frame,sigma_mask_txt) in zip(cluster,sigma_mask_txt) if sigma_mask_txt]
       
 
-        with open(directory+'/sigma.txt','wb') as sigma_file:
-            sigma_file.write(' '.join([str(i) for i in sigma_frames_txt]))
+        #with open(directory+'/sigma.txt','wb') as sigma_file:
+        #    for item in sigma_frames_txt:
+        #        sigma_file.write("%s\n" % item)
 
         # Let's also save the subsets of frames
         trajectory_subset.slice(sigma_mask).save(directory+'/sigma.pdb')
