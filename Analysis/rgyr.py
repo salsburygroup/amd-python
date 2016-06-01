@@ -42,11 +42,11 @@ UserInput=parser.parse_args()
 
 #Define the universe (i.e., molecule in VMD)
 u = MDAnalysis.Universe(UserInput.structure, UserInput.trajectory)
-selection = u.selectAtoms(UserInput.sel)
+selection = u.select_atoms(UserInput.sel)
 
 #Get Rgyr of each frame
 for frames in u.trajectory:
-    Rgyr.append((selection.radiusOfGyration()))
+    Rgyr.append((selection.radius_of_gyration()))
 
 #Make into a numpy array
 Rgyr = np.array(Rgyr)

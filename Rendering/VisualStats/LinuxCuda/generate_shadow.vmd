@@ -12,16 +12,13 @@
 
 package require cmdline
 set parameters {
-    first.arg   "" "Which starting frame?"
-    last.arg    "" "Which final frame?"
-    stride.arg  "" "Stride for displaying shados?"
     outfile.arg	"" "Output file name?"
     rep.arg	"" "What vmd representation?"
 }
 
 array set arg [cmdline::getoptions argv $parameters]
 
-set requiredParameters {first last stride outfile}
+set requiredParameters {outfile}
 foreach parameter $requiredParameters {
     if {$arg($parameter) == ""} {
         puts stderr "Missing required parameter: -$parameter"
@@ -166,7 +163,7 @@ proc vmdrestoremymaterials {} {
   material change transmode Edgy 0.000000
   material change ambient EdgyShiny 0.000000
   material change diffuse EdgyShiny 0.660000
-  matelibtachyonrial change specular EdgyShiny 0.960000
+  material change specular EdgyShiny 0.960000
   material change shininess EdgyShiny 0.750000
   material change mirror EdgyShiny 0.000000
   material change opacity EdgyShiny 1.000000
@@ -371,7 +368,8 @@ mol selupdate 0 top 0
 mol colupdate 0 top 0
 mol scaleminmax top 0 0.000000 0.000000
 mol smoothrep top 0 0
-mol drawframes top 0 $arg(first):$arg(stride):$arg(last)
+set frame_count [molinfo top get numframes]
+mol drawframes top 0 0:$frame_count
 mol clipplane center 0 0 top {0.0 0.0 0.0}
 mol clipplane color  0 0 top {0.5 0.5 0.5 }
 mol clipplane normal 0 0 top {0.0 0.0 1.0}

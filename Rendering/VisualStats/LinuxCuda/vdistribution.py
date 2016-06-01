@@ -11,7 +11,6 @@ dir = os.path.dirname(__file__)
 cwd = os.getcwd()
 shadow_helper = os.path.join(dir, 'generate_shadow.vmd')
 middle_helper = os.path.join(dir, 'generate_middle.vmd')
-vmd = '/Applications/VMD\ 1.9.2.app/Contents/MacOs/startup.command'
 
 
 parser = argparse.ArgumentParser(
@@ -25,9 +24,7 @@ inputs = parser.add_argument_group('Input arguments')
 inputs.add_argument('-h', '--help', action='help')
 inputs.add_argument('-m', '--middle', action='store', dest='middle',help='pdb that should be displayed as solid',type=str,required=True)
 inputs.add_argument('-s', '--shadow', action='store', dest='shadow',help='pdb with multiple frames that should be displayed as shadow',type=str,required=True)
-inputs.add_argument('-n', '--number', action='store', dest='number',help='number of frames in shadow',type=int,required=True)
 inputs.add_argument('-r', '--representation', action='store', dest='rep',help='VMD graphic representation to use',type=str,default='NewRibbons')
-inputs.add_argument('-stride', action='store', dest='stride',help='Stride for shadow',type=int,default=1)
 inputs.add_argument('-o', '--outdir', action='store', dest='directory',help='output directory',type=str, default=cwd)
 
 
@@ -36,17 +33,16 @@ UserInput=parser.parse_args()
 
 # Now, let's make some pretty pictures
 vmd_render_shadow_cmd = (
-        vmd + ' '
+        'vmd '
         + UserInput.shadow + ' -dispdev text -e ' 
-        + shadow_helper + ' -args -first 1 -last ' + str(UserInput.number -1 ) 
-        + ' -stride ' + str(UserInput.stride)
+        + shadow_helper + ' -args' 
         + ' -rep ' + UserInput.rep + ' -outfile ' + UserInput.directory + '/shadow.tga'
         )
 vmd_render_shadow=subprocess.call(vmd_render_shadow_cmd,shell=True)
 
 
 vmd_render_middle_cmd = (
-        vmd + ' '
+        'vmd '
         + UserInput.middle + ' -dispdev text -e ' 
         + middle_helper + ' -args -rep ' + UserInput.rep + ' -outfile '
         + UserInput.directory + '/middle.tga'
