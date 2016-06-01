@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 
 #In its current implementation, this script could require memory up to three times the size of the input trajectory.
-
+# Example
+# python /Users/melvrl13/Documents/AMD/AMD-PYTHON/Rendering/VisualStats/MacOS/vsigma.py -s /Volumes/RyanMdata/FUMP10/Folding/weightedSims3200/f10.psf  -t /Volumes/RyanMdata/FUMP10/Folding/weightedSims3200/weighted3200.dcd -c /Volumes/RyanMdata/FUMP10/Folding/weightedSims3200/clustering/cluster5.dat -l 3 -r NewCartoon
 from __future__ import division
 import mdtraj
 import math
@@ -47,7 +48,7 @@ trajectory = mdtraj.load(UserInput.dcd,top=UserInput.topology) #Load trajectory
 cluster_number = 1 #We'll start counting clusters from 1
 with open (UserInput.cluster_data) as file:
     for line in file:
-        cluster = map(int,line.split( )) #From string to ints
+        cluster = list(map(int,line.split( ))) #From string to ints
         # Get framesusin the user-specified distribution
         trajectory_subset = trajectory.slice(cluster)
         trajectory_subset.superpose(trajectory_subset,frame=0) #Subtracting off the median
@@ -75,9 +76,9 @@ with open (UserInput.cluster_data) as file:
         sigma_mask = [i for i in range(len(rmsd)) if rmsd[i] <= sigma]
         sigma_frames_txt = [frame for (frame,sigma_mask_txt) in zip(cluster,sigma_mask_txt) if sigma_mask_txt]
       
-
-        with open(directory+'/sigma.txt','wb') as sigma_file:
-            sigma_file.write(' '.join([str(i) for i in sigma_frames_txt]))
+    # Not python 3 compatible
+       # with open(directory+'/sigma.txt','wb') as sigma_file:
+       #     sigma_file.write(' '.join([str(i) for i in sigma_frames_txt]))
 
         # Let's also save the subsets of frames
         trajectory_subset.slice(sigma_mask).save(directory+'/sigma.pdb')

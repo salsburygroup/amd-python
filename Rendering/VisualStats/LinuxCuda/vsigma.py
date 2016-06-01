@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 
 #In its current implementation, this script could require memory up to three times the size of the input trajectory.
+# Example:
+# python /opt/AMD/amd-python/Rendering/VisualStats/LinuxCuda/vsigma.py -s f10.psf -t weighted3200.dcd -c cluster5.dat -l 3
 
 from __future__ import division
 import mdtraj

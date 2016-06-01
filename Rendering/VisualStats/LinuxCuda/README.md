@@ -1,5 +1,6 @@
 # Visual Statistics
 The two python scripts here generate an image of a biopolymer with uncertainty in position shown as shadow.
 
-The script VMDsigma.py creates a folder for each cluster up to the last cluster specified with "-l". The two pdb files within each folder are then the inputs of "--middle" and "--shadow". for vdistribution.py. Use "-h" for more details.
+The script vsigma.py takes a structure file, a trajectory and clustering data where a row contains the frames in a cluster, with the first entry in the row being the median structure in the cluster.
 
+The script vdistribution.py takes two input PDBs -- the median structure as one PDB and the part of the distribution to be displayed as shadow as the second PDB.
