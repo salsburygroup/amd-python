@@ -9,5 +9,5 @@ class DCDReader:
         self.top = topology_path
 
     def load(self):
-        trajectory = mdtraj.iterload(self.dcd, top=self.top)
+        trajectory = mdtraj.load(self.dcd, top=self.top)
         return trajectory

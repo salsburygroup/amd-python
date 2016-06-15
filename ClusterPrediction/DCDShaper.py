@@ -4,9 +4,7 @@ import numpy
 
 class DCDShaper:
     def __init__(self, trajectory, atom_selection):
-        assert isinstance(trajectory, mdtraj.Trajectory)
         self.trajectory = trajectory
-        assert isinstance(atom_selection, str)
         self.atom_selection = atom_selection
 
     def make_2d(self):

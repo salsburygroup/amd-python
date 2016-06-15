@@ -77,7 +77,7 @@ if __name__ == "__main__":
     import argparse
 
     # Initialize parser. The default help has poor labeling. See http://bugs.python.org/issue9694
-    parser = argparse.ArgumentParser(description='Run and score hdbscan clustering', add_help=False)
+    parser = argparse.ArgumentParser(description='Run and score clustering', add_help=False)
 
     # List all possible user input
     inputs = parser.add_argument_group('Input arguments')
