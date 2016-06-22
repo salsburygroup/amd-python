@@ -2,224 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60be380e-7fcd-487f-bd2a-7200b1968f18" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/melvrl13.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Analysis/AtomSelection.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Analysis/Correlation.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Analysis/Plotter.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Analysis/Saver.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Analysis/TrajectoryProcessor.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Analysis/TrajectoryReader.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Analysis/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/correlation_matrix.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/rmsf.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/.ipynb_checkpoints/SmilesVinaDocking-checkpoint.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/CorrelationPropagator.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/HBonanza_1.01.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/HDBSCAN.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/Markov/chain.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/PyEMMA/.ipynb_checkpoints/GenerateMacrostateMSM-checkpoint.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/PyEMMA/.ipynb_checkpoints/MSM_kinetics-checkpoint.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/PyEMMA/GenerateMacrostateMSM.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/PyEMMA/MSM_kinetics.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/PyEMMA/shortcuts.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/QT.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/.ipynb_checkpoints/F10_ZN_MSM_PCA-checkpoint.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/.ipynb_checkpoints/F10_ZN_MSM_TICA-checkpoint.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/F10.pdb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/F10_150mMZnCl2.dcd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/F10_ZN_MSM_PCA.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/F10_ZN_MSM_TICA.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/bpti_msm/Estimate_BPTI_MSM.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/bpti_msm/MSM_BPTI.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/bpti_msm/TPT_BPTI.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/bpti_msm/data/BPTI-clustercenters.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/bpti_msm/data/BPTI-histogram_xy.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/bpti_msm/data/BPTI-histogram_z.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/bpti_msm/data/BPTI.dtraj" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/bpti_msm/data/bpti_ca.pdb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/bpti_msm/data/observable.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/bpti_msm/data/pcca_structures.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/bpti_msm/data/pcca_structures_front.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/bpti_msm/data/pcca_structures_side.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/bpti_msm/data/pcca_structures_top.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/bpti_msm/shortcuts.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/init-ww-penta.pdb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/job1-protein.xtc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/job10-protein.xtc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/job11-protein.xtc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/job12-protein.xtc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/job13-protein.xtc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/job14-protein.xtc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/job15-protein.xtc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/job16-protein.xtc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/job17-protein.xtc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/job18-protein.xtc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/job19-protein.xtc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/job2-protein.xtc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/job20-protein.xtc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/job21-protein.xtc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/job22-protein.xtc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/job23-protein.xtc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/job24-protein.xtc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/job25-protein.xtc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/job3-protein.xtc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/job4-protein.xtc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/job5-protein.xtc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/job6-protein.xtc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/job7-protein.xtc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/job8-protein.xtc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/job9-protein.xtc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/pcca1_10samples.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/pcca1_10samples.tga" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/pcca1_10samples.xtc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/pcca2_10samples.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/pcca2_10samples.tga" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/pcca2_10samples.xtc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/pcca3_10samples.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/pcca3_10samples.tga" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/pcca3_10samples.xtc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/pcca4_10samples.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/pcca4_10samples.tga" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/pcca4_10samples.xtc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/pcca4_sets.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/pcca_structures.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/pcca_structures.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/pcca_structures.pptx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/data/view.vmd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TicaAndPCA/NoeExamples/pentapeptide_msm/pentapeptide_msm.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/TitrationAnalysis.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/align.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/hbond_analysis.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/native_contacts.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/pca2D.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/pca_ms.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/pca_ms_network.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/rgyr.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/rmsd.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Analysis/vina_batch_parse.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BasicExamples/vargin.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/.idea/.name" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/.idea/ClusterPrediction.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/.idea/dictionaries/melvrl13.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/.idea/encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/.idea/vcs.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/.idea/workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/Clusterer.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/DCDReader.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/DCDShaper.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/Examples/F10IonDistances.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/Examples/LabelsToMarkov.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/Markov.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/Optimizer.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/Plotter.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/Predictor.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/Saver.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/Scorer.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/Unsupervised/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/Unsupervised/clustering.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/Unsupervised/kmeans.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/Unsupervised/mwkmeans.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/Unsupervised/mwpam.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/Unsupervised/mymath.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/Unsupervised/pam.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/Unsupervised/tester.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/Unsupervised/ward.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/Unsupervised/wkmeans.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/pyemma.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/generate_middle.vmd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/generate_shadow.vmd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon.a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/ac3dparse.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/api.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/apigeom.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/box.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/camera.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/coordsys.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/cylinder.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/extvol.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/getargs.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/global.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/glwin.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/grid.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/hash.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/imageio.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/imap.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/intersect.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/jpeg.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/light.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/main.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/mgfparse.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/nffparse.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/parallel.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/parse.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/plane.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/pngfile.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/ppm.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/psd.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/quadric.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/render.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/ring.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/sgirgb.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/shade.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/spaceball.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/sphere.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/texture.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/tgafile.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/threads.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/trace.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/trackball.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/triangle.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/ui.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/util.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/vector.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/vol.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/libtachyon/winbmp.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClusterPrediction/resources/tachyon" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MelvinToolbox/.idea/MelvinToolbox.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MelvinToolbox/.idea/encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MelvinToolbox/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MelvinToolbox/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MelvinToolbox/.idea/vcs.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MelvinToolbox/.idea/workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MelvinToolbox/SufCD_cluster_sort.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MelvinToolbox/Titration/ionize.vmd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MelvinToolbox/Titration/last_frame.vmd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MelvinToolbox/Titration/titrate.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MelvinToolbox/average_concentration.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MelvinToolbox/cfVMDTimeseries.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MelvinToolbox/check_site.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MelvinToolbox/docking_prep.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MelvinToolbox/dssr_ensemble.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MelvinToolbox/gather_models.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MelvinToolbox/join_structures.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MelvinToolbox/representatives.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MelvinToolbox/split_frames.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MelvinToolbox/sqlalchemy_examples/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MelvinToolbox/sqlalchemy_examples/sqalchemy_example.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MelvinToolbox/sqlalchemy_examples/sqlalchemy_declarative.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MelvinToolbox/sqlalchemy_examples/sqlalchemy_insert.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MelvinToolbox/zinc_albumin_smiles/Converter.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MelvinToolbox/zinc_albumin_smiles/SQL/Database.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MelvinToolbox/zinc_albumin_smiles/SQL/Models.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MelvinToolbox/zinc_albumin_smiles/SQL/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MelvinToolbox/zinc_albumin_smiles/Vina/Docker.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MelvinToolbox/zinc_albumin_smiles/Vina/Prepper.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MelvinToolbox/zinc_albumin_smiles/Vina/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MelvinToolbox/zinc_albumin_smiles/Vina/src/shell_helper.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MelvinToolbox/zinc_albumin_smiles/Vina/src/slurm_helper.slurm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MelvinToolbox/zinc_albumin_smiles/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MelvinToolbox/zinc_albumin_smiles/docking_manager.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MelvinToolbox/zinc_albumin_smiles/docking_trials.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Rendering/plot_rmsd.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Utilities/SmilesVinaDocking.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Utilities/acemd_monitor.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Utilities/dnaMD.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Utilities/docking_submit.slurm" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Analysis/distance.py" afterPath="$PROJECT_DIR$/Analysis/distance.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Analysis/DimensionReduction.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Analysis/Featurizer.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Analysis/FreeEnergy.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Analysis/Histogrammer.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/pca.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/bin/pca2D.py" afterPath="$PROJECT_DIR$/sandbox/pca2D.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/melvrl13.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/melvrl13.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Analysis/Plotter.py" afterPath="$PROJECT_DIR$/Analysis/Plotter.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Readme.md" afterPath="$PROJECT_DIR$/Readme.md" />
     </list>
     <ignored path="AMD-PYTHON.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -240,7 +32,7 @@
     <favorites_list name="AMD-PYTHON" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Correlation.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Analysis/Correlation.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -253,33 +45,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TrajectoryProcessor.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Analysis/TrajectoryProcessor.py">
+      <file leaf-file-name="Distance.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Analysis/Distance.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AtomSelection.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Analysis/AtomSelection.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+            <state relative-caret-position="0">
+              <caret line="0" column="12" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Distance.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Analysis/Distance.py">
+      <file leaf-file-name="DimensionReduction.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Analysis/DimensionReduction.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="49" />
+            <state relative-caret-position="675">
+              <caret line="45" column="33" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -287,14 +67,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rmsf.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/bin/rmsf.py">
+      <file leaf-file-name="Featurizer.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Analysis/Featurizer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="791">
-              <caret line="58" column="21" selection-start-line="58" selection-start-column="21" selection-end-line="58" selection-end-column="21" />
-              <folding>
-                <element signature="e#23#38#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="240">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Histogrammer.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Analysis/Histogrammer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="13" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -302,10 +90,22 @@
       <file leaf-file-name="correlation_matrix.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/correlation_matrix.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="44" selection-end-column="113" />
+            <state relative-caret-position="581">
+              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="45" selection-end-column="94" />
               <folding>
                 <element signature="e#23#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FreeEnergy.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Analysis/FreeEnergy.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#12#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -314,19 +114,33 @@
       <file leaf-file-name="Plotter.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Analysis/Plotter.py">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="881">
+              <caret line="68" column="31" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
+              <folding>
+                <element signature="e#0#24#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pca2D.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sandbox/pca2D.py">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="24" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TrajectoryReader.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Analysis/TrajectoryReader.py">
+      <file leaf-file-name="pca.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bin/pca.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
-              <folding />
+            <state relative-caret-position="716">
+              <caret line="64" column="23" selection-start-line="64" selection-start-column="23" selection-end-line="64" selection-end-column="23" />
+              <folding>
+                <element signature="e#1#16#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -357,9 +171,14 @@
         <option value="$PROJECT_DIR$/bin/HDBSCAN.py" />
         <option value="$PROJECT_DIR$/Analysis/TrajectoryReader.py" />
         <option value="$PROJECT_DIR$/bin/correlation_matrix.py" />
-        <option value="$PROJECT_DIR$/Analysis/Plotter.py" />
         <option value="$PROJECT_DIR$/Analysis/Distance.py" />
         <option value="$PROJECT_DIR$/bin/rmsf.py" />
+        <option value="$PROJECT_DIR$/Analysis/Featurizer.py" />
+        <option value="$PROJECT_DIR$/Analysis/Histogrammer.py" />
+        <option value="$PROJECT_DIR$/Analysis/FreeEnergy.py" />
+        <option value="$PROJECT_DIR$/Analysis/Plotter.py" />
+        <option value="$PROJECT_DIR$/Analysis/DimensionReduction.py" />
+        <option value="$PROJECT_DIR$/bin/pca.py" />
       </list>
     </option>
   </component>
@@ -370,8 +189,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="24" />
-    <option name="width" value="1920" />
+    <option name="x" value="945" />
+    <option name="y" value="23" />
+    <option name="width" value="960" />
     <option name="height" value="1053" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -445,28 +265,10 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AMD-PYTHON" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AMD-PYTHON" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Analysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Cluster" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -475,6 +277,9 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/sandbox" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Analysis" />
     </key>
@@ -574,6 +379,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -708,27 +519,27 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1920" height="1053" extended-state="6" />
+    <frame x="945" y="23" width="960" height="1053" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.125" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -739,11 +550,84 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Analysis/Correlation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Analysis/TrajectoryProcessor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Analysis/AtomSelection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Analysis/Distance.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/rmsf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#23#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/correlation_matrix.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="44" selection-end-column="113" />
+          <folding>
+            <element signature="e#23#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Analysis/Plotter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="24" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Analysis/TrajectoryReader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Analysis/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -751,9 +635,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -769,9 +650,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -779,9 +657,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="23" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -799,7 +674,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="10" selection-start-line="10" selection-start-column="0" selection-end-line="12" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -813,7 +687,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Analysis/TrajectoryProcessor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
+        <state relative-caret-position="15">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
@@ -829,6 +703,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/bin/rmsf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+          <folding>
+            <element signature="e#23#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Analysis/Correlation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -839,40 +723,84 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Analysis/Plotter.py">
+    <entry file="file://$PROJECT_DIR$/Analysis/Distance.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="24" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
+          <caret line="0" column="12" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Analysis/Histogrammer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="13" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sandbox/pca2D.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/correlation_matrix.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="44" selection-end-column="113" />
+        <state relative-caret-position="581">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="45" selection-end-column="94" />
           <folding>
             <element signature="e#23#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Analysis/Distance.py">
+    <entry file="file://$PROJECT_DIR$/Analysis/Plotter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="49" />
+        <state relative-caret-position="881">
+          <caret line="68" column="31" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Analysis/Featurizer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Analysis/DimensionReduction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="45" column="33" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/rmsf.py">
+    <entry file="file://$PROJECT_DIR$/Analysis/FreeEnergy.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="791">
-          <caret line="58" column="21" selection-start-line="58" selection-start-column="21" selection-end-line="58" selection-end-column="21" />
+        <state relative-caret-position="315">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
-            <element signature="e#23#38#0" expanded="true" />
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/pca.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="716">
+          <caret line="64" column="23" selection-start-line="64" selection-start-column="23" selection-end-line="64" selection-end-column="23" />
+          <folding>
+            <element signature="e#1#16#0" expanded="true" />
           </folding>
         </state>
       </provider>

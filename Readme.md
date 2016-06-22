@@ -1,4 +1,4 @@
-Reorganized by RLM in the style of a python package.
+Reorganized in the style of a python package.
 
 The folder that's currently "Analysis" should be eventually renamed whatever we want the top-level package to be called.
 
