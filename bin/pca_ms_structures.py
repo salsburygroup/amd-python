@@ -56,9 +56,12 @@ UserInput = parser.parse_args()
 
 # Process trajectory
 trajectory = TrajectoryReader.DCD(topology_path=UserInput.structure, trajectory_path=UserInput.trajectory).load()
-trajectory = AtomSelection.Slice(trajectory=trajectory, atom_selection=UserInput.sel).select()
+trajectory_select = AtomSelection.Slice(trajectory=trajectory, atom_selection=UserInput.sel).select()
 assert isinstance(trajectory, mdtraj.Trajectory)
-xyz = Featurizer.XYZ(trajectory=trajectory).extract()
+xyz = Featurizer.XYZ(trajectory=trajectory_select).extract()
+del trajectory_select
+del trajectory
+trajectory = TrajectoryReader.DCD(topology_path=UserInput.structure, trajectory_path=UserInput.trajectory).load()
 
 projection, components, explained_variance = DimensionReduction.PCA(coordinates=xyz).reduce()
 for i in range(0, UserInput.max_components-1):
