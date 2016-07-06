@@ -66,6 +66,7 @@ for p1_ns in range(tenth_nanoseconds):
     t = mdtraj.load(trajectory, top=topology)
     sel = t.topology.select("not water")
     t_slice = t.atom_slice(sel)
+    t_slice = t_slice.superpose()
     t_slice = t_slice[p1_ns:25000 + p1_ns - 1]
     temp = t_slice.xyz
     frames = t_slice.xyz.shape[0]
