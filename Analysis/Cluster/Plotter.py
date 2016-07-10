@@ -1,3 +1,5 @@
+import matplotlib
+matplotlib.use('Agg') # For use on DEAC cluster
 import matplotlib.pyplot
 import numpy
 import pyemma
