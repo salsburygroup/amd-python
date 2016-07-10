@@ -1,4 +1,4 @@
-from clustering import Clustering
+from .clustering import Clustering
 import numpy as np
 import time
 
