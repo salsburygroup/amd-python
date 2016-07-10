@@ -1,12 +1,10 @@
-import numpy as np
-import random as rd
-from mymath import MyMath
-from kmeans import KMeans
-from wkmeans import WKMeans
-from mwkmeans import MWKMeans
-from pam import PartitionAroundMedoids
-from ward import Ward
-from mwpam import MWPAM
+from .mymath import MyMath
+from .kmeans import KMeans
+from .wkmeans import WKMeans
+from .mwkmeans import MWKMeans
+from .pam import PartitionAroundMedoids
+from .ward import Ward
+from .mwpam import MWPAM
 
 
 class Clustering(object):

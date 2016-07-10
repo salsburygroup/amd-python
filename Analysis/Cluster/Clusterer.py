@@ -1,11 +1,9 @@
 import hdbscan
-import Unsupervised.clustering
+from . import Unsupervised, Scorer, Optimizer
 import numpy
 from sklearn.cluster import MiniBatchKMeans
-import Scorer
 from sklearn import mixture
 from sklearn import cluster
-import Optimizer
 import copy
 
 

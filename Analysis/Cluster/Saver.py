@@ -2,10 +2,12 @@ import numpy
 import pandas
 import mdtraj
 import os
-import DCDShaper
+from .. import AtomSelection, Featurizer
 import scipy.spatial.distance
 import subprocess
 import PIL.Image
+import signal
+import glob
 
 
 class Saver:
@@ -71,7 +73,8 @@ class PDB(ClusterFrames):
         super().__init__(out_name, labels)
 
     def save(self):
-        trajectory_2d = DCDShaper.DCDShaper(trajectory=self.trajectory, atom_selection=self.atom_selection).make_2d()
+        trajectory_slice = AtomSelection.Slice(trajectory=self.trajectory, atom_selection=self.atom_selection).select()
+        trajectory_2d = Featurizer.XYZ(trajectory=trajectory_slice).extract()
         for i in range(0, int(max(self.labels)) + 1):
             directory = self.out_name + '/cluster' + str(i)
             os.makedirs(directory)
@@ -95,41 +98,59 @@ class Shadows(Saver):
         super().__init__(out_name)
 
     def save(self):
+        signal.signal(signal.SIGTTOU, signal.SIG_IGN)
         directory = os.path.dirname(__file__)
         shadow_helper = os.path.join(directory, 'resources', 'generate_shadow.vmd')
         middle_helper = os.path.join(directory, 'resources', 'generate_middle.vmd')
-        shadow_traj = mdtraj.load(self.shadow)
-        shadow_count = shadow_traj.n_frames
-        tachyon = os.path.join(directory, 'resources', 'tachyon')
-        stride = numpy.ceil(shadow_count/50)
 
-        vmd_render_shadow_cmd = (
-            '/Applications/VMD\\ 1.9.2.app/Contents/MacOs/startup.command ' + self.shadow + ' -dispdev text -e ' +
-            shadow_helper + ' -args -first 0 -last ' + str(shadow_count - 1) +
-            ' -stride ' + str(stride) + ' -rep ' + self.rep + ' -outfile ' + self.out_name + '/shadow.dat'
-        )
-        subprocess.call(vmd_render_shadow_cmd, shell=True)
+        vmd_render_shadow_cmd = ('vmd ' +
+                                 self.shadow + ' -dispdev text -e ' +
+                                 shadow_helper + ' -args ' +
+                                 ' -rep ' + self.rep)
+        subprocess.call([os.getenv('SHELL'), '-i', '-c', vmd_render_shadow_cmd], cwd=self.out_name)
+        shadow_pattern = self.out_name + "/shadow.*.tga"
+        if os.path.isfile(self.out_name + '/shadow.png'):
+            os.remove(self.out_name + '/shadow.png')
 
-        vmd_render_middle_cmd = (
-            '/Applications/VMD\\ 1.9.2.app/Contents/MacOs/startup.command ' + self.middle + ' -dispdev text -e ' +
-            middle_helper + ' -args -rep ' + self.rep + ' -outfile ' + self.out_name + '/middle.dat'
-            )
-        subprocess.call(vmd_render_middle_cmd, shell=True)
+        for file in glob.glob(shadow_pattern):
+            shadow_img = PIL.Image.open(file)
+            shadow_img = shadow_img.convert("RGBA")
+            shadow_data = shadow_img.getdata()
 
-        tachyon_render_shadow_cmd = (
-            tachyon + ' -trans_vmd ' + self.out_name + '/shadow.dat -o ' + self.out_name + '/shadow.tga'
-        )
-        subprocess.call(tachyon_render_shadow_cmd, shell=True)
+            new_shadow_data = []
+            for item in shadow_data:
+                if item[0] == 255 and item[1] == 255 and item[2] == 255:
+                    new_shadow_data.append((255, 255, 255, 0))
+                else:
+                    new_shadow_data.append((item[0], item[1], item[2], 26))
 
-        tachyon_render_middle_cmd = (
-            tachyon + ' -trans_vmd ' + self.out_name + '/middle.dat -o ' + self.out_name + '/middle.tga'
-        )
-        subprocess.call(tachyon_render_middle_cmd, shell=True)
+            shadow_img.putdata(new_shadow_data)
+
+            if os.path.isfile(self.out_name + '/shadow.png'):
+                shadow_old = PIL.Image.open(self.out_name + '/shadow.png')
+                shadow_new = PIL.Image.alpha_composite(shadow_img, shadow_old)
+                shadow_new.save(self.out_name + '/shadow.png')
+            else:
+                shadow_img.save(self.out_name + '/shadow.png', "PNG")
+
+        for file in glob.glob(shadow_pattern):
+            os.remove(file)
+
+        os.tcsetpgrp(0, os.getpgrp())
+
+        vmd_render_middle_command = ('vmd ' +
+                                 self.middle + ' -dispdev text -e ' +
+                                 middle_helper + ' -args ' + ' -rep ' + self.rep +
+                                 ' -outfile ' + self.out_name + '/middle.tga'
+                                 )
+
+        subprocess.call([os.getenv('SHELL'), '-i', '-c', vmd_render_middle_command], cwd=self.out_name)
+        os.tcsetpgrp(0, os.getpgrp())
 
         # Let's get rid of the white pixels and convert the TGAs to PNGs
-        middle_img = PIL.Image.open(self.out_name + '/middle.tga')
-        middle_img = middle_img.convert("RGBA")
-        middle_data = middle_img.getdata()
+        middle_image = PIL.Image.open(self.out_name + '/middle.tga')
+        middle_image = middle_image.convert("RGBA")
+        middle_data = middle_image.getdata()
 
         new_middle_data = []
         for item in middle_data:
@@ -138,26 +159,12 @@ class Shadows(Saver):
             else:
                 new_middle_data.append(item)
 
-        middle_img.putdata(new_middle_data)
-        middle_img.save(self.out_name + '/middle.png', "PNG")
-
-        shadow_img = PIL.Image.open(self.out_name + '/shadow.tga')
-        shadow_img = shadow_img.convert("RGBA")
-        shadow_data = shadow_img.getdata()
-
-        new_shadow_data = []
-        for item in shadow_data:
-            if item[0] == 255 and item[1] == 255 and item[2] == 255:
-                new_shadow_data.append((255, 255, 255, 0))
-            else:
-                new_shadow_data.append(item)
-
-        shadow_img.putdata(new_shadow_data)
-        shadow_img.save(self.out_name + '/shadow.png', "PNG")
+        middle_image.putdata(new_middle_data)
+        middle_image.save(self.out_name + '/middle.png', "PNG")
 
         # Now, let's layer them together
-        layered_img = PIL.Image.alpha_composite(shadow_img, middle_img)
+        layered_img = PIL.Image.alpha_composite(shadow_new, middle_image)
         layered_img.save(self.out_name + '/layered.png', "PNG")
 
-        blended_img = PIL.Image.blend(middle_img, shadow_img, 0.5)
+        blended_img = PIL.Image.blend(middle_image, shadow_new, 0.5)
         blended_img.save(self.out_name + '/blended.png', "PNG")

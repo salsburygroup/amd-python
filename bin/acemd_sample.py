@@ -35,6 +35,12 @@ inputs.add_argument('-c',
                     help='Configuration file as if you were running a full sim',
                     type=str,
                     required=True)
+inputs.add_argument('-sel',
+                    action='store',
+                    dest='sel',
+                    help='Atom selection',
+                    type=str,
+                    default='not water')
 UserInput = parser.parse_args()
 
 with open(UserInput.configuration_file, "r") as input_conf:
@@ -64,9 +70,9 @@ for p1_ns in range(tenth_nanoseconds):
     process = subprocess.Popen(acemd_cmd, shell=True)
     process.wait()
     t = mdtraj.load(trajectory, top=topology)
-    sel = t.topology.select("not water")
+    sel = t.topology.select(UserInput.sel)
     t_slice = t.atom_slice(sel)
-    t_slice = t_slice.superpose()
+    t_slice = t_slice.superpose(t_slice)
     t_slice = t_slice[p1_ns:25000 + p1_ns - 1]
     temp = t_slice.xyz
     frames = t_slice.xyz.shape[0]
@@ -74,7 +80,7 @@ for p1_ns in range(tenth_nanoseconds):
     data = temp.reshape((frames, atoms * 3))
     data = data.astype('float64')
     del temp
-    clusterer = hdbscan.HDBSCAN(min_cluster_size=2)
+    clusterer = hdbscan.HDBSCAN(min_cluster_size=10)
     cluster_labels = clusterer.fit_predict(data)
     num_frames = len(cluster_labels)
     labeled_traj = pandas.DataFrame(columns=['frame', 'cluster'])

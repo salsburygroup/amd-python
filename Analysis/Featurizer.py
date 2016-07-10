@@ -13,4 +13,5 @@ class FeatureExtractor:
 class XYZ(FeatureExtractor):
     def extract(self):
         xyz_2d = self.trajectory.xyz.reshape(self.trajectory.n_frames, self.trajectory.n_atoms * 3)
+        xyz_2d = xyz_2d.astype('float64')
         return xyz_2d

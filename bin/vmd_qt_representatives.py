@@ -35,6 +35,5 @@ with open (UserInput.cluster_data) as file:
         cluster = list(map(int,line.split( ))) #From string to ints
         trajectory_subset = trajectory.slice(cluster)
         trajectory_subset.superpose(trajectory_subset,frame=0) #Subtracting off the median
-
         trajectory_subset[0].save(UserInput.cwd + '/rep{0}.pdb'.format(cluster_number))
         cluster_number += 1
