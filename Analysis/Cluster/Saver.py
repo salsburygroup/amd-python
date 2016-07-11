@@ -6,7 +6,6 @@ from .. import AtomSelection, Featurizer
 import scipy.spatial.distance
 import subprocess
 import PIL.Image
-import signal
 import glob
 
 
@@ -98,7 +97,6 @@ class Shadows(Saver):
         super().__init__(out_name)
 
     def save(self):
-        signal.signal(signal.SIGTTOU, signal.SIG_IGN)
         directory = os.path.dirname(__file__)
         shadow_helper = os.path.join(directory, 'resources', 'generate_shadow.vmd')
         middle_helper = os.path.join(directory, 'resources', 'generate_middle.vmd')
@@ -107,7 +105,15 @@ class Shadows(Saver):
                                  self.shadow + ' -dispdev text -e ' +
                                  shadow_helper + ' -args ' +
                                  ' -rep ' + self.rep)
-        subprocess.call([os.getenv('SHELL'), '-i', '-c', vmd_render_shadow_cmd], cwd=self.out_name)
+        vmd_render_middle_command = ('vmd ' +
+                                     self.middle + ' -dispdev text -e ' +
+                                     middle_helper + ' -args ' + ' -rep ' + self.rep +
+                                     ' -outfile ' + self.out_name + '/middle.tga'
+                                     )
+        subprocess.call(
+            [os.getenv('SHELL'), '-i', '-c', vmd_render_shadow_cmd + '; ' + vmd_render_middle_command + '; exit'],
+            cwd=self.out_name
+        )
         shadow_pattern = self.out_name + "/shadow.*.tga"
         if os.path.isfile(self.out_name + '/shadow.png'):
             os.remove(self.out_name + '/shadow.png')
@@ -135,17 +141,6 @@ class Shadows(Saver):
 
         for file in glob.glob(shadow_pattern):
             os.remove(file)
-
-        os.tcsetpgrp(0, os.getpgrp())
-
-        vmd_render_middle_command = ('vmd ' +
-                                 self.middle + ' -dispdev text -e ' +
-                                 middle_helper + ' -args ' + ' -rep ' + self.rep +
-                                 ' -outfile ' + self.out_name + '/middle.tga'
-                                 )
-
-        subprocess.call([os.getenv('SHELL'), '-i', '-c', vmd_render_middle_command], cwd=self.out_name)
-        os.tcsetpgrp(0, os.getpgrp())
 
         # Let's get rid of the white pixels and convert the TGAs to PNGs
         middle_image = PIL.Image.open(self.out_name + '/middle.tga')
