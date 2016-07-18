@@ -21,7 +21,7 @@ set requiredParameters {outfile rep}
 foreach parameter $requiredParameters {
     if {$arg($parameter) == ""} {
         puts stderr "Missing required parameter: -$parameter"
-        exit 1
+        az 1
     }
 }
 set viewplist {}

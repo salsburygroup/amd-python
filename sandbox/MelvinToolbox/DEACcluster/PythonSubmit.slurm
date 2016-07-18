@@ -1,6 +1,5 @@
 #!/bin/bash -l
 #SBATCH --partition=large
-#SBATCH --mail-type=BEGIN,END,FAIL
 #SBATCH --mail-user=melvrl13@wfu.edu
 #SBATCH --account=salsburygrp
 #SBATCH --nodes=1
