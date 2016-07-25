@@ -1,9 +1,10 @@
-import Clusterer
-import DCDReader
-import DCDShaper
-import Plotter
-import Saver
-import Scorer
+from . import Clusterer
+from .. import AtomSelection
+from .. import TrajectoryReader
+from .. import Featurizer
+from . import Plotter
+from . import Saver
+from . import Scorer
 import os
 import glob
 
@@ -22,10 +23,9 @@ class Predictor:
 
     def predict(self):
         # Prepare DCD
-        self.trajectory = DCDReader.DCDReader(dcd_path=self.dcd_path, topology_path=self.topology_path).load()
-        self.trajectory_2d = DCDShaper.DCDShaper(
-            trajectory=self.trajectory, atom_selection=self.atom_selection
-        ).make_2d()
+        self.trajectory = TrajectoryReader.DCD(trajectory_path=self.dcd_path, topology_path=self.topology_path).load()
+        selection = AtomSelection.Slice(trajectory=self.trajectory, atom_selection=self.atom_selection)
+        self.trajectory_2d = Featurizer.XYZ(trajectory=selection).extract()
         # Cluster
         clusterer = getattr(Clusterer, self.method)(self.trajectory_2d, **self.kwargs)
         clusterer.fit()

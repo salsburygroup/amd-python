@@ -133,7 +133,7 @@ df.to_csv(UserInput.out_name + '_raw.csv',index=False) #Save as csv
 hbond_trajectory = pd.DataFrame(index=list(range(0, len(u.trajectory)))) #Empty data frame in memory
 for frame in list(range(0, len(u.trajectory))):
     current_frame_hbonds = df.loc[df['time'] == int(frame), ['donor_resnm', 'donor_resid', 'acceptor_resnm', 'acceptor_resid']] #All hbonds in frame
-    current_frame_hbond_pairs = [row['donor_resnm'] + str(row['donor_resid']) + '-' + row['donor_resnm'] + str(row['acceptor_resid'])
+    current_frame_hbond_pairs = [row['donor_resnm'] + str(row['donor_resid']) + '-' + row['acceptor_resnm'] + str(row['acceptor_resid'])
                                  for index, row in  current_frame_hbonds.iterrows()]
     for pair in current_frame_hbond_pairs:
         hbond_trajectory.loc[frame, pair] = 1 #Fill in the empties with 1 if the hbond occurs
