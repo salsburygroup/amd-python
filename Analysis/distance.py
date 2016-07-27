@@ -23,3 +23,14 @@ class RMSF(Distance):
         # Code at https://github.com/schilli/Tools/blob/master/rmsf.py uses 3*n_frames. Seems wrong...
         rmsf = (sum_squares/sub_trajectory.n_frames)**0.5
         return rmsf
+
+
+class RMSD(Distance):
+    def __init__(self, trajectory, atom_selection, reference_frame=0):
+        self.reference_frame = reference_frame
+        super().__init__(trajectory,atom_selection)
+    def calculate(self):
+        sub_trajectory = Slice(trajectory=self.trajectory, atom_selection=self.sel).select()
+        assert isinstance(sub_trajectory, mdtraj.Trajectory)
+        rmsd = mdtraj.rmsd(self.trajectory, self.trajectory, frame=self.reference_frame)
+        return rmsd
