@@ -3,7 +3,11 @@ import argparse
 from Analysis import Distance, Plotter, Saver, TrajectoryReader
 
 # Initialize parser. The default help has poor labeling. See http://bugs.python.org/issue9694
-parser = argparse.ArgumentParser(description='Calculate RMSD time series', add_help=False)
+parser = argparse.ArgumentParser(
+    description='Calculate RMSD time series. Centers structures at' +
+                ' origin before beginning but does not otherwise align.',
+    add_help=False
+)
 
 # List all possible user input
 inputs = parser.add_argument_group('Input arguments')
@@ -68,5 +72,5 @@ Plotter.Y(
     out_name=UserInput.out_name + '.png',
     x_label='Frame',
     y_label='RMSD (nm)',
-    title='RMSD timeseris'
+    title='RMSD timeseries'
 ).plot()

@@ -34,7 +34,7 @@ python_HDBSCAN_cmd = (
     ',m=HDBSCAN' + 
     ',a=' + UserInput.sel + 
     ',o=' + os.path.join(UserInput.out_name, 'HDBSCAN') + 
-    ' ' +  os.path.join(python_helpers, 'PythonSubmit.slurm')
+    ' ' +  os.path.join(python_helpers, 'PythonClusterSubmit.slurm')
     )
 print(python_HDBSCAN_cmd)
 subprocess.call(python_HDBSCAN_cmd, shell=True)
@@ -49,7 +49,7 @@ python_IMWKRescaled_cmd = (
     ',m=IMWKRescaled' + 
     ',a=' + UserInput.sel + 
     ',o=' + os.path.join(UserInput.out_name, 'IMWKRescaled') + 
-    ' ' +  os.path.join(python_helpers, 'PythonSubmit.slurm')
+    ' ' +  os.path.join(python_helpers, 'PythonClusterSubmit.slurm')
     )
 print(python_IMWKRescaled_cmd)
 subprocess.call(python_IMWKRescaled_cmd, shell=True)
@@ -63,7 +63,7 @@ subprocess.call(python_IMWKRescaled_cmd, shell=True)
 #    ',m=AffinityPropagation' + 
 #    ',a=' + UserInput.sel + 
 #    ',o=' + os.path.join(UserInput.out_name, 'AffinityPropagation') + 
-#    ' ' +  os.path.join(python_helpers, 'PythonSubmit.slurm')
+#    ' ' +  os.path.join(python_helpers, 'PythonClusterSubmit.slurm')
 #    )
 #print(python_AffinityPropagation_cmd)
 #subprocess.call(python_AffinityPropagation_cmd, shell=True)
@@ -77,7 +77,7 @@ subprocess.call(python_IMWKRescaled_cmd, shell=True)
 #    ',m=GMM'
 #    ',a=' + UserInput.sel + 
 #    ',o=' + os.path.join(UserInput.out_name, 'GMM') + 
-#    ' ' +  os.path.join(python_helpers, 'PythonSubmit.slurm')
+#    ' ' +  os.path.join(python_helpers, 'PythonClusterSubmit.slurm')
 #    )
 #print(python_GMM_cmd)
 #subprocess.call(python_GMM_cmd, shell=True)
@@ -91,7 +91,7 @@ subprocess.call(python_IMWKRescaled_cmd, shell=True)
 #    ',m=KMeans'
 #    ',a=' + UserInput.sel + 
 #    ',o=' + os.path.join(UserInput.out_name, 'KMeans') + 
-#    ' ' +  os.path.join(python_helpers, 'PythonSubmit.slurm')
+#    ' ' +  os.path.join(python_helpers, 'PythonClusterSubmit.slurm')
 #    )
 #print(python_KMeans_cmd)
 #subprocess.call(python_KMeans_cmd, shell=True)
@@ -105,7 +105,7 @@ subprocess.call(python_IMWKRescaled_cmd, shell=True)
 #    ',m=MeanShift'
 #    ',a=' + UserInput.sel + 
 #    ',o=' + os.path.join(UserInput.out_name, 'MeanShift') + 
-#    ' ' +  os.path.join(python_helpers, 'PythonSubmit.slurm')
+#    ' ' +  os.path.join(python_helpers, 'PythonClusterSubmit.slurm')
 #    )
 #print(python_MeanShift_cmd)
 #subprocess.call(python_MeanShift_cmd, shell=True)
@@ -119,7 +119,7 @@ subprocess.call(python_IMWKRescaled_cmd, shell=True)
 #    ',m=VBGMM'
 #    ',a=' + UserInput.sel + 
 #    ',o=' + os.path.join(UserInput.out_name, 'VBGMM') + 
-#    ' ' +  os.path.join(python_helpers, 'PythonSubmit.slurm')
+#    ' ' +  os.path.join(python_helpers, 'PythonClusterSubmit.slurm')
 #    )
 #print(python_VBGMM_cmd)
 #subprocess.call(python_VBGMM_cmd, shell=True)

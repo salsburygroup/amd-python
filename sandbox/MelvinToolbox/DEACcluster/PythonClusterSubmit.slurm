@@ -1,9 +1,9 @@
 #!/bin/bash -l
-#SBATCH --partition=large
+#SBATCH --partition=medium
 #SBATCH --mail-user=melvrl13@wfu.edu
 #SBATCH --account=salsburygrp
 #SBATCH --nodes=1
-#SBATCH --tasks-per-node=8
+#SBATCH --tasks-per-node=6
 #SBATCH --mem=120gb
 #SBATCH --time=120:00:00
 
