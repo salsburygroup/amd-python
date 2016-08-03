@@ -1,11 +1,10 @@
 import mdtraj
-from .TrajectoryReader import DCDReader
 
 
 class Processor:
-    def __init__(self, dcd_path, top_path, atom_selection):
-        self.dcd = dcd_path
-        self.top = top_path
+    def __init__(self, trajectory, atom_selection):
+        assert isinstance(trajectory, mdtraj.Trajectory)
+        self.trajectory = trajectory
         self.sel = atom_selection
 
     def process(self):
@@ -15,10 +14,8 @@ class Processor:
 class AtomIndexer(Processor):
     # From Oliver Schillinger's mdtraj tools https://github.com/schilli/Tools
     def process(self):
-        trajectory = DCDReader(dcd_path=self.dcd, topology_path=self.top)
-        assert isinstance(trajectory, mdtraj.Trajectory)
-        atom_indices = trajectory.topology.select(self.sel)
-        return atom_indices
+        self.atom_indices = self.trajectory.topology.select(self.sel)
+        return self.atom_indices
 
 
 class Stripper(Processor):
@@ -33,4 +30,6 @@ class Strider(Processor):
 
 class Aligner(Processor):
     def process(self):
-        raise NotImplementedError
+        indices = AtomIndexer(self.trajectory, self.sel).process()
+        aligned_trajectory = self.trajectory.superpose(self.trajectory, atom_indices=indices)
+        return aligned_trajectory

@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 import argparse
-from Analysis import Distance, Plotter, Saver, TrajectoryReader
+from Analysis import Distance, Plotter, Saver, TrajectoryReader, TrajectoryProcessor
 
 # Initialize parser. The default help has poor labeling. See http://bugs.python.org/issue9694
 parser = argparse.ArgumentParser(
@@ -45,6 +45,11 @@ inputs.add_argument(
     default='all'
 )
 inputs.add_argument(
+    '-align',
+    action='store_true',
+    help='Align to atom selection before calculating?',
+)
+inputs.add_argument(
     '-o',
     action='store',
     dest='out_name',
@@ -58,6 +63,10 @@ UserInput = parser.parse_args()
 
 # Read trajectory
 trajectory = TrajectoryReader.DCD(topology_path=UserInput.structure, trajectory_path=UserInput.trajectory).load()
+
+if UserInput.align:
+    trajectory = TrajectoryProcessor.Aligner(trajectory=trajectory, atom_selection=UserInput.sel).process()
+
 # Calculate RMSD
 rmsd_timeseries = Distance.RMSD(
     trajectory=trajectory, atom_selection=UserInput.sel, reference_frame=UserInput.ref_frame

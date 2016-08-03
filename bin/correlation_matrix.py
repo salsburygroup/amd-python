@@ -49,7 +49,7 @@ trajectory = AtomSelection.Slice(trajectory=trajectory, atom_selection=UserInput
 correlation_matrix = Correlation.Pearson(trajectory=trajectory).calculate()
 
 # Save HeatMap
-Plotter.HeatMap(y=correlation_matrix,
+Plotter.SimplePColor(y=correlation_matrix,
                 out_name=UserInput.out_name+'.png',
                 x_label=UserInput.sel,
                 y_label=UserInput.sel,

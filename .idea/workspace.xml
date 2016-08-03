@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60be380e-7fcd-487f-bd2a-7200b1968f18" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Analysis/TrajectoryProcessor.py" afterPath="$PROJECT_DIR$/Analysis/TrajectoryProcessor.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/correlation_matrix.py" afterPath="$PROJECT_DIR$/bin/correlation_matrix.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/rgyr.py" afterPath="$PROJECT_DIR$/bin/rgyr.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/rmsd.py" afterPath="$PROJECT_DIR$/bin/rmsd.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sandbox/CorrelationPropagator/.idea/workspace.xml" afterPath="$PROJECT_DIR$/sandbox/CorrelationPropagator/.idea/workspace.xml" />
     </list>
     <ignored path="AMD-PYTHON.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,18 +29,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Clusterer.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Analysis/Cluster/Clusterer.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="85" column="25" selection-start-line="85" selection-start-column="25" selection-end-line="85" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#14#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Distance.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Analysis/Distance.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -48,11 +41,23 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="rgyr.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/rgyr.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="825">
+              <caret line="55" column="40" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="40" />
+              <folding>
+                <element signature="e#807#824#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="rmsd.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bin/rmsd.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="881">
-              <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+            <state relative-caret-position="926">
+              <caret line="77" column="6" selection-start-line="77" selection-start-column="6" selection-end-line="77" selection-end-column="6" />
               <folding>
                 <element signature="e#23#38#0" expanded="true" />
               </folding>
@@ -60,33 +65,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cluster_automatic.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bin/cluster_automatic.py">
+      <file leaf-file-name="TrajectoryProcessor.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Analysis/TrajectoryProcessor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1425">
-              <caret line="98" column="24" selection-start-line="98" selection-start-column="24" selection-end-line="98" selection-end-column="24" />
+            <state relative-caret-position="525">
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Predictor.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Analysis/Cluster/Predictor.py">
+      <file leaf-file-name="correlation_matrix.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/correlation_matrix.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="26" column="68" selection-start-line="26" selection-start-column="68" selection-end-line="26" selection-end-column="68" />
+            <state relative-caret-position="915">
+              <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
               <folding>
-                <element signature="e#0#23#0" expanded="true" />
+                <element signature="e#23#38#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TrajectoryReader.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Analysis/TrajectoryReader.py">
+      <file leaf-file-name="Plotter.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Analysis/Plotter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+            <state relative-caret-position="1020">
+              <caret line="68" column="31" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -152,12 +157,10 @@
         <option value="$PROJECT_DIR$/Analysis/Cluster/DCDReader.py" />
         <option value="$PROJECT_DIR$/Analysis/TrajectoryProcessing.py" />
         <option value="$PROJECT_DIR$/Analysis/Distances.py" />
-        <option value="$PROJECT_DIR$/Analysis/TrajectoryProcessor.py" />
         <option value="$PROJECT_DIR$/Analysis/AtomSelection.py" />
         <option value="$PROJECT_DIR$/Analysis/Saver.py" />
         <option value="$PROJECT_DIR$/bin/HDBSCAN.py" />
         <option value="$PROJECT_DIR$/Analysis/TrajectoryReader.py" />
-        <option value="$PROJECT_DIR$/bin/correlation_matrix.py" />
         <option value="$PROJECT_DIR$/bin/rmsf.py" />
         <option value="$PROJECT_DIR$/Analysis/Histogrammer.py" />
         <option value="$PROJECT_DIR$/Analysis/FreeEnergy.py" />
@@ -186,6 +189,9 @@
         <option value="$PROJECT_DIR$/staged/hbond_analysis_resid.py" />
         <option value="$PROJECT_DIR$/Analysis/Cluster/Predictor.py" />
         <option value="$PROJECT_DIR$/Analysis/Distance.py" />
+        <option value="$PROJECT_DIR$/bin/correlation_matrix.py" />
+        <option value="$PROJECT_DIR$/bin/rgyr.py" />
+        <option value="$PROJECT_DIR$/Analysis/TrajectoryProcessor.py" />
         <option value="$PROJECT_DIR$/bin/rmsd.py" />
       </list>
     </option>
@@ -245,8 +251,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -371,6 +375,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -633,6 +639,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -644,7 +651,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -730,13 +736,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2016.1/python_stubs/-430937125/sys.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2016.1/python_stubs/-430937125/sys.py" />
     <entry file="file://$PROJECT_DIR$/bin/acemd_monitor.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -899,13 +899,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/rgyr.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Analysis/Saver.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -934,54 +927,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/correlation_matrix.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="45" column="47" selection-start-line="0" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Analysis/Plotter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="68" column="31" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/staged/hbond_analysis_resid.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1725">
           <caret line="122" column="19" selection-start-line="122" selection-start-column="19" selection-end-line="122" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Analysis/TrajectoryProcessor.py">
+    <entry file="file://$PROJECT_DIR$/Analysis/Cluster/Clusterer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="1185">
+          <caret line="85" column="25" selection-start-line="85" selection-start-column="25" selection-end-line="85" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Analysis/Cluster/Plotter.py">
+    <entry file="file://$PROJECT_DIR$/bin/cluster_automatic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="12" selection-start-line="22" selection-start-column="8" selection-end-line="24" selection-end-column="41" />
+        <state relative-caret-position="1425">
+          <caret line="98" column="24" selection-start-line="98" selection-start-column="24" selection-end-line="98" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Analysis/Cluster/Predictor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="26" column="68" selection-start-line="26" selection-start-column="68" selection-end-line="26" selection-end-column="68" />
+          <folding>
+            <element signature="e#0#23#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Analysis/TrajectoryReader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Analysis/Cluster/Optimizer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Analysis/Cluster/Markov.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -997,30 +982,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Analysis/Cluster/Predictor.py">
+    <entry file="file://$PROJECT_DIR$/Analysis/Cluster/Markov.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="26" column="68" selection-start-line="26" selection-start-column="68" selection-end-line="26" selection-end-column="68" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/cluster_automatic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1425">
-          <caret line="98" column="24" selection-start-line="98" selection-start-column="24" selection-end-line="98" selection-end-column="24" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Analysis/Cluster/Clusterer.py">
+    <entry file="file://$PROJECT_DIR$/Analysis/Plotter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="85" column="25" selection-start-line="85" selection-start-column="25" selection-end-line="85" selection-end-column="25" />
+        <state relative-caret-position="1020">
+          <caret line="68" column="31" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Analysis/Cluster/Plotter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="12" selection-start-line="22" selection-start-column="8" selection-end-line="24" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/correlation_matrix.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="915">
+          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#23#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/rgyr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="825">
+          <caret line="55" column="40" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="40" />
+          <folding>
+            <element signature="e#807#824#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1035,18 +1036,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Analysis/TrajectoryReader.py">
+    <entry file="file://$PROJECT_DIR$/Analysis/TrajectoryProcessor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+        <state relative-caret-position="525">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/rmsd.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="881">
-          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+        <state relative-caret-position="926">
+          <caret line="77" column="6" selection-start-line="77" selection-start-column="6" selection-end-line="77" selection-end-column="6" />
           <folding>
             <element signature="e#23#38#0" expanded="true" />
           </folding>

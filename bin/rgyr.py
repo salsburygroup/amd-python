@@ -22,7 +22,7 @@
 import MDAnalysis
 import argparse
 import numpy as np
-
+import matplotlib.pyplot as plt
 #Initialize variables
 Rgyr = []
 
@@ -35,7 +35,7 @@ inputs.add_argument('-h', '--help', action='help')
 inputs.add_argument('-structure', action='store', dest='structure',help='Structure file corresponding to trajectory',type=str,required=True)
 inputs.add_argument('-traj', action='store', dest='trajectory',help='Trajectory',type=str,required=True)
 inputs.add_argument('-sel', action='store', dest='sel', help='Atom selection',type=str,default='all')
-inputs.add_argument('-o', action='store', dest='out_name',help='Output file',type=str,required=True)
+inputs.add_argument('-o', action='store', dest='out_name',help='Output prefix',type=str,required=True)
 
 #Parse into useful form
 UserInput=parser.parse_args()
@@ -51,5 +51,12 @@ for frames in u.trajectory:
 #Make into a numpy array
 Rgyr = np.array(Rgyr)
 
+
 #Save as a column in a text file.
-np.savetxt(UserInput.out_name,Rgyr)
+np.savetxt(UserInput.out_name + '.txt', Rgyr)
+
+plt.plot(Rgyr)
+plt.title('RGYR Timeseries')
+plt.xlabel('Frame')
+plt.ylabel('RGYR')
+plt.savefig(UserInput.out_name + '.png')
