@@ -1,6 +1,7 @@
 import matplotlib
 matplotlib.use('Agg') # For use on DEAC cluster
 import matplotlib.pyplot
+import matplotlib.colors
 import numpy
 
 
@@ -63,6 +64,25 @@ class MeshPColor(Plotter):
         masked_y = numpy.ma.masked_where(numpy.isnan(self.y), self.y)
         matplotlib.pyplot.figure()
         matplotlib.pyplot.pcolormesh(self.x_edges, self.y_edges, masked_y.T)
+        matplotlib.pyplot.colorbar()
+        matplotlib.pyplot.xlabel(self.x_label)
+        matplotlib.pyplot.ylabel(self.y_label)
+        matplotlib.pyplot.title(self.title)
+        matplotlib.pyplot.savefig(self.out_name)
+        matplotlib.pyplot.clf()
+
+
+class MeshContour(Plotter):
+    def __init__(self, y, x_edges, y_edges, out_name, x_label=' ', y_label=' ', title=' '):
+        self.x_edges = x_edges
+        self.y_edges = y_edges
+        super().__init__(y, out_name, x_label, y_label, title)
+
+    def plot(self):
+        masked_y = numpy.ma.masked_where(numpy.isnan(self.y), self.y)
+        extent = (self.y_edges[0], self.y_edges[-1], self.x_edges[0], self.x_edges[-1])
+        matplotlib.pyplot.figure()
+        matplotlib.pyplot.contourf(masked_y, extent=extent, cmap=matplotlib.pyplot.cm.get_cmap("jet"))
         matplotlib.pyplot.colorbar()
         matplotlib.pyplot.xlabel(self.x_label)
         matplotlib.pyplot.ylabel(self.y_label)

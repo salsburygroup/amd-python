@@ -1,5 +1,7 @@
 
 import argparse
+import os
+import numpy
 from Analysis import AtomSelection, DimensionReduction, Featurizer, FreeEnergy, Plotter, Saver, TrajectoryReader
 
 # Initialize parser. The default help has poor labeling. See http://bugs.python.org/issue9694
@@ -41,7 +43,7 @@ inputs.add_argument('-n',
 inputs.add_argument('-o',
                     action='store',
                     dest='out_name',
-                    help='Output prefix for text and png files',
+                    help='Output folder for text and png files',
                     type=str,
                     required=True
                     )
@@ -57,18 +59,18 @@ del trajectory
 
 projection, components, explained_variance = DimensionReduction.PCA(coordinates=xyz).reduce()
 
-Saver.Array(array=projection, out_name=UserInput.out_name + '_projection.txt').save()
-Saver.Array(array=components, out_name=UserInput.out_name + '_components.txt').save()
-Saver.Array(array=explained_variance, out_name=UserInput.out_name + '_explained_variance.txt').save()
+Saver.Array(array=projection, out_name=os.path.join(UserInput.out_name, 'projection.txt')).save()
+Saver.Array(array=components, out_name=os.path.join(UserInput.out_name , 'components.txt')).save()
+Saver.Array(array=explained_variance, out_name=os.path.join(UserInput.out_name, 'explained_variance.txt')).save()
 
 for i in range(0, UserInput.max_components - 1):
     for j in range(i + 1, UserInput.max_components):
-        energy, x_edges, y_edges = FreeEnergy.FreedmanDiaconis(projection[:, i], projection[:, j]).calculate()
-        Plotter.MeshPColor(y=energy,
+        energy, x_edges, y_edges = FreeEnergy.Rice(projection[:, i], projection[:, j]).calculate()
+        Plotter.MeshContour(y=energy,
                            x_edges=x_edges,
                            y_edges=y_edges,
                            x_label='PCA_{0} ({1:.2f}%)'.format(i, explained_variance[i] * 100),
                            y_label='PCA_{0} ({1:.2f}%)'.format(j, explained_variance[j] * 100),
                            title='PCA_{0} and PCA_{1}'.format(i, j),
-                           out_name=UserInput.out_name + '_PCA_{0}_PCA{1}.png'.format(i, j)
+                           out_name=os.path.join(UserInput.out_name, 'PCA_{0}_PCA{1}.png'.format(i, j))
                            ).plot()

@@ -19,3 +19,14 @@ class FreedmanDiaconis(TwoDimensions):
         histogram[histogram == 0] = numpy.nan
         energy_landscape = -0.6 * numpy.log(histogram)
         return energy_landscape, x_edges, y_edges
+
+
+class Rice(TwoDimensions):
+    def calculate(self):
+        histogram, x_edges, y_edges = Histogrammer.Rice(
+            vector1=self.vector1,
+            vector2=self.vector2
+        ).bin()
+        histogram[histogram == 0] = numpy.nan
+        energy_landscape = -0.6 * numpy.log(histogram)
+        return energy_landscape, x_edges, y_edges

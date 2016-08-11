@@ -20,3 +20,10 @@ class FreedmanDiaconis(TwoDimensions):
         bins = numpy.ceil((numpy.max(temp[:, 0]) - numpy.min(temp[:, 0])) / bin_width)
         histogram, x_edges, y_edges = numpy.histogram2d(temp[:, 0], temp[:, 1], bins=bins)
         return histogram, x_edges, y_edges
+
+
+class Rice(TwoDimensions):
+    def bin(self):
+        bins = numpy.floor(2 * len(self.vector1) **(1./3))
+        histogram, x_edges, y_edges = numpy.histogram2d(self.vector1, self.vector2, bins=bins)
+        return histogram, x_edges, y_edges
