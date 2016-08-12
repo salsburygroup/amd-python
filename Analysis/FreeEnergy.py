@@ -1,6 +1,8 @@
 import numpy
 from . import Histogrammer
 
+# TODO: Free energy shouldn't care about binning method
+
 class TwoDimensions:
     def __init__(self, vector1, vector2):
         self.vector1 = vector1

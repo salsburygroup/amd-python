@@ -33,3 +33,15 @@ class Aligner(Processor):
         indices = AtomIndexer(self.trajectory, self.sel).process()
         aligned_trajectory = self.trajectory.superpose(self.trajectory, atom_indices=indices)
         return aligned_trajectory
+
+
+class Wrapper(Processor):
+    def process(self):
+        raise NotImplementedError
+
+
+class Unwrapper(Processor):
+    def process(self):
+        raise NotImplementedError
+
+

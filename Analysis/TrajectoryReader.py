@@ -17,3 +17,8 @@ class DCD(Reader):
     def load(self):
         trajectory = mdtraj.load(self.trajectory, top=self.topology)
         return trajectory
+
+
+class BigDCD(Reader):
+    def load(self):
+        raise NotImplementedError
