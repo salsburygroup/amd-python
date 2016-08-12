@@ -611,7 +611,7 @@ proc take_picture {args} {
   # (remember to delete the files yourself
   if {$arg1 == "reset"} {
     set take_picture(frame)  0
-    set take_picture(format) "./shadow.%09d.png"
+    set take_picture(format) "./shadow.%09d.tga"
     set take_picture(method) TachyonInternal
     set take_picture(modulo) 1
     set take_picture(exec)    {}

@@ -98,13 +98,13 @@ with open (UserInput.cluster_data) as file:
         os.tcsetpgrp(0,os.getpgrp())
 
 
-        shadow_pattern = directory + "/shadow.*.png"
+        shadow_pattern = directory + "/shadow.*.tga"
         if os.path.isfile(directory + '/shadow.png'):
             os.remove(directory + '/shadow.png')
 
         for fname in glob.glob(shadow_pattern):
             shadow_img = Image.open(fname)
- #           shadow_img = shadow_img.convert("RGBA")
+            shadow_img = shadow_img.convert("RGBA")
             shadow_data = shadow_img.getdata()
 
             new_shadow_data = []
@@ -129,14 +129,14 @@ with open (UserInput.cluster_data) as file:
         vmd_render_median_cmd = ('vmd ' 
                 + directory + '/mu.pdb -dispdev text -e ' 
                 + median_helper + ' -args '  + ' -rep ' + UserInput.rep + 
-                ' -outfile ' + directory + '/median.png'
+                ' -outfile ' + directory + '/median.tga'
                 )
         vmd_render_median=subprocess.call([os.getenv('SHELL'), '-i', '-c', vmd_render_median_cmd], cwd=directory)
         os.tcsetpgrp(0,os.getpgrp())
 
         #Let's get rid of the white pixels and convert the TGAs to PNGs
-        median_img = Image.open(directory + '/median.png')
-#        median_img = median_img.convert("RGBA")
+        median_img = Image.open(directory + '/median.tga')
+        median_img = median_img.convert("RGBA")
         median_data = median_img.getdata()
 
         new_median_data = []

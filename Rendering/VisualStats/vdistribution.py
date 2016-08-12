@@ -45,14 +45,14 @@ vmd_render_shadow_cmd = (
 vmd_render_shadow=subprocess.call([os.getenv('SHELL'), '-i', '-c', vmd_render_shadow_cmd], cwd=UserInput.directory)
 os.tcsetpgrp(0,os.getpgrp())
 
-shadow_pattern = UserInput.directory + "/shadow.*.png"
+shadow_pattern = UserInput.directory + "/shadow.*.tga"
 
 if os.path.isfile(UserInput.directory + '/shadow.png'):
     os.remove(UserInput.directory + '/shadow.png')
 
 for fname in glob.glob(shadow_pattern):
     shadow_img = Image.open(fname)
-#    shadow_img = shadow_img.convert("RGBA")
+    shadow_img = shadow_img.convert("RGBA")
     shadow_data = shadow_img.getdata()
 
     new_shadow_data = []
@@ -79,15 +79,15 @@ vmd_render_middle_cmd = (
         'vmd '
         + UserInput.middle + ' -dispdev text -e ' 
         + middle_helper + ' -args -rep ' + UserInput.rep + ' -outfile '
-        + UserInput.directory + '/middle.png'
+        + UserInput.directory + '/middle.tga'
         )
 vmd_render_middle=subprocess.call([os.getenv('SHELL'), '-i', '-c', vmd_render_middle_cmd], cwd=UserInput.directory)
 os.tcsetpgrp(0,os.getpgrp())
 
 
 #Let's get rid of the white pixels and convert the TGAs to PNGs
-middle_img = Image.open(UserInput.directory + '/middle.png')
-#middle_img = middle_img.convert("RGBA")
+middle_img = Image.open(UserInput.directory + '/middle.tga')
+middle_img = middle_img.convert("RGBA")
 middle_data = middle_img.getdata()
 
 new_middle_data = []
