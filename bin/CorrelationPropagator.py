@@ -1,5 +1,7 @@
 import mdtraj
 import numpy
+from tempfile import mkdtemp
+import os.path as path
 
 
 class CorrelationPropagator:
@@ -16,9 +18,17 @@ class CorrelationPropagator:
     def matrix(self):
         trajectory = mdtraj.load(self.dcd_path, top=self.top_path)
         deltas = numpy.empty([trajectory.n_frames-self.tau, trajectory.topology.n_atoms, 3], dtype=float)
-        dots = numpy.empty([trajectory.n_frames-self.tau, trajectory.topology.n_atoms, trajectory.topology.n_atoms],
-                           dtype=float
-                           )
+        temp_file = path.join(mkdtemp(), 'newfile.dat')
+        # dots = numpy.empty([trajectory.n_frames-self.tau, trajectory.topology.n_atoms, trajectory.topology.n_atoms],
+        #                   dtype=float
+        #                   )
+        dots = numpy.memmap(temp_file, dtype='float', mode='w+',
+                            shape=(trajectory.n_frames-self.tau,
+                                   trajectory.topology.n_atoms,
+                                   trajectory.topology.n_atoms
+                                   )
+                            )
+
         for frame in numpy.arange(trajectory.n_frames - self.tau):
             deltas[frame, :, :] = trajectory.xyz[frame] - trajectory.xyz[frame+self.tau]
             dots[frame, :, :] = numpy.inner(deltas[frame, :, :], deltas[frame, :, :])

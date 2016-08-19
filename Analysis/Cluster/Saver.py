@@ -50,7 +50,7 @@ class ClusterFrames(Saver):
         self.labels = labels
         super().__init__(out_name)
         num_frames = len(self.labels)
-        self. clusters = int(max(self.labels)) + 1
+        self.clusters = int(max(self.labels)) + 1
         self.labeled_traj = pandas.DataFrame(columns=['frame', 'cluster'])
         self.labeled_traj['frame'] = numpy.arange(num_frames)
         self.labeled_traj['cluster'] = self.labels

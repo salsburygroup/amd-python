@@ -6,10 +6,9 @@ python LabelsToMarkov.py -l RLM/QT_labels.txt -o /Users/melvrl13/Documents/group
 """
 
 
-import Markov
+from Analysis.Cluster import Markov, Plotter
 import argparse
 import numpy
-import Plotter
 import os
 import pyemma.plots as mplt
 import matplotlib.pyplot as plt
@@ -26,6 +25,9 @@ inputs.add_argument('-o', action='store', dest='output', help='Directory to save
 user_input = parser.parse_args()
 
 labels = numpy.genfromtxt(user_input.labels_file, dtype='int')
+if -1 in labels:
+    labels[labels < 0] = labels.max() + 1
+
 msm = Markov.Model(labels=labels).estimate()
 
 rate_matrix_image_file = os.path.join(user_input.output, 'rate_matrix.png')
