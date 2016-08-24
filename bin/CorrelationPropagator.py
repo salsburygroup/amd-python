@@ -1,7 +1,10 @@
+#!/usr/bin/env python
+
+# Ideally, you'll use the same atom selection you would for a correlation matrix.
+# I suggest 'name CA' for proteins and 'not element H' for nucleic acids.
+
 import mdtraj
 import numpy
-from tempfile import mkdtemp
-import os.path as path
 
 
 class CorrelationPropagator:
@@ -17,23 +20,14 @@ class CorrelationPropagator:
 
     def matrix(self):
         trajectory = mdtraj.load(self.dcd_path, top=self.top_path)
-        deltas = numpy.empty([trajectory.n_frames-self.tau, trajectory.topology.n_atoms, 3], dtype=float)
-        temp_file = path.join(mkdtemp(), 'newfile.dat')
-        # dots = numpy.empty([trajectory.n_frames-self.tau, trajectory.topology.n_atoms, trajectory.topology.n_atoms],
-        #                   dtype=float
-        #                   )
-        dots = numpy.memmap(temp_file, dtype='float', mode='w+',
-                            shape=(trajectory.n_frames-self.tau,
-                                   trajectory.topology.n_atoms,
-                                   trajectory.topology.n_atoms
-                                   )
-                            )
-
+        delta_sum = numpy.zeros([trajectory.topology.n_atoms, 3], dtype=float)
+        dot_sum = numpy.zeros([trajectory.topology.n_atoms, trajectory.topology.n_atoms],dtype=float)
         for frame in numpy.arange(trajectory.n_frames - self.tau):
-            deltas[frame, :, :] = trajectory.xyz[frame] - trajectory.xyz[frame+self.tau]
-            dots[frame, :, :] = numpy.inner(deltas[frame, :, :], deltas[frame, :, :])
-        self.average_delta = deltas.mean(axis=0)
-        self.average_dot = dots.mean(axis=0)
+            delta_temp = trajectory.xyz[frame] - trajectory.xyz[frame + self.tau]
+            delta_sum = delta_sum + delta_temp
+            dot_sum = dot_sum + numpy.inner(delta_temp, delta_temp)
+        self.average_delta = delta_sum / (trajectory.n_frames - self.tau)
+        self.average_dot = dot_sum / (trajectory.n_frames - self.tau)
         self.dot_average_delta = numpy.inner(self.average_delta, self.average_delta)
         return self.average_dot
 

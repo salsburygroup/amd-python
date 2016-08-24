@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60be380e-7fcd-487f-bd2a-7200b1968f18" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/quick_histogram.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Analysis/Cluster/Examples/LabelsToMarkov.py" afterPath="$PROJECT_DIR$/Analysis/Cluster/Examples/LabelsToMarkov.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Analysis/Cluster/Saver.py" afterPath="$PROJECT_DIR$/Analysis/Cluster/Saver.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/CorrelationPropagator.py" afterPath="$PROJECT_DIR$/bin/CorrelationPropagator.py" />
     </list>
     <ignored path="AMD-PYTHON.iws" />
@@ -31,7 +28,7 @@
       <file leaf-file-name="quick_histogram.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/quick_histogram.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="768">
+            <state relative-caret-position="765">
               <caret line="55" column="83" selection-start-line="55" selection-start-column="83" selection-end-line="55" selection-end-column="83" />
               <folding>
                 <element signature="e#23#38#0" expanded="true" />
@@ -75,7 +72,7 @@
       <file leaf-file-name="cluster_automatic.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/cluster_automatic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="761">
+            <state relative-caret-position="1380">
               <caret line="95" column="33" selection-start-line="95" selection-start-column="33" selection-end-line="95" selection-end-column="33" />
               <folding />
             </state>
@@ -85,7 +82,7 @@
       <file leaf-file-name="Saver.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Analysis/Cluster/Saver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
+            <state relative-caret-position="345">
               <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
               <folding />
             </state>
@@ -95,10 +92,10 @@
       <file leaf-file-name="CorrelationPropagator.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bin/CorrelationPropagator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="62" selection-start-line="27" selection-start-column="62" selection-end-line="27" selection-end-column="62" />
+            <state relative-caret-position="45">
+              <caret line="3" column="72" selection-start-line="3" selection-start-column="72" selection-end-line="3" selection-end-column="72" />
               <folding>
-                <element signature="e#0#13#0" expanded="true" />
+                <element signature="e#180#193#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -107,8 +104,8 @@
       <file leaf-file-name="Predictor.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Analysis/Cluster/Predictor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="26" column="68" selection-start-line="26" selection-start-column="68" selection-end-line="26" selection-end-column="68" />
+            <state relative-caret-position="135">
+              <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -209,7 +206,6 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-131" />
     <option name="y" value="23" />
     <option name="width" value="1920" />
     <option name="height" value="1053" />
@@ -618,7 +614,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-131" y="23" width="1920" height="1053" extended-state="0" />
+    <frame x="0" y="23" width="1920" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15885417" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -900,7 +896,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -908,7 +903,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1305">
           <caret line="92" column="20" selection-start-line="92" selection-start-column="20" selection-end-line="92" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -916,7 +910,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9195">
           <caret line="613" column="47" selection-start-line="613" selection-start-column="47" selection-end-line="613" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -924,7 +917,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -932,7 +924,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9195">
           <caret line="613" column="47" selection-start-line="613" selection-start-column="47" selection-end-line="613" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -940,7 +931,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -948,7 +938,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -956,7 +945,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -964,9 +952,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -974,9 +959,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -984,7 +966,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="780">
           <caret line="55" column="40" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1006,7 +987,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/quick_histogram.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="768">
+        <state relative-caret-position="765">
           <caret line="55" column="83" selection-start-line="55" selection-start-column="83" selection-end-line="55" selection-end-column="83" />
           <folding>
             <element signature="e#23#38#0" expanded="true" />
@@ -1042,34 +1023,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/cluster_automatic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="761">
+        <state relative-caret-position="1380">
           <caret line="95" column="33" selection-start-line="95" selection-start-column="33" selection-end-line="95" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Analysis/Cluster/Predictor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="26" column="68" selection-start-line="26" selection-start-column="68" selection-end-line="26" selection-end-column="68" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Analysis/Cluster/Saver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
+        <state relative-caret-position="345">
           <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Analysis/Cluster/Predictor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/CorrelationPropagator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="62" selection-start-line="27" selection-start-column="62" selection-end-line="27" selection-end-column="62" />
+        <state relative-caret-position="45">
+          <caret line="3" column="72" selection-start-line="3" selection-start-column="72" selection-end-line="3" selection-end-column="72" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#180#193#0" expanded="true" />
           </folding>
         </state>
       </provider>
