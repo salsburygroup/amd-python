@@ -32,6 +32,14 @@ inputs.add_argument(
     default=0
 )
 inputs.add_argument(
+    '-cutoff',
+    action='store',
+    dest='cutoff',
+    help='RMSD cutoff (In Angstroms)',
+    type=float,
+    default=5.0
+)
+inputs.add_argument(
     '-traj',
     action='store',
     dest='trajectory',
@@ -68,7 +76,8 @@ rmsd_timeseries = Distance.RMSD(
     trajectory=trajectory, atom_selection=UserInput.sel, reference_frame=UserInput.ref_frame
 ).calculate()
 
-traj_mask = numpy.where(rmsd_timeseries<5)
+traj_mask = numpy.where(rmsd_timeseries<cutoff)
+traj_masked=trajectory(traj_mask)
 
 # Save
 Saver.Array(array=rmsd_timeseries(traj_mask), out_name=UserInput.out_name + '.dat').save()
