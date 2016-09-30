@@ -1,3 +1,5 @@
+#! /usr/bin/env python
+#
 #psfgen.py
 #Ryan Godwin
 #9/30/16

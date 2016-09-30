@@ -35,7 +35,7 @@ inputs.add_argument(
     '-cutoff',
     action='store',
     dest='cutoff',
-    help='RMSD cutoff (In Angstroms)',
+    help='RMSD cutoff (In nanometers)',
     type=float,
     default=5.0
 )
@@ -76,16 +76,17 @@ rmsd_timeseries = Distance.RMSD(
     trajectory=trajectory, atom_selection=UserInput.sel, reference_frame=UserInput.ref_frame
 ).calculate()
 
-traj_mask = numpy.where(rmsd_timeseries<cutoff)
-traj_masked=trajectory(traj_mask)
+masked_rmsd=rmsd_timeseries[numpy.where(rmsd_timeseries<UserInput.cutoff)]
+masked_traj=trajectory[numpy.where(rmsd_timeseries<UserInput.cutoff)]
+
 
 # Save
-Saver.Array(array=rmsd_timeseries(traj_mask), out_name=UserInput.out_name + '.dat').save()
-
+Saver.Array(array=masked_rmsd, out_name=UserInput.out_name + '.dat').save()
+masked_traj.save_dcd(filename=UserInput.out_name + '.dcd')
 
 # Plot
 Plotter.Y(
-    y=rmsd_timeseries,
+    y=masked_rmsd,
     out_name=UserInput.out_name + '.png',
     x_label='Frame',
     y_label='RMSD (nm)',
