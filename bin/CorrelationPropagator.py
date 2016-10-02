@@ -8,7 +8,7 @@ import numpy
 
 
 class CorrelationPropagator:
-    def __init__(self, dcd_path, top_path, atom_selection, tau=1):
+    def __init__(self, dcd_path, top_path, atom_selection, tau):
         self.dcd_path = dcd_path
         self.top_path = top_path
         assert isinstance(atom_selection, str)
@@ -21,8 +21,7 @@ class CorrelationPropagator:
     def matrix(self):
         trajectory = mdtraj.load(self.dcd_path, top=self.top_path)
         indices = trajectory.top.select(UserInput.sel)
-        trajectory = trajectory.restrict_atoms(indices)
-        trajectory = trajectory
+        trajectory.restrict_atoms(indices)
         delta_sum = numpy.zeros([trajectory.topology.n_atoms, 3], dtype=float)
         dot_sum = numpy.zeros([trajectory.topology.n_atoms, trajectory.topology.n_atoms],dtype=float)
         for frame in numpy.arange(trajectory.n_frames - self.tau):
@@ -56,7 +55,7 @@ if __name__ == "__main__":
     UserInput = parser.parse_args()
 
     # Execute calculation
-    cp = CorrelationPropagator(UserInput.trajectory, UserInput.structure, UserInput.sel,UserInput.tau)
+    cp = CorrelationPropagator(UserInput.trajectory, UserInput.structure, UserInput.sel, UserInput.tau)
     average_dot = cp.matrix()
 
     # Save text results
