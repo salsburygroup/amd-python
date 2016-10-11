@@ -7,7 +7,7 @@
 #https://github.com/thatchristoph/vmd-cvs-github/blob/master/plugins/psfgen/python/Psfgen/Psfgen.py
 
 
-from _psfgen import *
+#from _psfgen import *
 
 class PsfgenFormatError(IOError):
 	pass

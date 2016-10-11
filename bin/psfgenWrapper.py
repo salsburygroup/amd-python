@@ -6,6 +6,7 @@
 
 import argparse
 from . import Psfgen
+import mdtraj as md   
 from Analysis import Saver, TrajectoryReader, TrajectoryProcessor
 
 parser = argparse.ArgumentParser(
@@ -88,8 +89,15 @@ print(UserInput.topology)
 #for loop over number of frames
 for frame in range(n_frames):
     print(frame)
+    #save pdb of frame
+    traj_frame = trajectory.slice(frame)
     
-#save frame as pdb
-#open pdb
+    
+    #generate a psf and pdb from that frame with correct parameters
+    topo_new=psfgen(topology_path)
+
+        
+    
+
 #psfgen
 #recombine pdb files 
