@@ -65,7 +65,7 @@ class ClusterFrames(Saver):
 
 
 class PDB(ClusterFrames):
-    def __init__(self, out_name, labels, trajectory, atom_selection='not element H'):
+    def __init__(self, out_name, labels, trajectory, atom_selection='all'):
         assert isinstance(trajectory, mdtraj.Trajectory)
         self.trajectory = trajectory
         self.atom_selection = atom_selection

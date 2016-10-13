@@ -5,9 +5,7 @@
 #9/30/16
 
 import argparse
-from . import Psfgen
-import mdtraj as md   
-from Analysis import Saver, TrajectoryReader, TrajectoryProcessor
+from Analysis import psfgen, Saver, TrajectoryReader, TrajectoryProcessor
 
 parser = argparse.ArgumentParser(
     description='Reads a trajectory, makes a pdb for every frame'+

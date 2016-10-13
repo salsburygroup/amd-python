@@ -1,7 +1,7 @@
 import mdtraj
 
 
-class Selector():
+class Selector:
     def __init__(self, trajectory, atom_selection):
         assert isinstance(trajectory, mdtraj.Trajectory)
         self.trajectory = trajectory
