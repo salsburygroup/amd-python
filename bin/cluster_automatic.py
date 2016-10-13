@@ -57,7 +57,7 @@ class Predictor:
 
         Saver.PDB(
             out_name=os.path.join(self.out_dir, 'clusters'),
-            labels=self.labels, trajectory=self.trajectory, atom_selection=self.atom_selection
+            labels=self.labels, trajectory=self.trajectory
         ).save()
 
     def visualize(self):

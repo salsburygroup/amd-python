@@ -9,8 +9,8 @@
 
 #from _psfgen import *
 
-class PsfgenFormatError(IOError):
-	pass
+#class PsfgenFormatError(IOError):
+#	pass
 	
 # Definitions for psf file types
 CHARMM="charmm"

@@ -70,7 +70,6 @@ atoms_of_interest = psf.select(UserInput.sel)
 n_atoms_of_interest = len(atoms_of_interest)
 reference_structure = pdb.atom_slice(atoms_of_interest)
 not_water = psf.select("not water")
-
 with mdtraj.formats.DCDTrajectoryFile('temp.dcd', 'w') as strided_trajectory:
     for output_frame in range(desired_frames):
         xyz = numpy.zeros((sample_rate, n_atoms_of_interest, 3), dtype='float64')
