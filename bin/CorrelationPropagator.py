@@ -20,7 +20,7 @@ class CorrelationPropagator:
 
     def matrix(self):
         trajectory = mdtraj.load(self.dcd_path, top=self.top_path)
-        indices = trajectory.top.select(UserInput.sel)
+        indices = trajectory.topology.select(UserInput.sel)
         trajectory.restrict_atoms(indices)
         delta_sum = numpy.zeros([trajectory.topology.n_atoms, 3], dtype=float)
         dot_sum = numpy.zeros([trajectory.topology.n_atoms, trajectory.topology.n_atoms],dtype=float)
