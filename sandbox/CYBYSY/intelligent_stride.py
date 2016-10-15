@@ -2,16 +2,15 @@
 
 # Ryan Melvin
 
-import os
+
 import hdbscan
+import os
 import pandas
 import numpy
 import mdtraj
 import argparse
 import matplotlib
 matplotlib.use('Agg')
-import matplotlib.pyplot as plt
-import seaborn
 from scipy.spatial.distance import euclidean
 
 
@@ -100,39 +99,42 @@ with mdtraj.formats.DCDTrajectoryFile(
         step += 1
 
 # Second round of clustering, keep track of populations along the way
-reps_traj = mdtraj.load(rep_trajectory_file, top=UserInput.structure_file)
-frames = reps_traj.n_frames
-atoms = reps_traj.n_atoms
-reps = reps_traj.xyz
-reps = reps.reshape((frames, atoms * 3))
+strided_trajectory = mdtraj.load(UserInput.output_prefix + '.dcd', top=UserInput.structure_file)
+strided_frames = strided_trajectory.n_frames
+atoms = strided_trajectory.n_atoms
+strided_trajectory = strided_trajectory.xyz
+strided_trajectory = strided_trajectory.reshape((strided_frames, atoms * 3))
+reps_trajectory = mdtraj.load(rep_trajectory_file, top=UserInput.structure_file)
+rep_frames = reps_trajectory.n_frames
+reps = reps_trajectory.xyz
+reps = reps.reshape((rep_frames, atoms * 3))
 reps = reps.astype('float64')
-clusterer = hdbscan.HDBSCAN(2)
-tracker['final_label'] = clusterer.fit_predict(reps)
-cluster_numbers = numpy.arange(start=-1, stop=max(tracker['final_label'] + 1))
-population = numpy.empty(shape=(len(cluster_numbers), 1))
-for index, cluster in enumerate(cluster_numbers):
-    population[index] = int(sum(tracker[tracker.final_label == cluster].population))
-norm_pop = population/sum(population)
-relative_populations = numpy.column_stack((cluster_numbers, norm_pop))
-numpy.save(UserInput.output_prefix + '_populations.txt', relative_populations)
-for i in range(0, int(max(tracker['final_label'])) + 1):
-    cluster_string = tracker.loc[tracker.final_label == i].frame_in_rep_dcd.values
-    cluster_coords = reps[cluster_string.astype('int')]
+both_trajectories = numpy.row_stack((strided_trajectory, reps))
+clusterer = hdbscan.HDBSCAN(min_cluster_size=2)
+labels = clusterer.fit_predict(both_trajectories)
+strided_labels = labels[0:strided_frames-1]
+rep_labels = labels[strided_frames-1:-1]
+rep_labeled_traj = pandas.DataFrame(columns=['frame', 'cluster'])
+rep_labeled_traj['frame'] = numpy.arange(len(rep_labels))
+rep_labeled_traj['cluster'] = rep_labels
+rep_unique_clusters = [cluster_number for cluster_number in rep_labels if cluster_number not in strided_labels]
+rep_unique_clusters = numpy.unique(rep_unique_clusters)
+rep_noise = [ind for ind, cluster in enumerate(rep_labels) if cluster == -1]
+tracker['final_label'] = rep_labels
+if not os.path.exists(UserInput.output_prefix + '_MissedStructures'):
+    os.mkdir(UserInput.output_prefix + '_MissedStructures')
+for label in rep_unique_clusters:
+    cluster_string = rep_labeled_traj.loc[rep_labeled_traj['cluster'] == label].frame.values
+    cluster_coords = reps[cluster_string]
     mean = cluster_coords.mean(axis=0)
     distance = [euclidean(row, mean) for row in cluster_coords]
     rep = cluster_string[numpy.argmin(distance)]
-    reps_traj[rep].save_pdb(os.path.join(UserInput.output_prefix + '_rep' + str(i) + '.pdb'))
+    population = int(sum(tracker[tracker.final_label == label].population))
+    reps_trajectory[rep].save_pdb(UserInput.output_prefix + '_MissedStructures/' + '/rep_' + str(label)
+                                  + '_population_' + str(population) + '.pdb')
+for frame_number in rep_noise:
+    population = int(sum(tracker[tracker.frame_in_rep_dcd == frame_number].population))
+    reps_trajectory[frame_number].save_pdb(UserInput.output_prefix + '_MissedStructures/' + '/noise_frame'
+                                           + str(frame_number) + '_population_' + str(population) + '.pdb')
 
-# Bar chart of populations
-# width = 0.35
-plt.bar(relative_populations[:,0], relative_populations[:,1])
-plt.title('Relative populations')
-plt.ylabel('Normalized population over original trajectory')
-plt.xlabel('Cluster number')
-plt.savefig(UserInput.output_prefix + '_rep_populations.png')
-
-numpy.savetxt(UserInput.output_prefix + '_hdbscan_labels.txt', tracker.final_label.values)
 tracker.to_csv(UserInput.output_prefix + '_details.csv')
-# plt.xticks(relative_populations[:,0] + width/2., relative_populations[:,0])
-
-
