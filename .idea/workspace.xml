@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60be380e-7fcd-487f-bd2a-7200b1968f18" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/CorrelationPropagator.py" afterPath="$PROJECT_DIR$/bin/CorrelationPropagator.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sandbox/CorrelationPropagator/.idea/workspace.xml" afterPath="$PROJECT_DIR$/sandbox/CorrelationPropagator/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/melvrl13.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/melvrl13.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sandbox/CYBYSY/intelligent_stride.py" afterPath="$PROJECT_DIR$/sandbox/CYBYSY/intelligent_stride.py" />
     </list>
     <ignored path="AMD-PYTHON.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,11 +33,41 @@
       <file leaf-file-name="intelligent_stride.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sandbox/CYBYSY/intelligent_stride.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="96" column="24" selection-start-line="96" selection-start-column="24" selection-end-line="96" selection-end-column="24" />
+            <state relative-caret-position="725">
+              <caret line="136" column="88" selection-start-line="136" selection-start-column="88" selection-end-line="136" selection-end-column="88" />
               <folding>
-                <element signature="e#35#44#0" expanded="true" />
+                <element signature="e#36#50#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HDBSCAN.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/HDBSCAN.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="590">
+              <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="80" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Predictor.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Analysis/Cluster/Predictor.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-165">
+              <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Saver.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Analysis/Cluster/Saver.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="73" column="19" selection-start-line="73" selection-start-column="19" selection-end-line="73" selection-end-column="19" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -119,8 +148,8 @@
         <option value="$PROJECT_DIR$/sandbox/CYBYSY/intelligent_sample.py" />
         <option value="$PROJECT_DIR$/bin/psfgenWrapper.py" />
         <option value="$PROJECT_DIR$/Analysis/psfgen.py" />
-        <option value="$PROJECT_DIR$/sandbox/CYBYSY/intelligent_stride.py" />
         <option value="$PROJECT_DIR$/bin/CorrelationPropagator.py" />
+        <option value="$PROJECT_DIR$/sandbox/CYBYSY/intelligent_stride.py" />
       </list>
     </option>
   </component>
@@ -131,8 +160,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="74" />
-    <option name="y" value="31" />
+    <option name="x" value="-27" />
+    <option name="y" value="29" />
     <option name="width" value="1680" />
     <option name="height" value="957" />
   </component>
@@ -562,7 +591,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="74" y="31" width="1680" height="957" extended-state="0" />
+    <frame x="-27" y="29" width="1680" height="957" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19821429" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -940,31 +969,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/HDBSCAN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="770">
-          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Analysis/Cluster/Predictor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-45">
-          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Analysis/Saver.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Analysis/Cluster/Saver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-250">
-          <caret line="73" column="19" selection-start-line="73" selection-start-column="19" selection-end-line="73" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -976,12 +984,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/bin/HDBSCAN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="590">
+          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Analysis/Cluster/Predictor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-165">
+          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Analysis/Cluster/Saver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="73" column="19" selection-start-line="73" selection-start-column="19" selection-end-line="73" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sandbox/CYBYSY/intelligent_stride.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="96" column="24" selection-start-line="96" selection-start-column="24" selection-end-line="96" selection-end-column="24" />
+        <state relative-caret-position="725">
+          <caret line="136" column="88" selection-start-line="136" selection-start-column="88" selection-end-line="136" selection-end-column="88" />
           <folding>
-            <element signature="e#35#44#0" expanded="true" />
+            <element signature="e#36#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
