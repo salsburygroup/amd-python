@@ -3,6 +3,7 @@
 import argparse
 from Analysis import AtomSelection, Correlation, Plotter, Saver, TrajectoryReader
 
+
 # Initialize parser. The default help has poor labeling. See http://bugs.python.org/issue9694
 parser = argparse.ArgumentParser(description='Calculate, save and plot correlation matrix', add_help=False)
 
