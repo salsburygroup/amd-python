@@ -63,14 +63,14 @@ plt.colorbar()
 plt.savefig(UserInput.out_name + '_average_dot.png')
 plt.close()
 
-plt.figure()
-plt.matshow(dot_average_delta)
-plt.xlabel('Atom')
-plt.ylabel('Atom')
-plt.title('Dot product of average delta')
-plt.colorbar(format='%.0e')
-plt.savefig(UserInput.out_name + '_dot_average_delta.png')
-plt.close()
+#plt.figure()
+#plt.matshow(dot_average_delta)
+#plt.xlabel('Atom')
+#plt.ylabel('Atom')
+#plt.title('Dot product of average delta')
+#plt.colorbar(format='%.0e')
+#plt.savefig(UserInput.out_name + '_dot_average_delta.png')
+#plt.close()
 
 if UserInput.also_cluster:
     if UserInput.correlation_as_distance:
@@ -85,8 +85,19 @@ if UserInput.also_cluster:
     else:
         min_membership = None
 
-    labels = Correlation.Clustering(
-        trajectory=trajectory, input_type=input_type, minimum_membership=min_membership
-    ).calculate()
-    Cluster.Saver.ClusterFrames(out_name=UserInput.out_name + '_residue_groups.txt', labels=labels).save()
-    Correlation.Clustering.visualize(labels=labels, pdb_file=UserInput.structure, out_name=UserInput.out_name)
+    # temporarily having this do all three for deciding which makes the most sense
+    labels = Correlation.Clustering.cluster(correlation_matrix=average_dot,  input_type='correlation')
+    Cluster.Saver.ClusterFrames(out_name=UserInput.out_name + '_residue_groups_correlation.txt', labels=labels).save()
+    Correlation.Clustering.visualize(
+        labels=labels, pdb_file=UserInput.structure, out_name=UserInput.out_name + '_correlation_render.tga'
+    )
+    labels = Correlation.Clustering.cluster(correlation_matrix=average_dot, input_type='similarity')
+    Cluster.Saver.ClusterFrames(out_name=UserInput.out_name + '_residue_groups_similarity.txt', labels=labels).save()
+    Correlation.Clustering.visualize(
+        labels=labels, pdb_file=UserInput.structure, out_name=UserInput.out_name + '_similarity_render.tga'
+    )
+    labels = Correlation.Clustering.cluster(correlation_matrix=average_dot, input_type='dots')
+    Cluster.Saver.ClusterFrames(out_name=UserInput.out_name + '_residue_groups_similarity.txt', labels=labels).save()
+    Correlation.Clustering.visualize(
+        labels=labels, pdb_file=UserInput.structure, out_name=UserInput.out_name + '_dots_render.tga'
+    )

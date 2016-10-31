@@ -84,22 +84,28 @@ class IMWKRescaled(Clusterer):
     def __init__(self, trajectory_2d, minkowski_weight=2):
         self.minkowski_weight = minkowski_weight
         self.centers = []
+        self.data = []
+        self.weights = []
+        self.optimal_k = []
         super().__init__(trajectory_2d)
 
     def fit(self):
         cl = Unsupervised.clustering.Clustering()
+        # Get maximum number of clusters
         [labels, _, _, _, _] = cl.ik_means(self.trajectory_2d, p=self.minkowski_weight)
         max_clusters = max(labels) + 1
         silhouette_averages = numpy.zeros(max_clusters - 1)
+        # Tru all less than or equal
         k_to_try = numpy.arange(2, max_clusters + 1)
         for k in k_to_try:
             cl = Unsupervised.clustering.Clustering()
             data = copy.copy(self.trajectory_2d)
             [labels, centroids, weights, _, _] = cl.imwk_means(data, p=self.minkowski_weight, k=k)
         # Rescale the data
+            populations = numpy.bincount(labels)
             for k1 in numpy.arange(0, max(labels)+1):
                 data[labels == k1] = numpy.multiply(
-                    self.trajectory_2d[labels == k1], numpy.tile(weights[k1], (numpy.sum(labels == k1), 1))
+                    self.trajectory_2d[labels == k1], numpy.tile(weights[k1], (populations[k1], 1))
                 )
                 centroids[k1] = numpy.multiply(centroids[k1], weights[k1])
         # Apply Euclidean KMeans
@@ -108,19 +114,27 @@ class IMWKRescaled(Clusterer):
             labels = kmeans_clusters.labels_
             silhouette_averages[k - 2] = Scorer.Silhouette(labels=labels, data=data).evaluate()
 
-        optimal_k = Optimizer.Optimizer(scores=silhouette_averages, parameter_list=k_to_try).maximize()
+        self.optimal_k = Optimizer.Optimizer(scores=silhouette_averages, parameter_list=k_to_try).maximize()
         # Do optimal clustering
-        data = copy.copy(self.trajectory_2d)
-        [labels, centroids, weights, _, _] = cl.imwk_means(data, p=self.minkowski_weight, k=optimal_k)
+        self.data = copy.copy(self.trajectory_2d)
+        [self.labels, self.centers, self.weights, _, _] = cl.imwk_means(
+            self.data, p=self.minkowski_weight, k=self.optimal_k)
         # Rescale the data
-        for k1 in numpy.arange(0, max(labels)+1):
-            data[labels == k1] = numpy.multiply(data[labels == k1],
-                                                numpy.tile(weights[k1], (numpy.sum(labels == k1), 1)))
-            centroids[k1] = numpy.multiply(centroids[k1], weights[k1])
+        for k1 in numpy.arange(0, max(self.labels)+1):
+            populations = numpy.bincount(self.labels)
+            self.data[self.labels == k1] = numpy.multiply(self.data[self.labels == k1],
+                                                numpy.tile(self.weights[k1], (populations[k1], 1)))
+            self.centers[k1] = numpy.multiply(self.centers[k1], self.weights[k1])
+        return self.labels, self.centers, self.data, self.weights, self.optimal_k
 
+
+class AmorimHennig(IMWKRescaled):
+    def fit(self):
         # Apply Euclidean KMeans
-        kmeans_clusterer = MiniBatchKMeans(n_clusters=optimal_k, n_init=5)
-        kmeans_clusters = kmeans_clusterer.fit(data)
+        _, _, self.data, _, self.optimal_k = IMWKRescaled(
+            trajectory_2d=self.trajectory_2d, minkowski_weight=self.minkowski_weight).fit()
+        kmeans_clusterer = MiniBatchKMeans(n_clusters=self.optimal_k, n_init=5)
+        kmeans_clusters = kmeans_clusterer.fit(self.data)
         self.labels = kmeans_clusters.labels_
         self.centers = kmeans_clusterer.cluster_centers_
         return self.labels, self.centers
