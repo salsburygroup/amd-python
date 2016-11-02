@@ -108,7 +108,7 @@ class Shadows(Saver):
         vmd_render_middle_command = ('vmd ' +
                                      self.middle + ' -dispdev text -e ' +
                                      middle_helper + ' -args ' + ' -rep ' + self.rep +
-                                     ' -outfile ' + self.out_name + '/middle.png'
+                                     ' -outfile ' + self.out_name + '/middle.tga'
                                      )
         subprocess.call(
             [os.getenv('SHELL'), '-i', '-c', vmd_render_shadow_cmd + '; ' + vmd_render_middle_command + '; exit'],

@@ -65,19 +65,19 @@ labels = MiniBatchKMeans(n_clusters=IMWK_optimal_k, n_init=5).fit_predict(IMWK_d
 finishing(labels, directory)
 
 # HDBSCAN
-directory = make_directory('AmorimHennig')
+directory = make_directory('HDBSCAN')
 labels = Clusterer.HDBSCAN(trajectory_2d=IMWK_data).fit()
 finishing(labels, directory)
 
-# GMM
-directory = make_directory('GMM')
-labels = mixture.GMM(n_components=IMWK_optimal_k, covariance_type='tied').fit_predict(IMWK_data)
-finishing(labels, directory)
-
-# VBGMM
-directory = make_directory('VBGMM')
-labels = mixture.VBGMM(n_components=IMWK_optimal_k, covariance_type='tied').fit_predict(IMWK_data)
-finishing(labels, directory)
+# # GMM
+# directory = make_directory('GMM')
+# labels = mixture.GMM(n_components=IMWK_optimal_k, covariance_type='tied').fit_predict(IMWK_data)
+# finishing(labels, directory)
+#
+# # VBGMM
+# directory = make_directory('VBGMM')
+# labels = mixture.VBGMM(n_components=IMWK_optimal_k, covariance_type='tied').fit_predict(IMWK_data)
+# finishing(labels, directory)
 
 # MeanShift
 directory = make_directory('MeanShift')
