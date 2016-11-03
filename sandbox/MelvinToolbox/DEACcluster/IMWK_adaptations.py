@@ -61,13 +61,19 @@ IMWK_labels, IMWK_center, IMWK_data, IMWK_weights, IMWK_optimal_k = Clusterer.IM
 
 # K-Means (A-H)
 directory = make_directory('AmorimHennig')
-labels = MiniBatchKMeans(n_clusters=IMWK_optimal_k, n_init=5).fit_predict(IMWK_data)
-finishing(labels, directory)
+try:
+    labels = MiniBatchKMeans(n_clusters=IMWK_optimal_k, n_init=5).fit_predict(IMWK_data)
+    finishing(labels, directory)
+except Exception:
+    pass
 
 # HDBSCAN
 directory = make_directory('HDBSCAN')
-labels = Clusterer.HDBSCAN(trajectory_2d=IMWK_data).fit()
-finishing(labels, directory)
+try:
+    labels = Clusterer.HDBSCAN(trajectory_2d=IMWK_data).fit()
+    finishing(labels, directory)
+except Exception:
+    pass
 
 # # GMM
 # directory = make_directory('GMM')
@@ -81,10 +87,16 @@ finishing(labels, directory)
 
 # MeanShift
 directory = make_directory('MeanShift')
-labels = cluster.MeanShift(n_jobs=-1).fit_predict(IMWK_data)
-finishing(labels, directory)
+try:
+    labels = cluster.MeanShift(n_jobs=-1).fit_predict(IMWK_data)
+    finishing(labels, directory)
+except Exception:
+    pass
 
 # AffinityPropagation
 directory = make_directory('AffinityPropagation')
-labels = cluster.AffinityPropagation(damping=0.5).fit_predict(IMWK_data)
-finishing(labels, directory)
+try:
+    labels = cluster.AffinityPropagation(damping=0.5).fit_predict(IMWK_data)
+    finishing(labels, directory)
+except Exception:
+    pass
