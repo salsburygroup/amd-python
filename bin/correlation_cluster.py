@@ -78,7 +78,9 @@ else:
     min_membership = None
 
 correlation_matrix = Correlation.Pearson(trajectory=trajectory).calculate()
-labels = Correlation.Clustering.cluster(correlation_matrix=correlation_matrix, input_type=input_type)
+labels = Correlation.Clustering.cluster(
+    correlation_matrix=correlation_matrix, input_type=input_type, minimum_membership=min_membership
+)
 Saver.ClusterFrames(out_name=UserInput.out_name + '_residue_groups.txt', labels=labels).save()
 Correlation.Clustering.visualize(
     labels=labels, pdb_file=UserInput.structure, out_name=UserInput.out_name + '_render.tga'

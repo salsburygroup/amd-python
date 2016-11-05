@@ -59,7 +59,7 @@ class KMeans(object):
                     final_dist = dist_tmp
             return final_u, final_centroids, final_ite, final_dist
 
-    def __k_means_batch(self, data, k, centroids=None, distance='SqEuclidean', p=None, max_ite=100):
+    def __k_means_batch(self, data, k, centroids=None, distance='SqEuclidean', p=None, max_ite=10000):
             #runs K-Means a single time - batch
             #returns -1, -1, -1, -1 if there is an empty cluster
             n_entities = data.shape[0]
