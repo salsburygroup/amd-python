@@ -92,12 +92,19 @@ class Clustering:
         df['residue'] = numpy.arange(num_residues)
         df['cluster'] = labels
         clusters = numpy.unique(df.loc[df['cluster'] != -1].cluster.values)
+        noise_string = ' '.join(
+            ['%d' % num for num in df.loc[df['cluster'] == -1].residue.values]
+        )
 
         with open(out_name + '_image_script.vmd', 'w+') as vmd_file:
             vmd_file.write(
-                'mol new ' + pdb_file + '\n' + 'mol delrep 0 top\n' + 'mol representation Cartoon\n'
-                + 'mol selection {all}\n' + 'mol material Ghost\n' + 'mol addrep top\n'
-                + 'mol representation NewCartoon\n' + 'mol material AOChalky\n' + ' display ambientocclusion on\n')
+                'mol new ' + pdb_file + '\n' + 'mol delrep 0 top\n')
+            if len(df.loc[df['cluster'] == -1]) > 0:
+                vmd_file.write(
+                    'mol representation NewCartoon\n'
+                    + 'mol selection {residue ' + noise_string + '}\n' + 'mol material Ghost\n' + 'mol addrep top\n')
+            vmd_file.write(
+                'mol representation NewCartoon\n' + 'mol material AOChalky\n' + 'display ambientocclusion on\n')
             for cluster in clusters:
                 cluster_string = ' '.join(
                     ['%d' % num for num in df.loc[df['cluster'] == cluster].residue.values]
