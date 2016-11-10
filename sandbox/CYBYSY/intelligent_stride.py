@@ -11,8 +11,9 @@ import mdtraj
 import argparse
 import matplotlib
 matplotlib.use('Agg')
+import matplotlib.pyplot
 from scipy.spatial.distance import euclidean
-
+import time
 
 # Initialize parser for user input
 parser = argparse.ArgumentParser(description='Run intelligently sampled ACEMD using HDBSCAN', add_help=False)
@@ -64,6 +65,8 @@ tracker = pandas.DataFrame(columns=['step', 'frame_in_rep_dcd', 'population'])
 rep_trajectory_file = UserInput.output_prefix + '_reps.dcd'
 step = 0
 frame_counter = 0
+
+start_time = time.time()
 
 with mdtraj.formats.DCDTrajectoryFile(
                 UserInput.output_prefix + '.dcd', 'w') as strided_trajectory, mdtraj.formats.DCDTrajectoryFile(
@@ -117,6 +120,8 @@ rep_labels = labels[strided_frames-1:-1]
 rep_labeled_traj = pandas.DataFrame(columns=['frame', 'cluster'])
 rep_labeled_traj['frame'] = numpy.arange(len(rep_labels))
 rep_labeled_traj['cluster'] = rep_labels
+end_time = time.time()
+print("Elapsed time was %g seconds" % (end_time - start_time))
 strided_unique_clusters = [cluster_number for cluster_number in strided_labels if cluster_number not in rep_labels]
 strided_noise = [ind for ind, cluster in enumerate(strided_labels) if cluster == -1]
 rep_unique_clusters = [cluster_number for cluster_number in rep_labels if cluster_number not in strided_labels]
@@ -128,21 +133,29 @@ print(str(len(rep_unique_clusters) + len(rep_noise)) + ' things missed in stridi
 print(str(len(strided_unique_clusters) + len(strided_noise)) + ' things only in strided trajectory\n'
       + '\t' + str(len(strided_unique_clusters)) + ' are from labeled clusters\n'
       + '\t' + str(len(strided_noise)) + ' are noise\n')
-#tracker['final_label'] = rep_labels
-#if not os.path.exists(UserInput.output_prefix + '_MissedStructures'):
-#    os.mkdir(UserInput.output_prefix + '_MissedStructures')
-# for label in rep_unique_clusters:
-#     cluster_string = rep_labeled_traj.loc[rep_labeled_traj['cluster'] == label].frame.values
-#     cluster_coords = reps[cluster_string]
-#     mean = cluster_coords.mean(axis=0)
-#     distance = [euclidean(row, mean) for row in cluster_coords]
-#     rep = cluster_string[numpy.argmin(distance)]
-#     population = int(sum(tracker[tracker.final_label == label].population))
-#     reps_trajectory[rep].save_pdb(UserInput.output_prefix + '_MissedStructures/' + '/rep_' + str(label)
-#                                   + '_population_' + str(population) + '.pdb')
-# for frame_number in rep_noise:
-#     population = int(sum(tracker[tracker.frame_in_rep_dcd == frame_number].population))
-#     reps_trajectory[frame_number].save_pdb(UserInput.output_prefix + '_MissedStructures/' + '/noise_frame'
-#                                            + str(frame_number) + '_population_' + str(population) + '.pdb')
-#
-# tracker.to_csv(UserInput.output_prefix + '_details.csv')
+
+matplotlib.pyplot.figure()
+matplotlib.pyplot.scatter(numpy.arange(len(labels)), labels, marker='+')
+matplotlib.pyplot.xlabel('Frame (only meaningful to line')
+matplotlib.pyplot.ylabel('Cluster')
+matplotlib.pyplot.title('Intelligent Stride Final Round')
+matplotlib.pyplot.savefig(UserInput.output_prefix + '_final_round_clusters.png')
+matplotlib.pyplot.close()
+tracker['final_label'] = rep_labels
+if not os.path.exists(UserInput.output_prefix + '_MissedStructures'):
+    os.mkdir(UserInput.output_prefix + '_MissedStructures')
+for label in rep_unique_clusters:
+    cluster_string = rep_labeled_traj.loc[rep_labeled_traj['cluster'] == label].frame.values
+    cluster_coords = reps[cluster_string]
+    mean = cluster_coords.mean(axis=0)
+    distance = [euclidean(row, mean) for row in cluster_coords]
+    rep = cluster_string[numpy.argmin(distance)]
+    population = int(sum(tracker[tracker.final_label == label].population))
+    reps_trajectory[rep].save_pdb(UserInput.output_prefix + '_MissedStructures/' + '/rep_' + str(label)
+                                  + '_population_' + str(population) + '.pdb')
+for frame_number in rep_noise:
+    population = int(sum(tracker[tracker.frame_in_rep_dcd == frame_number].population))
+    reps_trajectory[frame_number].save_pdb(UserInput.output_prefix + '_MissedStructures/' + '/noise_frame'
+                                           + str(frame_number) + '_population_' + str(population) + '.pdb')
+
+tracker.to_csv(UserInput.output_prefix + '_details.csv')
