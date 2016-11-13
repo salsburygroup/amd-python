@@ -31,6 +31,13 @@ inputs.add_argument('-sel',
                     type=str,
                     default='name CA'
                     )
+inputs.add_argument('-tau',
+                    action='store',
+                    dest='covariance_tau',
+                    default=None,
+                    type=int,
+                    help='Lag time for constructing a time-lagged correlation matrix',
+                    )
 inputs.add_argument('-o',
                     action='store',
                     dest='out_name',
@@ -47,14 +54,23 @@ trajectory = TrajectoryReader.DCD(topology_path=UserInput.structure, trajectory_
 trajectory = AtomSelection.Slice(trajectory=trajectory, atom_selection=UserInput.sel).select()
 
 # Make correlation matrix
-correlation_matrix = Correlation.Pearson(trajectory=trajectory).calculate()
+
+if UserInput.covariance_tau:
+    correlation_matrix = Correlation.TimeLagged(
+        trajectory=trajectory, covariance_tau=UserInput.covariance_tau
+    ).calculate()
+    title = 'Correlation Matrix with tau = {0}'.format(UserInput.covariance_tau)
+else:
+    correlation_matrix = Correlation.Pearson(trajectory=trajectory).calculate()
+    title = 'Correlation Matrix'
 
 # Save HeatMap
-Plotter.SimplePColor(y=correlation_matrix,
+
+Plotter.UnityPColor(y=correlation_matrix,
                 out_name=UserInput.out_name+'.png',
                 x_label=UserInput.sel,
                 y_label=UserInput.sel,
-                title='Correlation Matrix'
+                title=title
                 ).plot()
 
 Saver.Array(

@@ -35,6 +35,28 @@ class Pearson(Correlation):
         return self.correlation_matrix
 
 
+class TimeLagged(Correlation):
+    def __init__(self, trajectory, covariance_tau):
+        assert isinstance(covariance_tau, int)
+        self.covariance_tau=covariance_tau
+        super().__init__(trajectory)
+    def calculate(self):
+        average = numpy.average(self.trajectory.xyz, axis=0)
+        fluctuations = self.trajectory.xyz - average[numpy.newaxis, :]
+        del average
+        dots = numpy.zeros((self.trajectory.n_atoms, self.trajectory.n_atoms))
+        for i in range(self.trajectory.n_frames - self.covariance_tau):
+            dot = numpy.dot(fluctuations[i, :, :], numpy.transpose(fluctuations[i + self.covariance_tau, :, :]))
+            dots = dots + dot
+        del fluctuations
+        dots = numpy.divide(dots, self.trajectory.n_frames)
+        diagonal = numpy.diag(dots)
+        normalization_matrix = numpy.outer(diagonal, diagonal)
+        normalization_matrix = numpy.sqrt(normalization_matrix)
+        self.correlation_matrix = numpy.divide(dots, normalization_matrix)
+        return self.correlation_matrix
+
+
 class MutualInformation(Correlation):
     def calculate(self):
         raise NotImplementedError

@@ -3,7 +3,7 @@
 # Currently works with protein CA only
 
 import argparse
-from Analysis import AtomSelection, Correlation, TrajectoryReader
+from Analysis import AtomSelection, Correlation, Plotter, TrajectoryReader
 from Analysis.Cluster import Saver
 
 
@@ -33,6 +33,13 @@ inputs.add_argument('-sel',
                     help='Atom selection. Must be name CA currently.',
                     type=str,
                     default='name CA'
+                    )
+inputs.add_argument('-tau',
+                    action='store',
+                    dest='covariance_tau',
+                    default=None,
+                    type=int,
+                    help='Lag time for constructing a time-lagged correlation matrix',
                     )
 inputs.add_argument('-m',
                     action='store',
@@ -77,7 +84,12 @@ if UserInput.min_cluster_size:
 else:
     min_membership = None
 
-correlation_matrix = Correlation.Pearson(trajectory=trajectory).calculate()
+if UserInput.covariance_tau:
+    correlation_matrix = Correlation.TimeLagged(
+        trajectory=trajectory, covariance_tau=UserInput.covariance_tau
+    ).calculate()
+else:
+    correlation_matrix = Correlation.Pearson(trajectory=trajectory).calculate()
 labels = Correlation.Clustering.cluster(
     correlation_matrix=correlation_matrix, input_type=input_type, minimum_membership=min_membership
 )

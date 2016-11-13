@@ -53,6 +53,15 @@ class SimplePColor(Plotter):
         matplotlib.pyplot.savefig(self.out_name)
         matplotlib.pyplot.clf()
 
+class UnityPColor(Plotter):
+    def plot(self):
+        matplotlib.pyplot.pcolor(self.y, cmap='jet', vmin=-1, vmax=1)
+        matplotlib.pyplot.colorbar()
+        matplotlib.pyplot.xlabel(self.x_label)
+        matplotlib.pyplot.ylabel(self.y_label)
+        matplotlib.pyplot.title(self.title)
+        matplotlib.pyplot.savefig(self.out_name)
+        matplotlib.pyplot.clf()
 
 class MeshPColor(Plotter):
     def __init__(self, y, x_edges, y_edges, out_name, x_label=' ', y_label=' ', title=' '):

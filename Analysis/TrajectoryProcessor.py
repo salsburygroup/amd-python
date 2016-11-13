@@ -1,5 +1,6 @@
 import mdtraj
-
+import pandas
+import numpy
 
 class Processor:
     def __init__(self, trajectory, atom_selection):
@@ -44,4 +45,23 @@ class Unwrapper(Processor):
     def process(self):
         raise NotImplementedError
 
+
+class Repair:
+    @staticmethod
+    def atom_order(right_pdb_file, wrong_pdb_file, wrong_trajectory_file, out_trajectory_file):
+        right_topology = mdtraj.load_topology(right_pdb_file)
+        wrong_topology = mdtraj.load_topology(wrong_pdb_file)
+        right_table, right_bonds = right_topology.to_dataframe()
+        wrong_table, wrong_bonds = wrong_topology.to_dataframe()
+        repair_list = []
+        for index, row in right_table.iterrows():
+            repair_list.append(wrong_table[
+                            (wrong_table['name'] == row['name'])
+                            & (wrong_table['resSeq'] == row['resSeq'])
+                            & (wrong_table['resName'] == row['resName'])
+                            & (wrong_table['chainID'] == row['chainID'])].index[0])
+        with mdtraj.formats.DCDTrajectoryFile(out_trajectory_file, 'w') as right_trajectory_file:
+            for frame in mdtraj.iterload(wrong_trajectory_file, top=wrong_pdb_file, chunk=1):
+                correct_frame_xyz = frame.xyz[0][repair_list]
+                right_trajectory_file.write(correct_frame_xyz)
 
