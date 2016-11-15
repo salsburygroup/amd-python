@@ -1,5 +1,5 @@
 from Analysis.Cluster import Clusterer, Plotter, Saver, Scorer
-from Analysis import TrajectoryReader, Featurizer
+from Analysis import TrajectoryReader, Featurizer, AtomSelection
 import os
 import glob
 
@@ -19,10 +19,13 @@ class Predictor:
     def predict(self):
         # Prepare DCD
         self.trajectory = TrajectoryReader.DCD(topology_path=self.topology_path, trajectory_path=self.dcd_path).load()
+        self.trajectory = AtomSelection.Slice(trajectory=self.trajectory, atom_selection=self.atom_selection).select()
         self.trajectory_2d = Featurizer.XYZ(self.trajectory).extract()
+        del self.trajectory
         # Cluster
         clusterer = getattr(Clusterer, self.method)(self.trajectory_2d, **self.kwargs)
         clusterer.fit()
+
         self.labels = clusterer.labels
         # Save Timeseries
         Saver.TimeSeries(out_name=os.path.join(self.out_dir, 'timeseries.txt'), labels=clusterer.labels).save()
@@ -40,6 +43,7 @@ class Predictor:
                 labels=clusterer.labels, centers=clusterer.centers, data=self.trajectory_2d
             ).evaluate()
             Saver.Score(out_name=os.path.join(self.out_dir, 'DaviesBouldin.txt'), score=db_score).save()
+        self.trajectory = TrajectoryReader.DCD(topology_path=self.topology_path, trajectory_path=self.dcd_path).load()
 
     def row_format(self):  # Maybe format row
         try:

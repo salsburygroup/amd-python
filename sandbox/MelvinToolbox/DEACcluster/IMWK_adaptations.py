@@ -5,7 +5,7 @@
 
 import argparse
 import os
-from Analysis import TrajectoryReader, Featurizer
+from Analysis import TrajectoryReader, Featurizer, AtomSelection
 from Analysis.Cluster import Clusterer, Plotter, Saver, Scorer
 from sklearn.cluster import MiniBatchKMeans
 from sklearn import mixture
@@ -34,6 +34,7 @@ inputs.add_argument('-o', action='store', dest='out_name', help='Output director
 UserInput = parser.parse_args()
 
 trajectory = TrajectoryReader.DCD(trajectory_path=UserInput.trajectory, topology_path=UserInput.structure).load()
+trajectory = AtomSelection.Slice(trajectory=trajectory, atom_selection=atom_selection).select()
 trajectory_2d = Featurizer.XYZ(trajectory=trajectory).extract()
 
 
