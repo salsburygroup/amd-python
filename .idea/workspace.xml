@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60be380e-7fcd-487f-bd2a-7200b1968f18" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sandbox/MelvinToolbox/average_linkage_dendrogram.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sandbox/MelvinToolbox/DEACcluster/IMWK_adaptations.py" afterPath="$PROJECT_DIR$/sandbox/MelvinToolbox/DEACcluster/IMWK_adaptations.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Analysis/TrajectoryProcessor.py" afterPath="$PROJECT_DIR$/Analysis/TrajectoryProcessor.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sandbox/MelvinToolbox/average_linkage_dendrogram.py" afterPath="$PROJECT_DIR$/sandbox/MelvinToolbox/average_linkage_dendrogram.py" />
     </list>
     <ignored path="AMD-PYTHON.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,14 +42,46 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="average_linkage_dendrogram.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="average_linkage_dendrogram.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sandbox/MelvinToolbox/average_linkage_dendrogram.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="56" column="29" selection-start-line="56" selection-start-column="29" selection-end-line="56" selection-end-column="29" />
+            <state relative-caret-position="62">
+              <caret line="70" column="33" selection-start-line="70" selection-start-column="33" selection-end-line="70" selection-end-column="33" />
               <folding>
                 <element signature="e#23#38#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="repair_residue_atom_order.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/repair_residue_atom_order.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="585">
+              <caret line="40" column="33" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TrajectoryProcessor.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Analysis/TrajectoryProcessor.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="990">
+              <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="align.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sandbox/align.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="78">
+              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -115,13 +147,13 @@
         <option value="$PROJECT_DIR$/bin/correlation_cluster.py" />
         <option value="$PROJECT_DIR$/Analysis/Plotter.py" />
         <option value="$PROJECT_DIR$/bin/correlation_matrix.py" />
-        <option value="$PROJECT_DIR$/Analysis/TrajectoryProcessor.py" />
         <option value="$PROJECT_DIR$/repair_residue_atom_order.py" />
         <option value="$PROJECT_DIR$/bin/repair_residue_atom_order.py" />
         <option value="$PROJECT_DIR$/bin/cluster_automatic.py" />
         <option value="$PROJECT_DIR$/sandbox/MelvinToolbox/DEACcluster/IMWK_adaptations.py" />
         <option value="$PROJECT_DIR$/bin/pca_ms_structures_trial.py" />
         <option value="$PROJECT_DIR$/sandbox/MelvinToolbox/average_linkage_dendrogram.py" />
+        <option value="$PROJECT_DIR$/Analysis/TrajectoryProcessor.py" />
       </list>
     </option>
   </component>
@@ -132,10 +164,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="23" />
     <option name="y" value="23" />
-    <option name="width" value="1260" />
-    <option name="height" value="945" />
+    <option name="width" value="960" />
+    <option name="height" value="969" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -181,6 +212,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -325,8 +358,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -633,10 +664,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="23" y="23" width="1260" height="945" extended-state="0" />
+    <frame x="0" y="23" width="960" height="969" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21428572" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21354167" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882884" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -706,19 +737,17 @@
           <line>51</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/sandbox/align.py</url>
+          <line>25</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="13" />
+      <option name="time" value="15" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Analysis/Cluster/resources/generate_middle.vmd">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="808">
-          <caret line="589" column="17" selection-start-line="589" selection-start-column="17" selection-end-line="589" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Rendering/VisualStats/vsigma.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="645">
@@ -956,13 +985,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Analysis/TrajectoryProcessor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="60" column="72" selection-start-line="60" selection-start-column="72" selection-end-line="60" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/hbond_analysis_resid.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1815">
@@ -1023,16 +1045,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#62#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/repair_residue_atom_order.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="40" column="33" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -1053,11 +1065,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sandbox/MelvinToolbox/average_linkage_dendrogram.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="56" column="29" selection-start-line="56" selection-start-column="29" selection-end-line="56" selection-end-column="29" />
+        <state relative-caret-position="62">
+          <caret line="70" column="33" selection-start-line="70" selection-start-column="33" selection-end-line="70" selection-end-column="33" />
           <folding>
             <element signature="e#23#38#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/repair_residue_atom_order.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="40" column="33" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Analysis/TrajectoryProcessor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="990">
+          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sandbox/align.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

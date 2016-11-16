@@ -63,5 +63,4 @@ class Repair:
         with mdtraj.formats.DCDTrajectoryFile(out_trajectory_file, 'w') as right_trajectory_file:
             for frame in mdtraj.iterload(wrong_trajectory_file, top=wrong_pdb_file, chunk=1):
                 correct_frame_xyz = frame.xyz[0][repair_list]
-                right_trajectory_file.write(correct_frame_xyz)
-
+                right_trajectory_file.write(correct_frame_xyz*10)  # because nanometers

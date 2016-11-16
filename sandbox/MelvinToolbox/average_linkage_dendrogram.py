@@ -4,7 +4,9 @@ import argparse
 import numpy
 import matplotlib.pyplot as plt
 import seaborn
-from scipy.cluster.hierarchy import dendrogram, linkage
+from scipy.cluster.hierarchy import dendrogram
+from scipy.cluster import hierarchy
+from scipy.spatial.distance import squareform
 
 # Initialize parser. The default help has poor labeling. See http://bugs.python.org/issue9694
 parser = argparse.ArgumentParser(
@@ -50,6 +52,27 @@ inputs.add_argument('-y',
                     type=str,
                     default='distance'
                     )
+inputs.add_argument('-l',
+                    action='store',
+                    dest='labels',
+                    help='Labels for x-ticks',
+                    type=str,
+                    default=None
+                    )
+inputs.add_argument('-c',
+                    action='store',
+                    dest='cutoff',
+                    help='Where to cut the dendrogram',
+                    type=float,
+                    default=None
+                    )
+inputs.add_argument('-b',
+                    action='store',
+                    dest='bound',
+                    help='Lower bound for y-axis',
+                    type=float,
+                    default=0.0
+                    )
 inputs.add_argument('-o',
                     action='store',
                     dest='out_name',
@@ -63,23 +86,33 @@ UserInput = parser.parse_args()
 
 # Read in data
 distance_matrix = numpy.genfromtxt(UserInput.distances)
+distance_matrix = squareform(distance_matrix)
 ground_truths = numpy.genfromtxt(UserInput.ground_truths).astype(int)
+if UserInput.labels:
+    with open(UserInput.labels) as l:
+        labels = l.read().strip().split(' ')
+else:
+    labels = None
+
 
 # Make linkage matrix
-Z = linkage(distance_matrix, 'average')
+Z = hierarchy.average(distance_matrix)
 
 # Plot the dendrogram
-colors = plt.cm.rainbow(numpy.linspace(0,1,max(ground_truths)+1))
-plt.figure()
-# plt.style.use('ggplot')
+colors = plt.cm.rainbow(numpy.linspace(0, 1, max(ground_truths)+1))
+fig = plt.figure()
+d = dendrogram(Z, labels=labels, color_threshold=UserInput.cutoff)
+leaves = d['leaves']
 plt.title(UserInput.title)
 plt.xlabel(UserInput.x_label)
 plt.xlabel(UserInput.y_label)
-dendrogram(Z)
+ax = fig.gca()
+ax.set_ylim(UserInput.bound, ax.get_ylim()[1])
+ordered_ground_truths = ground_truths[leaves]
+
 idx = 0
-for x in ground_truths:
+for x in ordered_ground_truths:
     plt.gca().get_xticklabels()[idx].set_color(colors[x])
     idx += 1
 plt.savefig(UserInput.out_name, dpi=1200)
 plt.close()
-# plt.show()
