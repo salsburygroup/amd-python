@@ -3,7 +3,7 @@ import mdtraj as md
 import pandas as pd
 
 # Initialize parser. The default help has poor labeling. See http://bugs.python.org/issue9694
-parser = argparse.ArgumentParser(description = 'Pull pdbs of clusters from time series', add_help=False) 
+parser = argparse.ArgumentParser(description = 'Convert donor acceptor atom indecies and convert them to the appropriate residue', add_help=False) 
 
 # List all possible user input
 inputs=parser.add_argument_group('Input arguments')
@@ -20,9 +20,9 @@ t=md.load(structure)
 top=t.topology
 
 #read in file with occupancy data
-df = pd.read_csv(UserInput.hbonds, header=None)
-donor = df[0]
-acceptor = df[1]
+df = pd.read_csv(UserInput.hbonds, sep='\t', header=None)
+donor = df[0]-1
+acceptor = df[1]-1
 occ = df[2]
 
 i=0
@@ -35,7 +35,7 @@ while i < len(donor):
     acceptor_atom = top.atom(acceptor[i])
     occupancy = occ[i]
     
-    print('%s%s %s%s %s' % (donor_atom.residue.name, donor_atom.residue.index, acceptor_atom.residue.name, acceptor_atom.residue.index, occupancy))
-    f.write("{}{}\tpp\t{}{}\t{}\n".format(donor_atom.residue.name, donor_atom.residue.index, acceptor_atom.residue.name, acceptor_atom.residue.index, round(occupancy, 5)))
+    print('%s%s %s%s %s' % (donor_atom.residue.name, donor_atom.residue.index+1, acceptor_atom.residue.name, acceptor_atom.residue.index+1, occupancy))
+    f.write("{}{}\tpp\t{}{}\t{}\n".format(donor_atom.residue.name, donor_atom.residue.index+1, acceptor_atom.residue.name, acceptor_atom.residue.index+1, round(occupancy, 5)))
     i=i+1
     
