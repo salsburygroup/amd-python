@@ -29,7 +29,7 @@ inputs.add_argument('-g',
                     dest='ground_truths',
                     help='Text file containing ground-truth labels',
                     type=str,
-                    required=True
+                    default=None
                     )
 inputs.add_argument('-t',
                     action='store',
@@ -87,7 +87,6 @@ UserInput = parser.parse_args()
 # Read in data
 distance_matrix = numpy.genfromtxt(UserInput.distances)
 distance_matrix = squareform(distance_matrix)
-ground_truths = numpy.genfromtxt(UserInput.ground_truths).astype(int)
 if UserInput.labels:
     with open(UserInput.labels) as l:
         labels = l.read().strip().split(' ')
@@ -99,7 +98,6 @@ else:
 Z = hierarchy.average(distance_matrix)
 
 # Plot the dendrogram
-colors = plt.cm.rainbow(numpy.linspace(0, 1, max(ground_truths)+1))
 fig = plt.figure()
 d = dendrogram(Z, labels=labels, color_threshold=UserInput.cutoff)
 leaves = d['leaves']
@@ -108,11 +106,14 @@ plt.xlabel(UserInput.x_label)
 plt.xlabel(UserInput.y_label)
 ax = fig.gca()
 ax.set_ylim(UserInput.bound, ax.get_ylim()[1])
-ordered_ground_truths = ground_truths[leaves]
 
-idx = 0
-for x in ordered_ground_truths:
-    plt.gca().get_xticklabels()[idx].set_color(colors[x])
-    idx += 1
+if UserInput.ground_truths:
+    ground_truths = numpy.genfromtxt(UserInput.ground_truths).astype(int)
+    colors = plt.cm.rainbow(numpy.linspace(0, 1, max(ground_truths) + 1))
+    ordered_ground_truths = ground_truths[leaves]
+    idx = 0
+    for x in ordered_ground_truths:
+        plt.gca().get_xticklabels()[idx].set_color(colors[x])
+        idx += 1
 plt.savefig(UserInput.out_name, dpi=1200)
 plt.close()

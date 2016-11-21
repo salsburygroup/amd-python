@@ -103,11 +103,13 @@ with mdtraj.formats.DCDTrajectoryFile(
 
 # Second round of clustering, keep track of populations along the way
 strided_trajectory = mdtraj.load(UserInput.output_prefix + '.dcd', top=UserInput.structure_file)
+reps_trajectory = mdtraj.load(rep_trajectory_file, top=UserInput.structure_file)
+strided_trajectory = strided_trajectory.superpose(strided_trajectory)
+reps_trajectory = reps_trajectory.superpose(strided_trajectory)
 strided_frames = strided_trajectory.n_frames
 atoms = strided_trajectory.n_atoms
 strided_trajectory = strided_trajectory.xyz
 strided_trajectory = strided_trajectory.reshape((strided_frames, atoms * 3))
-reps_trajectory = mdtraj.load(rep_trajectory_file, top=UserInput.structure_file)
 rep_frames = reps_trajectory.n_frames
 reps = reps_trajectory.xyz
 reps = reps.reshape((rep_frames, atoms * 3))
