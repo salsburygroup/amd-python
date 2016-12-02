@@ -29,7 +29,7 @@ Rin2=re.sub('[{}]','',UserInput.Rin)
 RinClean=Rin2.split(' ')
 RinStr=np.array(RinClean, dtype='f')
 RinNum=RinStr.astype(np.float)
-R=np.reshape(RinNum, (3,3))
+R=np.reshape(RinNum, (4,4))
 
 print(R)
 
