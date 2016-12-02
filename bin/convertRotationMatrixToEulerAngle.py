@@ -13,7 +13,7 @@ import re
 import argparse
 
 #Initialize parser. The default help has poor labeling. See http://bugs.python.org/issue9694
-parser = argparse.ArgumentParser(description = 'Calculate RGYR time series', add_help=False) 
+parser = argparse.ArgumentParser(description = 'Convert a rotation matrix output from VMD into Euler Angles', add_help=False) 
 
 #List all possible user input
 inputs=parser.add_argument_group('Input arguments')
