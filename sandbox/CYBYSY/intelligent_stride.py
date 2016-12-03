@@ -125,6 +125,7 @@ rep_labeled_traj['cluster'] = rep_labels
 end_time = time.time()
 print("Elapsed time was %g seconds" % (end_time - start_time))
 strided_unique_clusters = [cluster_number for cluster_number in strided_labels if cluster_number not in rep_labels]
+strided_unique_clusters = numpy.unique(strided_unique_clusters)
 strided_noise = [ind for ind, cluster in enumerate(strided_labels) if cluster == -1]
 rep_unique_clusters = [cluster_number for cluster_number in rep_labels if cluster_number not in strided_labels]
 rep_unique_clusters = numpy.unique(rep_unique_clusters)
@@ -138,7 +139,7 @@ print(str(len(strided_unique_clusters) + len(strided_noise)) + ' things only in 
 
 matplotlib.pyplot.figure()
 matplotlib.pyplot.scatter(numpy.arange(len(labels)), labels, marker='+')
-matplotlib.pyplot.xlabel('Frame (only meaningful to line')
+matplotlib.pyplot.xlabel('Frame (only meaningful to line)')
 matplotlib.pyplot.ylabel('Cluster')
 matplotlib.pyplot.title('Intelligent Stride Final Round')
 matplotlib.pyplot.savefig(UserInput.output_prefix + '_final_round_clusters.png')
@@ -160,4 +161,26 @@ for frame_number in rep_noise:
     reps_trajectory[frame_number].save_pdb(UserInput.output_prefix + '_MissedStructures/' + '/noise_frame'
                                            + str(frame_number) + '_population_' + str(population) + '.pdb')
 
-tracker.to_csv(UserInput.output_prefix + '_details.csv')
+tracker.to_csv(UserInput.output_prefix + '_kept_details.csv')
+strided_clusters, strided_cluster_counts = numpy.unique(strided_labels, return_counts=True)
+stride_details = pandas.DataFrame(columns=['cluster', 'population'])
+stride_details['cluster'] = strided_clusters
+stride_details['population'] = strided_cluster_counts
+stride_details.to_csv(UserInput.output_prefix + '_stride_details.csv')
+
+summary = pandas.DataFrame(columns=['clusters_only_in_kept',
+                                    'fraction_of_original',
+                                    'clusters_only_in_strided',
+                                    'fraction_of_strided',
+                                    'clusters_in_both'])
+clusters_only_in_kept = len(rep_unique_clusters)
+total_frames = strided_frames * UserInput.stride
+fraction_original  = sum(tracker[tracker['final_label'].isin(rep_unique_clusters)]['population'])/total_frames
+clusters_only_in_strided = len(strided_unique_clusters)
+fraction_strided = \
+    sum(stride_details[stride_details['cluster'].isin(strided_unique_clusters)]['population'])/strided_frames
+clusters_in_both = [cluster_number for cluster_number in strided_labels if cluster_number in rep_labels]
+clusters_in_both = len(clusters_in_both)
+summary.loc[0] = [clusters_only_in_kept, fraction_original, clusters_only_in_strided,
+                                    fraction_strided, clusters_in_both]
+summary.to_csv(UserInput.output_prefix + '_summary.csv')
