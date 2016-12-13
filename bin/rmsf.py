@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import argparse
-from Analysis import Distance, Plotter, Saver, TrajectoryReader
+from Analysis import Distance, Plotter, Saver, TrajectoryReader, TrajectoryProcessor
 
 # Initialize parser. The default help has poor labeling. See http://bugs.python.org/issue9694
 parser = argparse.ArgumentParser(description='Calculate, save and plot RMSF', add_help=False)
@@ -30,6 +30,10 @@ inputs.add_argument('-sel',
                     type=str,
                     default='name CA'
                     )
+inputs.add_argument('-align',
+                    action='store_true',
+                    help='Align to atom selection before calculating?',
+)
 inputs.add_argument('-o',
                     action='store',
                     dest='out_name',
@@ -45,6 +49,9 @@ UserInput = parser.parse_args()
 trajectory = TrajectoryReader.DCD(topology_path=UserInput.structure,
                                   trajectory_path=UserInput.trajectory
                                   ).load()
+
+if UserInput.align:
+    trajectory = TrajectoryProcessor.Aligner(trajectory=trajectory, atom_selection=UserInput.sel).process()
 
 # Calculate RMSF
 rmsf_array = Distance.RMSF(trajectory=trajectory,

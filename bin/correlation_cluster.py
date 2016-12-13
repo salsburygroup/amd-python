@@ -47,6 +47,7 @@ inputs.add_argument('-m',
                     help='Minimum cluster and neighborhood size for HDBSCAN',
                     type=int
                     )
+# maybe make the dot product flag -dot
 inputs.add_argument('-d',
                     action='store_true',
                     dest='correlation_as_distance',
