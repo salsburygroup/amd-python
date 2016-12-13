@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import argparse
-from Analysis import AtomSelection, Correlation, Plotter, Saver, TrajectoryReader
+from Analysis import AtomSelection, Correlation, Plotter, Saver, TrajectoryReader, TrajectoryProcessor
 
 
 # Initialize parser. The default help has poor labeling. See http://bugs.python.org/issue9694
@@ -38,6 +38,10 @@ inputs.add_argument('-tau',
                     type=int,
                     help='Lag time for constructing a time-lagged correlation matrix',
                     )
+inputs.add_argument('-align',
+                    action='store_true',
+                    help='Align to atom selection before calculating?',
+)
 inputs.add_argument('-o',
                     action='store',
                     dest='out_name',
@@ -52,6 +56,9 @@ UserInput = parser.parse_args()
 # Process trajectory
 trajectory = TrajectoryReader.DCD(topology_path=UserInput.structure, trajectory_path=UserInput.trajectory).load()
 trajectory = AtomSelection.Slice(trajectory=trajectory, atom_selection=UserInput.sel).select()
+
+if UserInput.align:
+    trajectory = TrajectoryProcessor.Aligner(trajectory=trajectory, atom_selection=UserInput.sel).process()
 
 # Make correlation matrix
 
