@@ -106,6 +106,7 @@ plt.xlabel(UserInput.x_label)
 plt.ylabel(UserInput.y_label)
 ax = fig.gca()
 ax.set_ylim(UserInput.bound, ax.get_ylim()[1])
+ax.set_xticklabels(ax.xaxis.get_majorticklabels(), rotation=45)
 
 if UserInput.ground_truths:
     ground_truths = numpy.genfromtxt(UserInput.ground_truths).astype(int)

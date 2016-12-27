@@ -101,16 +101,35 @@ with mdtraj.formats.DCDTrajectoryFile(
         del window
         step += 1
 
+# Second round of clustering -- kept trajectory only
+reps_trajectory = mdtraj.load(rep_trajectory_file, top=UserInput.structure_file)
+reps_trajectory = reps_trajectory.superpose(reps_trajectory)
+rep_frames = reps_trajectory.n_frames
+atoms = reps_trajectory.n_atoms
+reps = reps_trajectory.xyz
+reps = reps.reshape((rep_frames, atoms * 3))
+reps = reps.astype('float64')
+clusterer = hdbscan.HDBSCAN(min_cluster_size=2)
+kept_labels = clusterer.fit_predict(reps)
+del reps
+kept_noise = [ind for ind, cluster in enumerate(kept_labels) if cluster == -1]
+kept_fraction_noise = float(len(kept_noise))/float(rep_frames)
+matplotlib.pyplot.figure()
+matplotlib.pyplot.scatter(numpy.arange(len(kept_labels)), kept_labels, marker='+')
+matplotlib.pyplot.xlabel('Kept Frame')
+matplotlib.pyplot.ylabel('Cluster')
+matplotlib.pyplot.title('Intelligent Stride Kept Onlyu')
+matplotlib.pyplot.savefig(UserInput.output_prefix + '_kept_only_clusters.png')
+matplotlib.pyplot.close()
+numpy.savetxt(UserInput.output_prefix + '_kept_only_clustering.txt', kept_labels)
+
 # Second round of clustering, keep track of populations along the way
 strided_trajectory = mdtraj.load(UserInput.output_prefix + '.dcd', top=UserInput.structure_file)
-reps_trajectory = mdtraj.load(rep_trajectory_file, top=UserInput.structure_file)
 strided_trajectory = strided_trajectory.superpose(strided_trajectory)
 reps_trajectory = reps_trajectory.superpose(strided_trajectory)
 strided_frames = strided_trajectory.n_frames
-atoms = strided_trajectory.n_atoms
 strided_trajectory = strided_trajectory.xyz
 strided_trajectory = strided_trajectory.reshape((strided_frames, atoms * 3))
-rep_frames = reps_trajectory.n_frames
 reps = reps_trajectory.xyz
 reps = reps.reshape((rep_frames, atoms * 3))
 reps = reps.astype('float64')
@@ -136,6 +155,7 @@ print(str(len(rep_unique_clusters) + len(rep_noise)) + ' things missed in stridi
 print(str(len(strided_unique_clusters) + len(strided_noise)) + ' things only in strided trajectory\n'
       + '\t' + str(len(strided_unique_clusters)) + ' are from labeled clusters\n'
       + '\t' + str(len(strided_noise)) + ' are noise\n')
+print('Fraction of kept trajectory that was noise: ' + str(kept_fraction_noise) + '\n')
 
 matplotlib.pyplot.figure()
 matplotlib.pyplot.scatter(numpy.arange(len(labels)), labels, marker='+')
@@ -175,12 +195,12 @@ summary = pandas.DataFrame(columns=['clusters_only_in_kept',
                                     'clusters_in_both'])
 clusters_only_in_kept = len(rep_unique_clusters)
 total_frames = strided_frames * UserInput.stride
-fraction_original  = sum(tracker[tracker['final_label'].isin(rep_unique_clusters)]['population'])/total_frames
+fraction_original = sum(tracker[tracker['final_label'].isin(rep_unique_clusters)]['population'])/total_frames
 clusters_only_in_strided = len(strided_unique_clusters)
 fraction_strided = \
     sum(stride_details[stride_details['cluster'].isin(strided_unique_clusters)]['population'])/strided_frames
 clusters_in_both = [cluster_number for cluster_number in strided_labels if cluster_number in rep_labels]
 clusters_in_both = len(clusters_in_both)
 summary.loc[0] = [clusters_only_in_kept, fraction_original, clusters_only_in_strided,
-                                    fraction_strided, clusters_in_both]
+                  fraction_strided, clusters_in_both]
 summary.to_csv(UserInput.output_prefix + '_summary.csv')
