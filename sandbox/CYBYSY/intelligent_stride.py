@@ -103,6 +103,7 @@ with mdtraj.formats.DCDTrajectoryFile(
 
 # Second round of clustering -- kept trajectory only
 reps_trajectory = mdtraj.load(rep_trajectory_file, top=UserInput.structure_file)
+reps_trajectory = reps_trajectory.atom_slice(reps_trajectory.topology.select(UserInput.atom_selection))
 reps_trajectory = reps_trajectory.superpose(reps_trajectory)
 rep_frames = reps_trajectory.n_frames
 atoms = reps_trajectory.n_atoms
@@ -118,13 +119,14 @@ matplotlib.pyplot.figure()
 matplotlib.pyplot.scatter(numpy.arange(len(kept_labels)), kept_labels, marker='+')
 matplotlib.pyplot.xlabel('Kept Frame')
 matplotlib.pyplot.ylabel('Cluster')
-matplotlib.pyplot.title('Intelligent Stride Kept Onlyu')
+matplotlib.pyplot.title('Intelligent Stride Kept Only')
 matplotlib.pyplot.savefig(UserInput.output_prefix + '_kept_only_clusters.png')
 matplotlib.pyplot.close()
 numpy.savetxt(UserInput.output_prefix + '_kept_only_clustering.txt', kept_labels)
 
 # Second round of clustering, keep track of populations along the way
 strided_trajectory = mdtraj.load(UserInput.output_prefix + '.dcd', top=UserInput.structure_file)
+strided_trajectory = strided_trajectory.atom_slice(strided_trajectory.topology.select(UserInput.atom_selection))
 strided_trajectory = strided_trajectory.superpose(strided_trajectory)
 reps_trajectory = reps_trajectory.superpose(strided_trajectory)
 strided_frames = strided_trajectory.n_frames
@@ -165,21 +167,21 @@ matplotlib.pyplot.title('Intelligent Stride Final Round')
 matplotlib.pyplot.savefig(UserInput.output_prefix + '_final_round_clusters.png')
 matplotlib.pyplot.close()
 tracker['final_label'] = rep_labels
-if not os.path.exists(UserInput.output_prefix + '_MissedStructures'):
-    os.mkdir(UserInput.output_prefix + '_MissedStructures')
-for label in rep_unique_clusters:
-    cluster_string = rep_labeled_traj.loc[rep_labeled_traj['cluster'] == label].frame.values
-    cluster_coords = reps[cluster_string]
-    mean = cluster_coords.mean(axis=0)
-    distance = [euclidean(row, mean) for row in cluster_coords]
-    rep = cluster_string[numpy.argmin(distance)]
-    population = int(sum(tracker[tracker.final_label == label].population))
-    reps_trajectory[rep].save_pdb(UserInput.output_prefix + '_MissedStructures/' + '/rep_' + str(label)
-                                  + '_population_' + str(population) + '.pdb')
-for frame_number in rep_noise:
-    population = int(sum(tracker[tracker.frame_in_rep_dcd == frame_number].population))
-    reps_trajectory[frame_number].save_pdb(UserInput.output_prefix + '_MissedStructures/' + '/noise_frame'
-                                           + str(frame_number) + '_population_' + str(population) + '.pdb')
+#if not os.path.exists(UserInput.output_prefix + '_MissedStructures'):
+#    os.mkdir(UserInput.output_prefix + '_MissedStructures')
+#for label in rep_unique_clusters:
+#    cluster_string = rep_labeled_traj.loc[rep_labeled_traj['cluster'] == label].frame.values
+#    cluster_coords = reps[cluster_string]
+#    mean = cluster_coords.mean(axis=0)
+#    distance = [euclidean(row, mean) for row in cluster_coords]
+#    rep = cluster_string[numpy.argmin(distance)]
+#    population = int(sum(tracker[tracker.final_label == label].population))
+#    reps_trajectory[rep].save_pdb(UserInput.output_prefix + '_MissedStructures/' + '/rep_' + str(label)
+#                                  + '_population_' + str(population) + '.pdb')
+#for frame_number in rep_noise:
+#    population = int(sum(tracker[tracker.frame_in_rep_dcd == frame_number].population))
+#    reps_trajectory[frame_number].save_pdb(UserInput.output_prefix + '_MissedStructures/' + '/noise_frame'
+#                                           + str(frame_number) + '_population_' + str(population) + '.pdb')
 
 tracker.to_csv(UserInput.output_prefix + '_kept_details.csv')
 strided_clusters, strided_cluster_counts = numpy.unique(strided_labels, return_counts=True)

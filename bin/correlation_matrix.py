@@ -42,6 +42,12 @@ inputs.add_argument('-align',
                     action='store_true',
                     help='Align to atom selection before calculating?',
 )
+inputs.add_argument('-ax',
+                    action='store',
+                    dest='axis_label',
+                    default=None,
+                    help='Align to atom selection before calculating?',
+)
 inputs.add_argument('-o',
                     action='store',
                     dest='out_name',
@@ -73,12 +79,20 @@ else:
 
 # Save HeatMap
 
-Plotter.UnityPColor(y=correlation_matrix,
-                out_name=UserInput.out_name+'.png',
-                x_label=UserInput.sel,
-                y_label=UserInput.sel,
-                title=title
-                ).plot()
+if UserInput.axis_label:
+    Plotter.UnityPColor(y=correlation_matrix,
+                        out_name=UserInput.out_name+'.png',
+                        x_label=UserInput.axis_label,
+                        y_label=UserInput.axis_label,
+                        title=title
+                        ).plot()
+else:
+    Plotter.UnityPColor(y=correlation_matrix,
+                        out_name=UserInput.out_name + '.png',
+                        x_label=UserInput.sel,
+                        y_label=UserInput.sel,
+                        title=title
+                        ).plot()
 
 Saver.Array(
     array=correlation_matrix,

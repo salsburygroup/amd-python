@@ -39,6 +39,30 @@ inputs.add_argument(
     type=int,
     default=None
 )
+inputs.add_argument(
+    '-x',
+    action='store',
+    dest='x_label',
+    help='label for x axis',
+    type=str,
+    default=' '
+)
+inputs.add_argument(
+    '-y',
+    action='store',
+    dest='y_label',
+    help='label for y axis',
+    type=str,
+    default=' '
+)
+inputs.add_argument(
+    '-t',
+    action='store',
+    dest='title',
+    help='title for plot',
+    type=str,
+    default=' '
+)
 # Parse into useful form
 UserInput = parser.parse_args()
 
@@ -52,7 +76,10 @@ if not UserInput.bins:
     bins = int(numpy.ceil((numpy.max(timeseries) - numpy.min(timeseries)) / bin_width))
 else:
     bins = UserInput.bins
-n = matplotlib.pyplot.hist(x=timeseries, bins=bins, normed=1)
+n = matplotlib.pyplot.hist(x=timeseries, bins=bins, normed=True, stacked=True)
 y = matplotlib.mlab.normpdf( bins, numpy.mean(timeseries), numpy.std(a=timeseries))
 matplotlib.pyplot.grid(True)
+matplotlib.pyplot.xlabel(UserInput.x_label)
+matplotlib.pyplot.ylabel(UserInput.y_label)
+matplotlib.pyplot.title(UserInput.title)
 matplotlib.pyplot.savefig(UserInput.output)

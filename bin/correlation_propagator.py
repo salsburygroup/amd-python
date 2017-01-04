@@ -3,9 +3,8 @@
 # Ideally, you'll use the same atom selection you would for a correlation matrix.
 # I suggest 'name CA' for proteins and 'not element H' for nucleic acids.
 
-from Analysis import AtomSelection, Cluster, Correlation, Saver, TrajectoryReader
+from Analysis import AtomSelection, Cluster, Correlation, Plotter, Saver, TrajectoryReader
 import argparse
-import matplotlib.pyplot as plt
 # Initialize parser. The default help has poor labeling. See http://bugs.python.org/issue9694
 parser = argparse.ArgumentParser(description='Calculate Propagating Correlation Matrix', add_help=False)
 
@@ -55,13 +54,11 @@ Saver.Array(array=dot_average_delta, out_name=UserInput.out_name + '_dot_average
 
 # Save pretty pictures
 # need to add matshow to Plotter
-plt.matshow(average_dot)
-plt.xlabel('Atom')
-plt.ylabel('Atom')
-plt.title('Average dot product')
-plt.colorbar()
-plt.savefig(UserInput.out_name + '_average_dot.png')
-plt.close()
+Plotter.UnityPColor(y=average_dot,
+                    x_label='Atom',
+                    y_label='Atom',
+                    title='Average dot product',
+                    out_name=UserInput.out_name + '_average_dot.png').plot()
 
 #plt.figure()
 #plt.matshow(dot_average_delta)

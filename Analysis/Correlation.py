@@ -73,11 +73,16 @@ class Propagator(Correlation):
         for frame in numpy.arange(self.trajectory.n_frames - self.tau):
             delta_temp = self.trajectory.xyz[frame] - self.trajectory.xyz[frame + self.tau]
             delta_sum = delta_sum + delta_temp
-            dot_sum = dot_sum + numpy.inner(delta_temp, delta_temp) # same as dot of v and v' where v is <n_atoms, 3>
+            dot_sum = dot_sum + numpy.inner(delta_temp, delta_temp) # same as dot o f v and v' where v is <n_atoms, 3>
         average_delta = delta_sum / (self.trajectory.n_frames - self.tau)
         average_dot = dot_sum / (self.trajectory.n_frames - self.tau)
         dot_average_delta = numpy.inner(average_delta, average_delta)
-        return average_dot, average_delta, dot_average_delta
+        #_, normalization_matrix = Pearson(self.trajectory).calculate()
+        diagonal = numpy.diag(average_dot)
+        normalization_matrix = numpy.outer(diagonal, diagonal)
+        normalization_matrix = numpy.sqrt(normalization_matrix)
+        normalized_average_dot = numpy.divide(average_dot, normalization_matrix)
+        return normalized_average_dot, average_delta, dot_average_delta,
 
 
 class Clustering:
