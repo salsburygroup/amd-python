@@ -62,7 +62,7 @@ class WKMeans(object):
                 weights[k_i, dispersion[k_i, :].argmin()] = 1
         return weights
 
-    def __wk_means(self, data, k, beta, centroids=None, weights=None, max_ite=1000, distance='SqEuclidean', p=None):
+    def __wk_means(self, data, k, beta, centroids=None, weights=None, max_ite=100000, distance='SqEuclidean', p=None):
         #runs WK-Means (or MWK-Means) once
         #returns -1, -1, -1, -1, -1 if there is an empty cluster
         n_entities, n_features = data.shape
@@ -102,7 +102,7 @@ class WKMeans(object):
             previous_u = u[:]
             ite += 1
 
-    def wk_means(self, data, k, beta, init_centroids=None, init_weights=None, distance='SqEuclidean', replicates=1, p=None, max_ite=1000):
+    def wk_means(self, data, k, beta, init_centroids=None, init_weights=None, distance='SqEuclidean', replicates=1, p=None, max_ite=100000):
         #Weighted K-Means
         final_dist = float("inf")
         for replication_i in range(replicates):

@@ -25,7 +25,7 @@ class Y(Plotter):
         matplotlib.pyplot.ylabel(self.y_label)
         matplotlib.pyplot.title(self.title)
         matplotlib.pyplot.savefig(self.out_name)
-        matplotlib.pyplot.clf()
+        matplotlib.pyplot.close()
 
 
 class XY(Plotter):
@@ -40,7 +40,7 @@ class XY(Plotter):
         matplotlib.pyplot.ylabel(self.y_label)
         matplotlib.pyplot.title(self.title)
         matplotlib.pyplot.savefig(self.out_name)
-        matplotlib.pyplot.clf()
+        matplotlib.pyplot.close()
 
 
 class SimplePColor(Plotter):
@@ -51,7 +51,7 @@ class SimplePColor(Plotter):
         matplotlib.pyplot.ylabel(self.y_label)
         matplotlib.pyplot.title(self.title)
         matplotlib.pyplot.savefig(self.out_name)
-        matplotlib.pyplot.clf()
+        matplotlib.pyplot.close()
 
 class UnityPColor(Plotter):
     def plot(self):
@@ -61,7 +61,7 @@ class UnityPColor(Plotter):
         matplotlib.pyplot.ylabel(self.y_label)
         matplotlib.pyplot.title(self.title)
         matplotlib.pyplot.savefig(self.out_name)
-        matplotlib.pyplot.clf()
+        matplotlib.pyplot.close()
 
 class MeshPColor(Plotter):
     def __init__(self, y, x_edges, y_edges, out_name, x_label=' ', y_label=' ', title=' '):
@@ -78,7 +78,7 @@ class MeshPColor(Plotter):
         matplotlib.pyplot.ylabel(self.y_label)
         matplotlib.pyplot.title(self.title)
         matplotlib.pyplot.savefig(self.out_name)
-        matplotlib.pyplot.clf()
+        matplotlib.pyplot.close()
 
 
 class MeshContour(Plotter):
@@ -97,4 +97,4 @@ class MeshContour(Plotter):
         matplotlib.pyplot.ylabel(self.y_label)
         matplotlib.pyplot.title(self.title)
         matplotlib.pyplot.savefig(self.out_name)
-        matplotlib.pyplot.clf()
+        matplotlib.pyplot.close()

@@ -40,7 +40,7 @@ class KMeans(object):
     def __init__(self, _my_math):
         self.my_math = _my_math
 
-    def k_means(self, data, k, replicates=1, init_centroids=None, dist='SqEuclidean', p=None, max_ite=100):
+    def k_means(self, data, k, replicates=1, init_centroids=None, dist='SqEuclidean', p=None, max_ite=10000):
             final_dist = float("inf")
             for replication_i in range(replicates):
                 #loops up to max_ite to try to get a successful clustering for this replication
@@ -59,7 +59,7 @@ class KMeans(object):
                     final_dist = dist_tmp
             return final_u, final_centroids, final_ite, final_dist
 
-    def __k_means_batch(self, data, k, centroids=None, distance='SqEuclidean', p=None, max_ite=10000):
+    def __k_means_batch(self, data, k, centroids=None, distance='SqEuclidean', p=None, max_ite=1000000):
             #runs K-Means a single time - batch
             #returns -1, -1, -1, -1 if there is an empty cluster
             n_entities = data.shape[0]
