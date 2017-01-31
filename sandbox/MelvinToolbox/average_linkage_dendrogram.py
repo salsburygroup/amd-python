@@ -5,7 +5,7 @@ import numpy
 import matplotlib.pyplot as plt
 import seaborn
 from scipy.cluster.hierarchy import dendrogram
-from scipy.cluster import hierarchy
+import fastcluster
 from scipy.spatial.distance import squareform
 
 # Initialize parser. The default help has poor labeling. See http://bugs.python.org/issue9694
@@ -95,7 +95,7 @@ else:
 
 
 # Make linkage matrix
-Z = hierarchy.average(distance_matrix)
+Z =fastcluster.linkage(distance_matrix, method='average')
 
 # Plot the dendrogram
 fig = plt.figure()
@@ -110,9 +110,9 @@ ax.set_xticklabels(ax.xaxis.get_majorticklabels())
 
 if UserInput.ground_truths:
     ground_truths = numpy.genfromtxt(UserInput.ground_truths).astype(int)
-    #colors = plt.cm.rainbow(numpy.linspace(0, 1, max(ground_truths) + 1))
-    colors = [(0, 0, 0), (.9, .6, 0), (.35, .7, .9), (0, .6, .5),
-              (.95, .9, .25), (0, .46, .7), (.8, .4, 0), (.8, .6, .7)]
+    colors = plt.cm.rainbow(numpy.linspace(0, 1, max(ground_truths) + 1))
+    #colors = [(0, 0, 0), (.9, .6, 0), (.35, .7, .9), (0, .6, .5),
+    #          (.95, .9, .25), (0, .46, .7), (.8, .4, 0), (.8, .6, .7)]
     ordered_ground_truths = ground_truths[leaves]
     idx = 0
     for x in ordered_ground_truths:

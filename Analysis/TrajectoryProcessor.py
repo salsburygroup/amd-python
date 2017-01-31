@@ -30,9 +30,16 @@ class Strider(Processor):
 
 
 class Aligner(Processor):
+    def __init__(self, trajectory, atom_selection, reference=None):
+        self.reference = reference
+        super().__init__(trajectory, atom_selection)
+
     def process(self):
         indices = AtomIndexer(self.trajectory, self.sel).process()
-        aligned_trajectory = self.trajectory.superpose(self.trajectory, atom_indices=indices)
+        if self.reference:
+            aligned_trajectory = self.trajectory.superpose(reference=self.reference, atom_indices=indices)
+        else:
+            aligned_trajectory = self.trajectory.superpose(self.trajectory, atom_indices=indices)
         return aligned_trajectory
 
 
