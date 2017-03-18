@@ -51,7 +51,7 @@ class TimeLagged(Correlation):
         del fluctuations
         dots = numpy.divide(dots, self.trajectory.n_frames)
         diagonal = numpy.diag(dots)
-        normalization_matrix = numpy.outer(diagonal, diagonal)
+        normalization_matrix = numpy.absolute(numpy.outer(diagonal, diagonal))
         normalization_matrix = numpy.sqrt(normalization_matrix)
         self.correlation_matrix = numpy.divide(dots, normalization_matrix)
         return self.correlation_matrix

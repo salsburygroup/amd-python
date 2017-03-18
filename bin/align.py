@@ -64,4 +64,4 @@ with mdtraj.formats.DCDTrajectoryFile(UserInput.out_name, 'w') as output_file:
             atom_selection=UserInput.sel,
             reference=reference,
         ).process()
-        output_file.write(aligned_chunk.xyz)
+        output_file.write(aligned_chunk.xyz*10)

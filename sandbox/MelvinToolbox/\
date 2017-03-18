@@ -100,7 +100,7 @@ else:
 Z =fastcluster.linkage(distance_matrix, method='average')
 
 
-scipy.cluster.hierarchy.set_link_color_palette(['g', 'c', 'orange', 'c', 'g'])
+scipy.cluster.hierarchy.set_link_color_palette(['c', 'g', 'orange', 'c', 'g'])
 
 
 # Plot the dendrogram
