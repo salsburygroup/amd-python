@@ -76,10 +76,12 @@ if not UserInput.bins:
     bins = int(numpy.ceil((numpy.max(timeseries) - numpy.min(timeseries)) / bin_width))
 else:
     bins = UserInput.bins
-n = matplotlib.pyplot.hist(x=timeseries, bins=bins, normed=True, stacked=True)
+fig, ax = matplotlib.pyplot.subplots()
+n = matplotlib.pyplot.hist(x=timeseries, bins=bins, normed=False, stacked=True)
 y = matplotlib.mlab.normpdf( bins, numpy.mean(timeseries), numpy.std(a=timeseries))
 matplotlib.pyplot.grid(True)
-matplotlib.pyplot.xlabel(UserInput.x_label)
-matplotlib.pyplot.ylabel(UserInput.y_label)
-matplotlib.pyplot.title(UserInput.title)
+matplotlib.pyplot.xlabel(UserInput.x_label, fontsize=15)
+matplotlib.pyplot.ylabel(UserInput.y_label, fontsize=15)
+matplotlib.pyplot.tick_params(labelsize=18)
+matplotlib.pyplot.title(UserInput.title, fontsize=15)
 matplotlib.pyplot.savefig(UserInput.output)

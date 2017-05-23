@@ -46,7 +46,7 @@ inputs.add_argument('-ax',
                     action='store',
                     dest='axis_label',
                     default=None,
-                    help='Align to atom selection before calculating?',
+                    help='Label for axes',
 )
 inputs.add_argument('-o',
                     action='store',

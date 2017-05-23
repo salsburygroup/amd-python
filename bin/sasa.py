@@ -66,7 +66,7 @@ Plotter.Y(y=total_sasa,
                 ).plot()
 
 def autocorr(x):
-    "Compute an autocorrelation with numpy"
+    '''Compute an autocorrelation with numpy'''
     x = x - numpy.mean(x)
     result = numpy.correlate(x, x, mode='full')
     result = result[result.size//2:]

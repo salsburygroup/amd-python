@@ -21,7 +21,7 @@ inputs.add_argument(
     required=True
 )
 inputs.add_argument(
-    '-ref_frame',
+    '-ref',
     action='store',
     dest='ref_frame',
     help='Reference Structure',

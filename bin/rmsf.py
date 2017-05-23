@@ -33,7 +33,7 @@ inputs.add_argument('-sel',
 inputs.add_argument('-align',
                     action='store_true',
                     help='Align to atom selection before calculating?',
-)
+                    )
 inputs.add_argument('-o',
                     action='store',
                     dest='out_name',

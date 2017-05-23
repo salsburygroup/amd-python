@@ -90,8 +90,8 @@ distance_matrix = numpy.genfromtxt(UserInput.distances)
 distance_matrix = squareform(distance_matrix)
 if UserInput.labels:
     with open(UserInput.labels) as l:
-        labels = l.read().strip().split(' ')
-        #labels = l.readlines()
+        #labels = l.read().strip().split(' ')
+        labels = l.readlines()
 else:
     labels = None
 
