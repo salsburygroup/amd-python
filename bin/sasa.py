@@ -9,6 +9,8 @@ import pandas as pd
 from mdentropy.metrics import * 
 from Analysis import Plotter, Saver
 
+#Jiajie Xiao
+# Jan 09, 2017
 # Initialize parser. The default help has poor labeling. See http://bugs.python.org/issue9694
 parser = argparse.ArgumentParser(
     description='Compute Solvent Accessible Surface Area  for given MD trajectories', add_help=False
