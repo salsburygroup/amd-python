@@ -2,6 +2,7 @@ import matplotlib
 matplotlib.use('Agg') # For use on DEAC cluster
 import matplotlib.pyplot
 import matplotlib.colors
+import seaborn
 import numpy
 
 
@@ -47,6 +48,8 @@ class SimplePColor(Plotter):
     def plot(self):
         matplotlib.pyplot.pcolor(self.y, cmap='jet')
         matplotlib.pyplot.colorbar()
+        matplotlib.pyplot.ylim(0, len(self.y))
+        matplotlib.pyplot.xlim(0, len(self.y))
         matplotlib.pyplot.xlabel(self.x_label)
         matplotlib.pyplot.ylabel(self.y_label)
         matplotlib.pyplot.title(self.title)
@@ -57,6 +60,8 @@ class UnityPColor(Plotter):
     def plot(self):
         matplotlib.pyplot.pcolor(self.y, cmap='jet', vmin=-1, vmax=1)
         matplotlib.pyplot.colorbar()
+        matplotlib.pyplot.ylim(0, len(self.y))
+        matplotlib.pyplot.xlim(0, len(self.y))
         matplotlib.pyplot.xlabel(self.x_label)
         matplotlib.pyplot.ylabel(self.y_label)
         matplotlib.pyplot.title(self.title)

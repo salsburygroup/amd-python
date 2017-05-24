@@ -6,13 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="60be380e-7fcd-487f-bd2a-7200b1968f18" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/correlation_matrix.py" afterPath="$PROJECT_DIR$/bin/correlation_matrix.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/quick_histogram.py" afterPath="$PROJECT_DIR$/bin/quick_histogram.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/rmsd.py" afterPath="$PROJECT_DIR$/bin/rmsd.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/rmsf.py" afterPath="$PROJECT_DIR$/bin/rmsf.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/sasa.py" afterPath="$PROJECT_DIR$/bin/sasa.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/notebooks/PyEMMA/GenerateMacrostateMSM.ipynb" afterPath="$PROJECT_DIR$/notebooks/PyEMMA/GenerateMacrostateMSM.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sandbox/MelvinToolbox/average_linkage_dendrogram.py" afterPath="$PROJECT_DIR$/sandbox/MelvinToolbox/average_linkage_dendrogram.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Analysis/Plotter.py" afterPath="$PROJECT_DIR$/Analysis/Plotter.py" />
     </list>
     <ignored path="AMD-PYTHON.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,18 +44,38 @@
       <file leaf-file-name="quick_histogram.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/quick_histogram.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="29">
+            <state relative-caret-position="510">
               <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="correlation_matrix.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="correlation_matrix.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/correlation_matrix.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="48" column="40" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
+            <state relative-caret-position="-268">
+              <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Plotter.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Analysis/Cluster/Plotter.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-298">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Plotter.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Analysis/Plotter.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="615">
+              <caret line="51" column="46" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -116,7 +130,6 @@
         <option value="/Volumes/RyanMData/IntelligentSampling/InitialTrials/F10Ca/stride_correlation.py" />
         <option value="/Volumes/RyanMData/IntelligentSampling/InitialTrials/stride_correlation.py" />
         <option value="$PROJECT_DIR$/Analysis/Distance.py" />
-        <option value="$PROJECT_DIR$/Analysis/Plotter.py" />
         <option value="/Volumes/RyanMData/IntelligentSampling/InitialTrials/nucleic_acids/rmsf_correlation.py" />
         <option value="$PROJECT_DIR$/Analysis/Cluster/Unsupervised/mwkmeans.py" />
         <option value="$PROJECT_DIR$/Analysis/Cluster/Unsupervised/kmeans.py" />
@@ -135,6 +148,7 @@
         <option value="$PROJECT_DIR$/sandbox/MelvinToolbox/average_linkage_dendrogram.py" />
         <option value="$PROJECT_DIR$/bin/quick_histogram.py" />
         <option value="$PROJECT_DIR$/bin/correlation_matrix.py" />
+        <option value="$PROJECT_DIR$/Analysis/Plotter.py" />
       </list>
     </option>
   </component>
@@ -146,8 +160,8 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1680" />
-    <option name="height" value="945" />
+    <option name="width" value="1920" />
+    <option name="height" value="969" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -193,8 +207,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -311,6 +323,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -620,10 +634,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="945" extended-state="6" />
+    <frame x="0" y="23" width="1920" height="969" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21607143" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.215625" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882884" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -720,13 +734,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bin/HDBSCAN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sandbox/MelvinToolbox/DEACcluster/IMWK_adaptations.slurm">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -836,13 +843,6 @@
     <entry file="file:///Volumes/RyanMData/IntelligentSampling/InitialTrials/F10Ca/stride_correlation.py" />
     <entry file="file:///Volumes/RyanMData/IntelligentSampling/InitialTrials/stride_correlation.py" />
     <entry file="file:///Volumes/RyanMData/IntelligentSampling/InitialTrials/nucleic_acids/rmsf_correlation.py" />
-    <entry file="file://$PROJECT_DIR$/Analysis/Plotter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="24" column="46" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Analysis/Cluster/Unsupervised/mwkmeans.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="58">
@@ -1047,7 +1047,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/quick_histogram.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
+        <state relative-caret-position="510">
           <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
           <folding />
         </state>
@@ -1055,8 +1055,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/correlation_matrix.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="48" column="40" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
+        <state relative-caret-position="-268">
+          <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Analysis/Cluster/Plotter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-298">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Analysis/Plotter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="51" column="46" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
           <folding />
         </state>
       </provider>
