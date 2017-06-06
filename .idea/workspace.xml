@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="60be380e-7fcd-487f-bd2a-7200b1968f18" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/pca_ms_network.py" afterPath="$PROJECT_DIR$/bin/pca_ms_network.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Analysis/Cluster/Saver.py" afterPath="$PROJECT_DIR$/Analysis/Cluster/Saver.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/cluster_automatic.py" afterPath="$PROJECT_DIR$/bin/cluster_automatic.py" />
     </list>
     <ignored path="AMD-PYTHON.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -74,21 +75,61 @@
       <file leaf-file-name="Plotter.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Analysis/Plotter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="825">
+            <state relative-caret-position="1245">
               <caret line="83" column="43" selection-start-line="83" selection-start-column="43" selection-end-line="83" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pca_ms_network.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pca_ms_network.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/pca_ms_network.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
-              <caret line="39" column="22" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
+            <state relative-caret-position="135">
+              <caret line="14" column="53" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="53" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="correlation_propagator.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/correlation_propagator.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="840">
+              <caret line="57" column="10" selection-start-line="57" selection-start-column="10" selection-end-line="57" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Correlation.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Analysis/Correlation.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="841">
+              <caret line="143" column="27" selection-start-line="143" selection-start-column="27" selection-end-line="143" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AtomSelection.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Analysis/AtomSelection.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="54" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Saver.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Analysis/Cluster/Saver.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="608">
+              <caret line="84" column="56" selection-start-line="84" selection-start-column="56" selection-end-line="84" selection-end-column="56" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -128,7 +169,6 @@
         <option value="$PROJECT_DIR$/sandbox/MelvinToolbox/DEACcluster/IMWK_adaptations.slurm" />
         <option value="$PROJECT_DIR$/Analysis/Cluster/Clusterer.py" />
         <option value="$PROJECT_DIR$/Examples/hbond_two_systems.py" />
-        <option value="$PROJECT_DIR$/Analysis/Cluster/Saver.py" />
         <option value="$PROJECT_DIR$/repair_residue_atom_order.py" />
         <option value="$PROJECT_DIR$/bin/repair_residue_atom_order.py" />
         <option value="$PROJECT_DIR$/sandbox/MelvinToolbox/DEACcluster/IMWK_adaptations.py" />
@@ -161,6 +201,7 @@
         <option value="$PROJECT_DIR$/bin/correlation_matrix.py" />
         <option value="$PROJECT_DIR$/Analysis/Plotter.py" />
         <option value="$PROJECT_DIR$/bin/pca_ms_network.py" />
+        <option value="$PROJECT_DIR$/Analysis/Cluster/Saver.py" />
       </list>
     </option>
   </component>
@@ -173,7 +214,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1920" />
-    <option name="height" value="969" />
+    <option name="height" value="974" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -219,7 +260,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -337,6 +377,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -347,19 +388,19 @@
     <property name="last_opened_file_path" value="/Volumes/RyanMData/IntelligentSampling/InitialTrials/nucleic_acids" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Analysis/Cluster" />
+      <recent name="$PROJECT_DIR$/bin" />
+      <recent name="$PROJECT_DIR$/sandbox/MelvinToolbox" />
+      <recent name="$PROJECT_DIR$/sandbox/MelvinToolbox/DEACcluster" />
+      <recent name="$PROJECT_DIR$/Examples" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/sandbox/CYBYSY" />
       <recent name="$PROJECT_DIR$/sandbox/MelvinToolbox" />
       <recent name="$PROJECT_DIR$/bin" />
       <recent name="$PROJECT_DIR$/sandbox/MelvinToolbox/DEACcluster" />
       <recent name="$PROJECT_DIR$/staged" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/bin" />
-      <recent name="$PROJECT_DIR$/sandbox/MelvinToolbox" />
-      <recent name="$PROJECT_DIR$/sandbox/MelvinToolbox/DEACcluster" />
-      <recent name="$PROJECT_DIR$/Examples" />
-      <recent name="$PROJECT_DIR$/Analysis" />
     </key>
   </component>
   <component name="RunManager" selected="Python.correlation_matrix">
@@ -646,7 +687,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="969" extended-state="6" />
+    <frame x="0" y="23" width="1920" height="974" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.215625" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -741,7 +782,7 @@
           <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="21" />
+      <option name="time" value="22" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -800,13 +841,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Analysis/Cluster/Saver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="818">
-          <caret line="85" column="76" selection-start-line="85" selection-start-column="76" selection-end-line="85" selection-end-column="76" />
         </state>
       </provider>
     </entry>
@@ -906,13 +940,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/correlation_propagator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="835">
-          <caret line="57" column="10" selection-start-line="57" selection-start-column="10" selection-end-line="57" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sandbox/CYBYSY/intelligent_stride.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="835">
@@ -1000,20 +1027,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Analysis/AtomSelection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="54" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Analysis/Correlation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1425">
-          <caret line="101" column="12" selection-start-line="101" selection-start-column="12" selection-end-line="101" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/extractDCD.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1076,7 +1089,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Analysis/Plotter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
+        <state relative-caret-position="1245">
           <caret line="83" column="43" selection-start-line="83" selection-start-column="43" selection-end-line="83" selection-end-column="43" />
           <folding />
         </state>
@@ -1084,11 +1097,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/pca_ms_network.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="39" column="22" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
+        <state relative-caret-position="135">
+          <caret line="14" column="53" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="53" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/correlation_propagator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="57" column="10" selection-start-line="57" selection-start-column="10" selection-end-line="57" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Analysis/Cluster/Saver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="84" column="56" selection-start-line="84" selection-start-column="56" selection-end-line="84" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Analysis/Correlation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="841">
+          <caret line="143" column="27" selection-start-line="143" selection-start-column="27" selection-end-line="143" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Analysis/AtomSelection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="54" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
+          <folding />
         </state>
       </provider>
     </entry>

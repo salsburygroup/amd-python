@@ -58,11 +58,14 @@ class Predictor:
             self.labels[0]
         except IndexError:
             print('Method predict must be executed first')
+       
+        full_trajectory = TrajectoryReader.DCD(topology_path=self.topology_path, trajectory_path=self.dcd_path).load()
 
         Saver.PDB(
             out_name=os.path.join(self.out_dir, 'clusters'),
-            labels=self.labels, trajectory=self.trajectory
-        ).save()
+            labels=self.labels, trajectory=full_trajectory,
+            atom_selection=self.atom_selection
+            ).save()
 
     def visualize(self):
         for folder in glob.glob(os.path.join(self.out_dir, 'clusters', 'cluster*')):

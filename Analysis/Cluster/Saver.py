@@ -7,6 +7,7 @@ import scipy.spatial.distance
 import subprocess
 import PIL.Image
 import glob
+import copy
 
 
 class Saver:
@@ -72,8 +73,8 @@ class PDB(ClusterFrames):
         super().__init__(out_name, labels)
 
     def save(self):
-        trajectory_slice = AtomSelection.Slice(trajectory=self.trajectory, atom_selection=self.atom_selection).select()
-        trajectory_2d = Featurizer.XYZ(trajectory=trajectory_slice).extract()
+        trajectory_temp_slice = AtomSelection.Slice(trajectory=copy.copy(self.trajectory), atom_selection=self.atom_selection).select()
+        trajectory_2d = Featurizer.XYZ(trajectory=trajectory_temp_slice).extract()
         for i in range(0, int(max(self.labels)) + 1):
             directory = self.out_name + '/cluster' + str(i)
             os.makedirs(directory)
