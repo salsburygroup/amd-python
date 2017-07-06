@@ -1,6 +1,7 @@
 #! /usr/bin/env python
 import argparse
 import numpy
+import sys
 from Analysis import Distance, Plotter, Saver, TrajectoryReader, TrajectoryProcessor
 
 # Initialize parser. The default help has poor labeling. See http://bugs.python.org/issue9694
@@ -77,8 +78,8 @@ rmsd_timeseries = Distance.RMSD(
 ).calculate()
 
 masked_rmsd=rmsd_timeseries[numpy.where(rmsd_timeseries<UserInput.cutoff)]
-masked_traj=trajectory[numpy.where(rmsd_timeseries<UserInput.cutoff)]
-
+print(masked_rmsd)
+masked_traj=trajectory[numpy.where(masked_rmsd<UserInput.cutoff)]
 
 # Save
 Saver.Array(array=masked_rmsd, out_name=UserInput.out_name + '.dat').save()
