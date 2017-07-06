@@ -20,5 +20,5 @@ class Indices(Selector):
 class Slice(Selector):
     def select(self):
         indices = self.trajectory.top.select(self.sel)
-        sub_trajectory = self.trajectory.restrict_atoms(indices)
+        sub_trajectory = self.trajectory.atom_slice(atom_indices=indices, inplace=False)
         return sub_trajectory
