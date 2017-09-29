@@ -1,0 +1,3 @@
+These notebooks are taken from https://github.com/scikit-learn-contrib/hdbscan.
+They are not original work. Unless noted, they are word for word copies 
+and are intended only for internal use to gain better understanding.
