@@ -53,7 +53,7 @@ class TimeLagged(Correlation):
         dots = numpy.divide(dots, self.trajectory.n_frames)
         diagonal = numpy.diag(dots)
         self.normalization_matrix = numpy.outer(diagonal, diagonal)
-        self.normalization_matrix = numpy.sqrt(self.normalization_matrix)
+        self.normalization_matrix = numpy.sqrt(numpy.absolute(self.normalization_matrix))
         self.correlation_matrix = numpy.divide(dots, self.normalization_matrix)
         return self.correlation_matrix
 

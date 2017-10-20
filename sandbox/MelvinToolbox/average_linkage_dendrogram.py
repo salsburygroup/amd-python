@@ -90,8 +90,8 @@ distance_matrix = numpy.genfromtxt(UserInput.distances)
 distance_matrix = squareform(distance_matrix)
 if UserInput.labels:
     with open(UserInput.labels) as l:
-        #labels = l.read().strip().split(' ')
-        labels = l.readlines()
+        labels = l.read().strip().split(' ')
+        #labels = l.readlines()
 else:
     labels = None
 
@@ -100,12 +100,12 @@ else:
 Z =fastcluster.linkage(distance_matrix, method='average')
 
 
-scipy.cluster.hierarchy.set_link_color_palette(['orange', 'c', 'c', 'b', 'r'])
+scipy.cluster.hierarchy.set_link_color_palette(['b', 'g', 'c', 'b', 'r'])
 
 
 # Plot the dendrogram
 fig = plt.figure()
-d = dendrogram(Z, labels=labels, color_threshold=UserInput.cutoff)
+d = dendrogram(Z, labels=labels, color_threshold=UserInput.cutoff, leaf_rotation=90)
 leaves = d['leaves']
 plt.title(UserInput.title)
 plt.xlabel(UserInput.x_label)

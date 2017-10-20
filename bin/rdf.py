@@ -90,13 +90,13 @@ r, g_r = md.compute_rdf(traj,pairs=pais_Of_interest,r_range=radii_range,bin_widt
 rdf = numpy.column_stack((r,g_r))                                  
 Saver.Array(
     array=rdf,
-    out_name='rdf_'+UserInput.out_name+'.dat'
+    out_name=UserInput.out_name+'.dat'
 ).save()
 
 
 title = 'Radial distribution function ({0},{1})'.format(UserInput.sel1, UserInput.sel2)
 Plotter.XY(x=r,y=g_r,
-                out_name='rdf_'+UserInput.out_name+'.pdf',
+                out_name=UserInput.out_name+'.pdf',
                 x_label='r (nm)',
                 y_label='g(r)',
                 title=title

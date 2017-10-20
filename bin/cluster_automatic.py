@@ -77,6 +77,15 @@ class Predictor:
 if __name__ == "__main__":
     import argparse
 
+    """
+    Example usages:
+    #HDBSCAN
+    python /Users/melvrl13/Documents/AMD/AMD-PYTHON/bin/cluster_automatic.py -top /Volumes/RyanMdata-1/FUMP10/hairpin.pdb -traj /Volumes/RyanMdata-1/FUMP10/Folding/weightedSims3200/weighted3200.dcd -sel "not element H" -o /Volumes/RyanMdata-1/FUMP10/Folding/hdbscan_demo -method HDBSCAN
+
+    #Amorim Hennig
+    python /Users/melvrl13/Documents/AMD/AMD-PYTHON/bin/cluster_automatic.py -top /Volumes/RyanMData-1/MutSa/WGT_sims/carbo_small/altered/combined_trajectories/nucleic.pdb -traj /Volumes/RyanMData-1/MutSa/WGT_sims/carbo_small/altered/combined_trajectories/nucleic.dcd -sel "not element H" -o /Volumes/RyanMData-1/MutSa/WGT_sims/carbo_small/altered/combined_trajectories/Analysis/AmorimHennig/take2 -method IMWKRescaled
+    """
+
     # Initialize parser. The default help has poor labeling. See http://bugs.python.org/issue9694
     parser = argparse.ArgumentParser(description='Run and score clustering', add_help=False)
 
