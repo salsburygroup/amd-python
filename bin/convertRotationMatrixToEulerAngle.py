@@ -3,6 +3,7 @@
 #Modified from:https://www.learnopencv.com/rotation-matrix-to-euler-angles/
 
 #Takes a rotation matrix from VMD output and converts to Euler Angles
+#To get the rotation orientation from VMD use the command: "molinfo top get rotate_matrix"
 #For example
 #python /Users/fwamps/SalsburyGroup/Python/sandbox/convertRotationMatrixToEulerAngle.py
 #-rMat '{{0.31456 0.948179 0.0448005} {0.785671 -0.286553 0.548277} {0.532702 -0.137269 -0.835096}}'
