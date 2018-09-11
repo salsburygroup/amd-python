@@ -28,6 +28,13 @@ inputs.add_argument('-str',
                     type=str,
                     required=True
                     )
+inputs.add_argument('-directional',
+                    action='store',
+                    dest='directional',
+                    help='directional correlation?yes or no',
+                    type=str,
+                    default='no'
+                    )
 inputs.add_argument('-o',
                     action='store',
                     dest='out_name',
@@ -44,11 +51,16 @@ residue_list = [residue for residue in topology.residues]
 corr = np.genfromtxt(UserInput.file)
 num_residues = corr.shape[0]
 
-with open('corr_table.csv', 'w') as out:
+with open(UserInput.out_name+'.csv', 'w') as out:
     out.write('Res_A, Res_B, Type, Corr, abs(Corr)\n')
     for id_a in range(num_residues):
-        for id_b in range(id_a+1, num_residues):
-            out.write('{0:s}, {1:s}, {2:s}, {3:f}, {4:f}\n'.format(
-                str(residue_list[id_a]), str(residue_list[id_b]), str(int(np.sign(corr[id_a, id_b]))),
-                corr[id_a, id_b], abs(corr[id_a, id_b])))
+        if UserInput.directional == 'no':
+            id_b_start = id_a
+        else:
+            id_b_start = 0
+        for id_b in range(id_b_start, num_residues):
+            out.write('{0:s}, {1:s}, {2:s}, {3:f}, {4:f}\n'.format(str(residue_list[id_a]),
+                                                                   str(residue_list[id_b]),
+                                                                   str(int(np.sign(corr[id_a, id_b]))),
+                                                                   corr[id_a, id_b], abs(corr[id_a, id_b])))
 
