@@ -1,7 +1,7 @@
 #! /usr/bin/env python
+from Analysis import TrajectoryReader, TrajectoryProcessor
 import argparse
 import mdtraj
-from Analysis import TrajectoryReader, TrajectoryProcessor
 
 # Initialize parser. The default help has poor labeling. See http://bugs.python.org/issue9694
 parser = argparse.ArgumentParser(
@@ -12,38 +12,33 @@ parser = argparse.ArgumentParser(
 # List all possible user input
 inputs = parser.add_argument_group('Input arguments')
 inputs.add_argument('-h', '--help', action='help')
-inputs.add_argument(
-    '-ref',
-    action='store',
-    dest='structure',
-    help='Reference PDB',
-    type=str,
-    required=True
-)
-inputs.add_argument(
-    '-traj',
-    action='store',
-    dest='trajectory',
-    help='Trajectory',
-    type=str,
-    required=True
-)
-inputs.add_argument(
-    '-sel',
-    action='store',
-    dest='sel',
-    help='Atom selection',
-    type=str,
-    default='all'
-)
-inputs.add_argument(
-    '-o',
-    action='store',
-    dest='out_name',
-    help='Output file name',
-    type=str,
-    required=True
-)
+inputs.add_argument('-s',
+                    action='store',
+                    dest='structure',
+                    help='Reference PDB',
+                    type=str,
+                    required=True)
+
+inputs.add_argument('-t',
+                    action='store',
+                    dest='trajectory',
+                    help='Trajectory',
+                    type=str,
+                    required=True)
+
+inputs.add_argument('-sel',
+                    action='store',
+                    dest='sel',
+                    help='Atom selection',
+                    type=str,
+                    default='all')
+
+inputs.add_argument('-o',
+                    action='store',
+                    dest='out_name',
+                    help='Output file name',
+                    type=str,
+                    required=True)
 
 # Parse into useful form
 UserInput = parser.parse_args()

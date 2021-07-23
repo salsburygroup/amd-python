@@ -12,14 +12,14 @@ parser = argparse.ArgumentParser(description='Calculate the center of mass for a
 # List all possible user input
 inputs = parser.add_argument_group('Input arguments')
 inputs.add_argument('-h', '--help', action='help')
-inputs.add_argument('-top',
+inputs.add_argument('-s',
                     action='store',
                     dest='structure',
                     help='Structure file corresponding to trajectory',
                     type=str,
                     required=True
                     )
-inputs.add_argument('-traj',
+inputs.add_argument('-t',
                     action='store',
                     dest='trajectory',
                     help='Trajectory',

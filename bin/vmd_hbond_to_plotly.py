@@ -1,4 +1,4 @@
-import plotly.plotly as py
+import chart_studio.plotly as py
 import plotly.graph_objs as go
 import pandas
 import argparse
@@ -17,6 +17,7 @@ inputs.add_argument('-vmd',
                     type=str,
                     required=True
                     )
+
 inputs.add_argument('-title',
                     action='store',
                     dest='title',

@@ -1,3 +1,4 @@
+import os
 import numpy as np
 import mdtraj as md
 import hdbscan
@@ -15,8 +16,8 @@ parser = argparse.ArgumentParser(description = 'Run and score hdbscan clustering
 # List all possible user input
 inputs=parser.add_argument_group('Input arguments')
 inputs.add_argument('-h', '--help', action='help')
-inputs.add_argument('-top', action='store', dest='structure',help='Structure file corresponding to trajectory',type=str,required=True)
-inputs.add_argument('-traj', action='store', dest='trajectory',help='Trajectory',type=str,required=True)
+inputs.add_argument('-s', action='store', dest='structure',help='Structure file corresponding to trajectory',type=str,required=True)
+inputs.add_argument('-t', action='store', dest='trajectory',help='Trajectory',type=str,required=True)
 inputs.add_argument('-sel', action='store', dest='sel', help='Atom selection',type=str,default='not element H')
 inputs.add_argument('-min', action='store', dest='min', help='minimum cluster membership',type=int,default=10)
 inputs.add_argument('-o', action='store', dest='out_name',help='Output file',type=str,required=True)
@@ -29,6 +30,10 @@ trajectory = UserInput.trajectory
 t = md.load(trajectory,top=topology)
 sel = t.topology.select(UserInput.sel)
 t = t.atom_slice(sel)
+
+out_name=UserInput.out_name
+fname = './' + 'HD_' + out_name
+os.mkdir(fname)
 
 # Format trajectory 
 temp = t.xyz
@@ -62,8 +67,8 @@ adjusted_score = np.mean(scores[scoreable])
 
 # Save results
 #Text
-np.savetxt(UserInput.out_name + '/hdbscan_labels.txt', cluster_labels, fmt='%i')
-with open (UserInput.out_name + '/silhouette_scores.txt', 'w') as f:
+np.savetxt('HD_' + UserInput.out_name + '/hdbscan_labels.txt', cluster_labels, fmt='%i')
+with open ('HD_' + UserInput.out_name + '/silhouette_scores.txt', 'w') as f:
     f.write("silhouette score is {0} \n adjusted score is {1}".format(raw_score, adjusted_score))
     
 #Figures
@@ -72,5 +77,5 @@ plt.scatter(np.arange(frames), cluster_labels, marker = '+')
 plt.xlabel('Frame')
 plt.ylabel('Cluster')
 plt.title('HDBSCAN')
-plt.savefig(UserInput.out_name + '/hdbscan_timeseries.png')
+plt.savefig('HD_' + UserInput.out_name + '/hdbscan_timeseries.png')
 plt.clf()

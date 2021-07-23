@@ -26,7 +26,7 @@ parser = argparse.ArgumentParser(
 inputs = parser.add_argument_group('Input arguments')
 inputs.add_argument('-h', '--help', action='help')
 inputs.add_argument(
-    '-str',
+    '-s',
     action='store',
     dest='structure',
     help='PDB file not psf',
@@ -34,7 +34,7 @@ inputs.add_argument(
     required=True
 )
 inputs.add_argument(
-    '-traj',
+    '-t',
     action='store',
     dest='trajectory',
     help='Trajectory',
@@ -50,7 +50,7 @@ inputs.add_argument(
     default='all'
 )
 inputs.add_argument(
-    '-stride',
+    '-l',
     action='store',
     dest='stride',
     help='striding',

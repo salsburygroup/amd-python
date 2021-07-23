@@ -2,7 +2,6 @@ import numpy as np
 import mdtraj as md
 import argparse
 
-
 # Jiajie Xiao
 # 09.19.2017
 
@@ -14,14 +13,14 @@ parser = argparse.ArgumentParser(
 # List all possible user input
 inputs = parser.add_argument_group('Input arguments')
 inputs.add_argument('-h', '--help', action='help')
-inputs.add_argument('-input',
+inputs.add_argument('-i',
                     action='store',
                     dest='file',
                     help='input files of correlation matrix',
                     type=str,
                     required=True
                     )
-inputs.add_argument('-str',
+inputs.add_argument('-s',
                     action='store',
                     dest='structure',
                     help='PDB file',
@@ -40,7 +39,7 @@ inputs.add_argument('-o',
                     dest='out_name',
                     help='Output file name',
                     type=str,
-                    required=False
+                    default='corr_table'
                     )
 
 # Parse into useful form
@@ -63,4 +62,3 @@ with open(UserInput.out_name+'.csv', 'w') as out:
                                                                    str(residue_list[id_b]),
                                                                    str(int(np.sign(corr[id_a, id_b]))),
                                                                    corr[id_a, id_b], abs(corr[id_a, id_b])))
-

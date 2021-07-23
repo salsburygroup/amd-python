@@ -1,3 +1,4 @@
+import os
 import numpy as np
 import mdtraj as md
 import matplotlib
@@ -29,6 +30,10 @@ t = md.load(trajectory,top=topology)
 n_frames = t.n_frames
 sel = t.topology.select(UserInput.sel)
 t = t.atom_slice(sel)
+
+out_name=UserInput.out_name
+fname = './' + out_name
+os.mkdir(fname)
 
 tempfile = tempfile.NamedTemporaryFile()
 distances = np.memmap(tempfile.name, dtype=float, shape=(n_frames,n_frames))
