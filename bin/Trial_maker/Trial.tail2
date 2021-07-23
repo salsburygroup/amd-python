@@ -1,0 +1,3 @@
+              ' /home/wud18/bash/XXXSubmit.slurm')
+print(python_cmd)
+subprocess.call(python_cmd, shell=True)

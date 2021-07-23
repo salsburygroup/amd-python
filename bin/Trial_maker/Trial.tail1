@@ -1,0 +1,6 @@
+
+# Find Helper scripts
+script = '/home/wud18/python/XXX.py'
+
+# Calculating distance
+python_cmd = ('sbatch --export=sc=' + script +
